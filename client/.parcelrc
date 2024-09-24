@@ -1,0 +1,11 @@
+{
+	// Disable babel config for parcel, but allow for other things like eslint and jest
+	// https://parceljs.org/languages/javascript/#usage-with-other-tools
+	"extends": "@parcel/config-default",
+	"transformers": {
+		"*.{js,mjs,jsx,cjs,ts,tsx}": [
+			"@parcel/transformer-js",
+			"@parcel/transformer-react-refresh-wrap"
+		]
+	}
+}

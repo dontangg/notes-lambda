@@ -1,0 +1,8 @@
+#!/bin/sh
+set -x
+
+# sync all the files
+aws s3 sync client/dist s3://notes.thewilsonpad.com/ --delete --profile personal
+
+# set cache control on index.html to expire faster to allow for updates (CloudFront caches)
+aws s3 cp client/dist/index.html s3://notes.thewilsonpad.com/index.html --cache-control max-age=60 --profile personal
