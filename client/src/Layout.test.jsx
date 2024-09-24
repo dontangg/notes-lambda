@@ -1,6 +1,6 @@
 import { screen, waitFor } from "@testing-library/react"
 import React from "react";
-import App from "./App"
+import App from "./Layout"
 import { renderWithProviders } from "./utils/test-utils"
 
 test("App should have correct initial render", () => {

@@ -9,7 +9,6 @@ import {
   selectCount,
   selectStatus,
 } from "./counterSlice"
-// import "./Counter.module.css";
 
 export const Counter = () => {
   const dispatch = useDispatch()
