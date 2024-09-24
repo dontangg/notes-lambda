@@ -1,27 +1,24 @@
-# vite-template-redux
+# notes-lambda
 
-Uses [Vite](https://vitejs.dev/), [Vitest](https://vitest.dev/), and [React Testing Library](https://github.com/testing-library/react-testing-library) to create a modern [React](https://react.dev/) app compatible with [Create React App](https://create-react-app.dev/)
-
-```sh
-npx degit reduxjs/redux-templates/packages/vite-template-redux my-app
-```
-
-## Goals
-
-- Easy migration from Create React App or Vite
-- As beginner friendly as Create React App
-- Optimized performance compared to Create React App
-- Customizable without ejecting
+A website that uses AWS S3, API Gateway, Lambda, and DynamoDB.
+S3 is used for static hosting with S3 for html, css, and js files.
+API Gateway routes calls to Lambda, which makes calls to DynamoDB.
 
 ## Scripts
 
-- `dev`/`start` - start dev server and open browser
-- `build` - build for production
-- `preview` - locally preview production build
-- `test` - launch test runner
+For the S3 imitating client, navigate into the client folder:
 
-## Inspiration
+- `npm i` - install node module dependencies
+- `npm start` - start a development server on port 1234
+- `npm run build` - combine and minify files for production and place them in the dist folder
+- `npm test` - run unit tests
 
-- [Create React App](https://github.com/facebook/create-react-app/tree/main/packages/cra-template)
-- [Vite](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react)
-- [Vitest](https://github.com/vitest-dev/vitest/tree/main/examples/react-testing-lib)
+For deployment to AWS, from the root folder:
+
+- `bin/s3-sync` - upload the files to the AWS S3 bucket
+- `bin/lambda-update` - update the AWS Lambda
+
+From the API Gateway / lambda imitator:
+
+- `npm start` - start a development server that mimics API Gateway
+- `npm test` - run unit tests
