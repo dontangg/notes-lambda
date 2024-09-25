@@ -1,10 +1,10 @@
 import { screen, waitFor } from "@testing-library/react"
 import React from "react";
-import App from "./Layout"
+import Layout from "./Layout"
 import { renderWithProviders } from "./utils/test-utils"
 
 test("App should have correct initial render", () => {
-  renderWithProviders(<App />)
+  renderWithProviders(<Layout />)
 
   // The app should be rendered correctly
   expect(screen.getByText(/learn/i)).toBeInTheDocument()
@@ -15,7 +15,7 @@ test("App should have correct initial render", () => {
 })
 
 test("Increment value and Decrement value should work as expected", async () => {
-  const { user } = renderWithProviders(<App />)
+  const { user } = renderWithProviders(<Layout />)
 
   // Click on "+" => Count should be 1
   await user.click(screen.getByLabelText("Increment value"))
@@ -27,7 +27,7 @@ test("Increment value and Decrement value should work as expected", async () => 
 })
 
 test("Add Amount should work as expected", async () => {
-  const { user } = renderWithProviders(<App />)
+  const { user } = renderWithProviders(<Layout />)
 
   // "Add Amount" button is clicked => Count should be 2
   await user.click(screen.getByText("Add Amount"))
@@ -48,7 +48,7 @@ test("Add Amount should work as expected", async () => {
 })
 
 it("Add Async should work as expected", async () => {
-  const { user } = renderWithProviders(<App />)
+  const { user } = renderWithProviders(<Layout />)
 
   // "Add Async" button is clicked => Count should be 2
   await user.click(screen.getByText("Add Async"))
@@ -77,7 +77,7 @@ it("Add Async should work as expected", async () => {
 })
 
 test("Add If Odd should work as expected", async () => {
-  const { user } = renderWithProviders(<App />)
+  const { user } = renderWithProviders(<Layout />)
 
   // "Add If Odd" button is clicked => Count should stay 0
   await user.click(screen.getByText("Add If Odd"))

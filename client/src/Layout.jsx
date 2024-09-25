@@ -1,16 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 import { Quotes } from "./features/quotes/Quotes";
 
-const App = (props) => {
-	const logo = new URL('logo.svg', import.meta.url);
-
-	if (props.test) return <div>test</div>;
+const Layout = () => {
+	const [mainMenuIsOpen, setMainMenuIsOpen] = useState(false);
+	const [userMenuIsOpen, setUserMenuIsOpen] = useState(false);
 
 	return (
-		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
+		<>
+			<nav className="navbar navbar-expand-md bg-body-tertiary">
+				<div className="container">
+					<a className="navbar-brand" href="#">Notes</a>
+					<button
+						className="navbar-toggler"
+						type="button"
+						aria-controls="navbarSupportedContent"
+						aria-expanded={mainMenuIsOpen ? 'true' : 'false'}
+						aria-label="Toggle navigation"
+						onClick={() => setMainMenuIsOpen(!mainMenuIsOpen)}>
+							<span className="navbar-toggler-icon"></span>
+					</button>
+					<div className={'collapse navbar-collapse' + (mainMenuIsOpen ? ' show' : '')} id="navbarSupportedContent">
+						<ul className="navbar-nav me-auto mb-2 mb-lg-0">
+							<li className="nav-item">
+								<a className="nav-link active" aria-current="page" href="#">New Guess</a>
+							</li>
+							<li className="nav-item">
+								<a className="nav-link" href="#">Scorecard</a>
+							</li>
+							<li className="nav-item">
+								<a className="nav-link" href="#">My Songs</a>
+							</li>
+							<li className="nav-item">
+								<a className="nav-link" href="#">Competitions</a>
+							</li>
+							<li className="nav-item d-block d-md-none">
+								<a className="nav-link" href="#">Sign Out</a>
+							</li>
+						</ul>
+						<ul className="navbar-nav d-flex d-none d-md-block">
+							<li className="nav-item dropdown">
+								<button
+									className={'nav-link dropdown-toggle' + (userMenuIsOpen ? ' show' : '')}
+									type="button"
+									aria-expanded={userMenuIsOpen ? 'true' : 'false'}
+									onClick={() => setUserMenuIsOpen(!userMenuIsOpen)}>
+										Don
+								</button>
+								<ul className={'dropdown-menu dropdown-menu-end' + (userMenuIsOpen ? ' show' : '')} style={{ right: 0 }}>
+									<li><a className="dropdown-item" href="#">Sign Out</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<div className="container">
+				<div className="container py-4 px-3 mx-auto">
+					<h1>Hello, Bootstrap and Parcel!</h1>
+					<button className="btn btn-primary">Primary button</button>
+				</div>
+
 				<Link to={`/test`}>test</Link>
 				<Link to={`/asdf`}>asdf</Link>
 				<Outlet />
@@ -18,31 +68,9 @@ const App = (props) => {
 					Edit <code>src/App.tsx</code> and save to reload.
 				</p>
 				<Quotes />
-				<span>
-					<span>Learn </span>
-					<a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-						React
-					</a>
-					<span>, </span>
-					<a className="App-link" href="https://redux.js.org" target="_blank" rel="noopener noreferrer">
-						Redux
-					</a>
-					<span>, </span>
-					<a className="App-link" href="https://redux-toolkit.js.org" target="_blank" rel="noopener noreferrer">
-						Redux Toolkit
-					</a>
-					<span>, </span>
-					<a className="App-link" href="https://react-redux.js.org" target="_blank" rel="noopener noreferrer">
-						React Redux
-					</a>
-					,<span> and </span>
-					<a className="App-link" href="https://reselect.js.org" target="_blank" rel="noopener noreferrer">
-						Reselect
-					</a>
-				</span>
-			</header>
-		</div>
+			</div>
+		</>
 	);
 };
 
-export default App;
+export default Layout;
