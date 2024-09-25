@@ -3,7 +3,7 @@
 const cryptoHelper = require('./cryptoHelper');
 const userDb = require('./db/user');
 
-let userController = {
+const userController = {
 
 	validateUser: async (req) => {
 		// A simple method just to ensure that we've gone through the authorizer
@@ -45,8 +45,7 @@ let userController = {
 
 	save: async (req) => {
 		let user = JSON.parse(req.body);
-		user.id = req.user.id;
-		user.organizationId = req.user.organizationId;
+		user.sk = req.user.email;
 
 		if (user.password) {
 			user.passwordHash = await cryptoHelper.hashPassword(user.password);

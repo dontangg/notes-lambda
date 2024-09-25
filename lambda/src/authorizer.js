@@ -17,13 +17,13 @@ module.exports = function(req) {
 	if (!req.headers)
 		return false;
 
-	let authHeader = req.headers['Authorization'] || req.headers['authorization'] || (req.query && req.query['authorization']);
+	const authHeader = req.headers['Authorization'] || req.headers['authorization'] || (req.query && req.query['authorization']);
 	if (!authHeader)
 		return false;
 
 	try {
-		let encryptedToken = authHeader.replace(/\s*bearer\s*/i, '');
-		let token = JSON.parse(cryptoHelper.decrypt(encryptedToken));
+		const encryptedToken = authHeader.replace(/\s*bearer\s*/i, '');
+		const token = JSON.parse(cryptoHelper.decrypt(encryptedToken));
 
 		if (!token.email) {
 			logger.error("authorizer", new Error('Bearer token decrypted successfuly, but is missing required data'), { token }, req);
