@@ -10,4 +10,4 @@ zip -r ../${ZIP_FILE} .
 cd ..
 
 # Update the lambda
-aws lambda update-function-code --function-name crust_club_ordering --region us-east-1 --zip-file fileb://${ZIP_FILE} --profile crustclub
+aws lambda update-function-code --function-name notes --region us-east-1 --zip-file fileb://${ZIP_FILE} --profile personal
