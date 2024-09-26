@@ -4,7 +4,7 @@ import { signOut } from '../features/signIn/signInSlice';
 
 const apiUrlPrefix = "https://notesapi.thewilsonpad.com";
 
-export const fetchStatus = {
+export const FetchStatus = {
 	idle: 'idle',
 	pending: 'pending',
 	success: 'success',

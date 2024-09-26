@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useLocation } from "react-router-dom";
 import { fetchSignIn, getSignInState } from "./signInSlice";
+import Spinner from "../../common/Spinner";
+import { FetchStatus } from "../../app/appFetch";
 
 export default function SignInPage() {
 	const dispatch = useDispatch();
@@ -20,8 +22,7 @@ export default function SignInPage() {
 	};
 
 	if (signInState.authToken) {
-		setPassword('');
-		const route = (location.state && location.state.from) || { pathname: "/" };
+		const route = (location.state?.from) || { pathname: "/" };
 		console.log(route);
 		return (<Navigate to={route} replace />);
 	}
@@ -70,7 +71,9 @@ export default function SignInPage() {
 						</div>
 					</div>
 					{signInState.error && (<div class="alert alert-danger" role="alert">{signInState.error}</div>)}
-					<button type="submit" class="btn btn-primary" disabled={!email || !password} onClick={onSignInClick}>Sign in</button>
+					<button type="submit" class="btn btn-primary" disabled={!email || !password} onClick={onSignInClick}>
+						Sign in {signInState.signInStatus === FetchStatus.pending ? (<Spinner />) : null}
+					</button>
 				</form>
 			</div>
 		</div>

@@ -1,11 +1,11 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { rawFetch, fetchStatus } from '../../app/appFetch';
+import { rawFetch, FetchStatus } from '../../app/appFetch';
 
 const pageLoadAuthToken = window.localStorage.getItem('authToken') || '';
 
 const initialState = {
 	authToken: pageLoadAuthToken,
-	signInStatus: fetchStatus.idle,
+	signInStatus: FetchStatus.idle,
 	error: '',
 };
 
@@ -29,7 +29,7 @@ export const fetchSignIn = createAsyncThunk(
     }, {
         condition: (arg, { getState, extra }) => {
             const signInState = getState().signIn;
-            return signInState.signInStatus !== fetchStatus.pending;
+            return signInState.signInStatus !== FetchStatus.pending;
         }
     },
 );
@@ -40,7 +40,7 @@ export const signInSlice = createSlice({
 	reducers: {
 		signOut: (state) => {
 			state.authToken = '';
-			state.signInStatus = fetchStatus.idle;
+			state.signInStatus = FetchStatus.idle;
 			window.localStorage.removeItem('authToken');
 		},
         changeSignInField: (state, action) => {
@@ -52,15 +52,15 @@ export const signInSlice = createSlice({
             window.localStorage.setItem('authToken', action.payload.token);
 
 			state.error = '';
-            state.signInStatus = fetchStatus.success;
+            state.signInStatus = FetchStatus.success;
             state.authToken = action.payload.token;
         });
         builder.addCase(fetchSignIn.rejected, (state, action) => {
-            state.signInStatus = fetchStatus.error;
+            state.signInStatus = FetchStatus.error;
             state.error = action.error.message;
         });
         builder.addCase(fetchSignIn.pending, (state, action) => {
-            state.signInStatus = fetchStatus.pending;
+            state.signInStatus = FetchStatus.pending;
         });
     },
 	selectors: {
