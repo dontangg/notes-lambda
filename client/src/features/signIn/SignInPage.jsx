@@ -1,17 +1,22 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useLocation } from "react-router-dom";
-import { fetchSignIn, getSignInState } from "./signInSlice";
+import { fetchSignIn, selectSignIn } from "./signInSlice";
 import Spinner from "../../common/Spinner";
 import { FetchStatus } from "../../app/appFetch";
 
 export default function SignInPage() {
 	const dispatch = useDispatch();
-	const signInState = useSelector(getSignInState);
+	const signInState = useSelector(selectSignIn);
 	const location = useLocation();
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [didSubmit, setDidSubmit] = useState(false);
+
+	if (signInState.authToken) {
+		const route = (location.state?.from) || { pathname: "/" };
+		return (<Navigate to={route} replace />);
+	}
 
 	const onSignInClick = (e) => {
 		e.preventDefault();
@@ -20,12 +25,6 @@ export default function SignInPage() {
 			dispatch(fetchSignIn({ email, password }));
 		}
 	};
-
-	if (signInState.authToken) {
-		const route = (location.state?.from) || { pathname: "/" };
-		console.log(route);
-		return (<Navigate to={route} replace />);
-	}
 
 	const isEmailValid = !didSubmit || email;
 	const isPasswordValid = !didSubmit || password;

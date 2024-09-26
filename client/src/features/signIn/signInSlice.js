@@ -64,10 +64,10 @@ export const signInSlice = createSlice({
         });
     },
 	selectors: {
-		getSignInState: state => state,
+		selectSignIn: state => state,
 	},
 });
 
 export const { signOut } = signInSlice.actions;
 
-export const { getSignInState } = signInSlice.selectors;
+export const { selectSignIn } = signInSlice.selectors;

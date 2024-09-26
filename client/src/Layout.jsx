@@ -1,15 +1,28 @@
 import React, { useState } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
+import { Outlet, Link, Navigate } from "react-router-dom";
+import { selectSignIn, signOut } from "./features/signIn/signInSlice";
 
 const Layout = () => {
+	const dispatch = useDispatch();
+	const signInState = useSelector(selectSignIn);
 	const [mainMenuIsOpen, setMainMenuIsOpen] = useState(false);
 	const [userMenuIsOpen, setUserMenuIsOpen] = useState(false);
+
+	if (!signInState.authToken) {
+		return (<Navigate to="/signin" replace />);
+	}
+
+	const onSignOutClick = (e) => {
+		e.preventDefault();
+		dispatch(signOut());
+	};
 
 	return (
 		<>
 			<nav className="navbar navbar-expand-md bg-body-tertiary">
 				<div className="container">
-					<a className="navbar-brand" href="#">Notes</a>
+					<Link className="navbar-brand" to="/">Notes</Link>
 					<button
 						className="navbar-toggler"
 						type="button"
@@ -47,7 +60,7 @@ const Layout = () => {
 										Don
 								</button>
 								<ul className={'dropdown-menu dropdown-menu-end' + (userMenuIsOpen ? ' show' : '')} style={{ right: 0 }}>
-									<li><a className="dropdown-item" href="#">Sign Out</a></li>
+									<li><a className="dropdown-item" href="#" onClick={onSignOutClick}>Sign Out</a></li>
 								</ul>
 							</li>
 						</ul>

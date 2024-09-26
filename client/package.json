@@ -7,6 +7,7 @@
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
+	"clean": "rm -rf dist .parcel-cache",
     "test": "jest",
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
