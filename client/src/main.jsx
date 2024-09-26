@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./Layout";
 import ErrorPage from "./ErrorPage";
-import { Counter } from "./features/counter/Counter";
+import SignInPage from "./features/signIn/SignInPage";
 import { store } from "./app/store";
 
 const router = createBrowserRouter([
@@ -14,13 +14,17 @@ const router = createBrowserRouter([
 		children: [
 			{
 				path: "/",
-				element: <Counter />,
+				element: <div>Home</div>,
 			},
 			{
 				path: "/test",
 				element: <Layout test={true} />,
 			},
 		]
+	},
+	{
+		element: <SignInPage />,
+		path: "/signin",
 	},
 ]);
 

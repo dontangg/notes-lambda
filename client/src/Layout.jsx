@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
-import { Quotes } from "./features/quotes/Quotes";
 
 const Layout = () => {
 	const [mainMenuIsOpen, setMainMenuIsOpen] = useState(false);
@@ -67,7 +66,6 @@ const Layout = () => {
 				<p>
 					Edit <code>src/App.tsx</code> and save to reload.
 				</p>
-				<Quotes />
 			</div>
 		</>
 	);

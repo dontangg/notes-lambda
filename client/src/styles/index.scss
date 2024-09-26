@@ -1,5 +1,11 @@
 // Import all of Bootstrap's CSS
 @import "bootstrap/scss/bootstrap";
 
+.signInPage form {
+	max-width: 400px;
+}
 
-  
+.signInPage h1 {
+	background-image: '../logo.png';
+	padding-left: '40px' !important;
+}
