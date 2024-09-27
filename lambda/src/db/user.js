@@ -21,9 +21,9 @@ const userDb = {
 	},
 
 	save: async (user) => {
-		if (!user.id) {
-			user.id = db.generateId();
-		}
+		// if (!user.id) {
+		// 	user.id = db.generateId();
+		// }
 
 		db.stripWhitespace(user, [ 'name' ]);
 

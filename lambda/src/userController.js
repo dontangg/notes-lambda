@@ -32,7 +32,7 @@ const userController = {
 
 
 	get: async (req) => {
-		let user = await userDb.get(req.user.email);
+		const user = await userDb.get(req.user.email);
 
 		if (!user) {
 			return { statusCode: 404 };
@@ -44,16 +44,21 @@ const userController = {
 	},
 
 	save: async (req) => {
-		let user = JSON.parse(req.body);
-		user.sk = req.user.email;
+		const user = JSON.parse(req.body);
+		user.email = req.user.email;
 
-		if (user.password) {
-			user.passwordHash = await cryptoHelper.hashPassword(user.password);
+		if (user.curPassword && user.newPassword) {
+			const storedUser = await userDb.get(user.email);
+			if (await cryptoHelper.comparePassword(user.curPassword, storedUser.passwordHash)) {
+				user.passwordHash = await cryptoHelper.hashPassword(user.newPassword);
+			} else {
+				return { statusCode: 403, body: JSON.stringify({ message: 'Current password is incorrect.' }) };
+			}
 		}
 
-		await db.User.save(user);
+		await userDb.save(user);
 
-		return { statusCode: 200, body: JSON.stringify({ id: user.id }) };
+		return { statusCode: 200 };
 	}
 }
 
