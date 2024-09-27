@@ -30,6 +30,18 @@ export default function appFetch(path, options, dispatch, getState) {
 			dispatch(signOut());
 			throw "Unauthorized";
 		}
+		if (!response.ok) { // If the server returned a 400-500, reject the promise
+			const defaultMessage = response.status + ' ' + response.statusText;
+
+			// Check for a message in the server response to use as the error message
+			return response.json().then(responseBody => {
+				if (responseBody.message) {
+					throw responseBody.message;
+				} else {
+					throw defaultMessage;
+				}
+			}, () => { throw defaultMessage; });
+		}
 		return response;
 	});
 };

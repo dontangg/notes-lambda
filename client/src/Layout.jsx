@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { Outlet, Link, Navigate } from "react-router-dom";
+import { Outlet, Link, Navigate, NavLink } from "react-router-dom";
 import { selectSignIn, signOut } from "./features/signIn/signInSlice";
 
 const Layout = () => {
@@ -8,10 +8,17 @@ const Layout = () => {
 	const signInState = useSelector(selectSignIn);
 	const [mainMenuIsOpen, setMainMenuIsOpen] = useState(false);
 	const [userMenuIsOpen, setUserMenuIsOpen] = useState(false);
+	const accountDropdownRef = useRef(null);
 
 	if (!signInState.authToken) {
 		return (<Navigate to="/signin" replace />);
 	}
+
+	const onBodyClick = (e) => {
+		if (accountDropdownRef.current && !accountDropdownRef.current.contains(e.target)) {
+			setUserMenuIsOpen(false);
+		}
+	};
 
 	const onSignOutClick = (e) => {
 		e.preventDefault();
@@ -20,7 +27,7 @@ const Layout = () => {
 
 	return (
 		<>
-			<nav className="navbar navbar-expand-md bg-body-tertiary">
+			<nav className="navbar navbar-expand-md bg-body-tertiary mb-4" onClick={onBodyClick}>
 				<div className="container">
 					<Link className="navbar-brand" to="/">Notes</Link>
 					<button
@@ -35,7 +42,7 @@ const Layout = () => {
 					<div className={'collapse navbar-collapse' + (mainMenuIsOpen ? ' show' : '')} id="navbarSupportedContent">
 						<ul className="navbar-nav me-auto mb-2 mb-lg-0">
 							<li className="nav-item">
-								<a className="nav-link active" aria-current="page" href="#">New Guess</a>
+								<a className="nav-link" aria-current="page" href="#">New Guess</a>
 							</li>
 							<li className="nav-item">
 								<a className="nav-link" href="#">Scorecard</a>
@@ -56,10 +63,12 @@ const Layout = () => {
 									className={'nav-link dropdown-toggle' + (userMenuIsOpen ? ' show' : '')}
 									type="button"
 									aria-expanded={userMenuIsOpen ? 'true' : 'false'}
-									onClick={() => setUserMenuIsOpen(!userMenuIsOpen)}>
+									onClick={() => setUserMenuIsOpen(!userMenuIsOpen)}
+									ref={accountDropdownRef}>
 										Don
 								</button>
 								<ul className={'dropdown-menu dropdown-menu-end' + (userMenuIsOpen ? ' show' : '')} style={{ right: 0 }}>
+									<li><NavLink className="dropdown-item" to="/account">Account</NavLink></li>
 									<li><a className="dropdown-item" href="#" onClick={onSignOutClick}>Sign Out</a></li>
 								</ul>
 							</li>
@@ -67,18 +76,8 @@ const Layout = () => {
 					</div>
 				</div>
 			</nav>
-			<div className="container">
-				<div className="container py-4 px-3 mx-auto">
-					<h1>Hello, Bootstrap and Parcel!</h1>
-					<button className="btn btn-primary">Primary button</button>
-				</div>
-
-				<Link to={`/test`}>test</Link>
-				<Link to={`/asdf`}>asdf</Link>
+			<div className="container" onClick={onBodyClick}>
 				<Outlet />
-				<p>
-					Edit <code>src/App.tsx</code> and save to reload.
-				</p>
 			</div>
 		</>
 	);

@@ -2,10 +2,11 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { store } from "./app/store";
 import Layout from "./Layout";
 import ErrorPage from "./ErrorPage";
 import SignInPage from "./features/signIn/SignInPage";
-import { store } from "./app/store";
+import AccountPage from "./features/account/AccountPage";
 
 const router = createBrowserRouter([
 	{
@@ -17,8 +18,8 @@ const router = createBrowserRouter([
 				element: <div>Home</div>,
 			},
 			{
-				path: "/test",
-				element: <Layout test={true} />,
+				path: "/account",
+				element: <AccountPage />,
 			},
 		]
 	},

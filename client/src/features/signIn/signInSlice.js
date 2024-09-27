@@ -6,19 +6,19 @@ const pageLoadAuthToken = window.localStorage.getItem('authToken') || '';
 const initialState = {
 	authToken: pageLoadAuthToken,
 	signInStatus: FetchStatus.idle,
-	currentUserEmail: null,
+	currentUserEmail: '',
 	error: '',
 };
 
 export const fetchSignIn = createAsyncThunk(
-    'signin/fetchSignIn',
-    async (arg, thunkAPI) => {
-        const signInState = thunkAPI.getState().signIn;
+	'signin/fetchSignIn',
+	async (arg, thunkAPI) => {
+		const signInState = thunkAPI.getState().signIn;
 
-        const body = arg;
+		const body = arg;
 		const email = body.email;
 
-        return rawFetch('/get_token', { method: 'POST', body: JSON.stringify(body) })
+		return rawFetch('/get_token', { method: 'POST', body: JSON.stringify(body) })
 			.then(response => {
 				if (!response.ok) {
 					if (response.status >= 400 && response.status < 500)
@@ -28,44 +28,41 @@ export const fetchSignIn = createAsyncThunk(
 				return response.json().then(jsonResponse => ({ token: jsonResponse.token, email }));
 			}, () => { throw new Error('Unable to sign in'); });
 
-    }, {
-        condition: (arg, { getState, extra }) => {
-            const signInState = getState().signIn;
-            return signInState.signInStatus !== FetchStatus.pending;
-        }
-    },
+	}, {
+		condition: (arg, { getState, extra }) => {
+			const signInState = getState().signIn;
+			return signInState.signInStatus !== FetchStatus.pending;
+		}
+	},
 );
 
 export const signInSlice = createSlice({
-    name: 'signIn',
-    initialState,
+	name: 'signIn',
+	initialState,
 	reducers: {
 		signOut: (state) => {
 			state.authToken = '';
 			state.signInStatus = FetchStatus.idle;
 			window.localStorage.removeItem('authToken');
 		},
-        changeSignInField: (state, action) => {
-            state[action.payload.fieldName] = action.payload.text;
-        },
 	},
-    extraReducers: (builder) => {
-        builder.addCase(fetchSignIn.fulfilled, (state, action) => {
-            window.localStorage.setItem('authToken', action.payload.token);
+	extraReducers: (builder) => {
+		builder.addCase(fetchSignIn.fulfilled, (state, action) => {
+			window.localStorage.setItem('authToken', action.payload.token);
 
 			state.error = '';
-            state.signInStatus = FetchStatus.success;
-            state.authToken = action.payload.token;
+			state.signInStatus = FetchStatus.success;
+			state.authToken = action.payload.token;
 			state.currentUserEmail = action.payload.email;
-        });
-        builder.addCase(fetchSignIn.rejected, (state, action) => {
-            state.signInStatus = FetchStatus.error;
-            state.error = action.error.message;
-        });
-        builder.addCase(fetchSignIn.pending, (state, action) => {
-            state.signInStatus = FetchStatus.pending;
-        });
-    },
+		});
+		builder.addCase(fetchSignIn.rejected, (state, action) => {
+			state.signInStatus = FetchStatus.error;
+			state.error = action.error.message;
+		});
+		builder.addCase(fetchSignIn.pending, (state, action) => {
+			state.signInStatus = FetchStatus.pending;
+		});
+	},
 	selectors: {
 		selectSignIn: state => state,
 	},
