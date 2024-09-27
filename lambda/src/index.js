@@ -1,10 +1,10 @@
 'use strict';
 
-let authorizer = require('./authorizer');
-let Router = require('./router');
-let router = new Router();
-let logger = require('./logger');
-let UserController = require('./userController');
+const authorizer = require('./authorizer');
+const Router = require('./router');
+const router = new Router();
+const logger = require('./logger');
+const UserController = require('./userController');
 
 router.get('/user', UserController.get);
 router.post('/user', UserController.save);
@@ -24,6 +24,19 @@ router.get('/timeout', async function timeoutHandler(req) {
 /* END TEST */
 
 const validOrigins = ['http://localhost:1234', 'https://notes.thewilsonpad.com'];
+
+const addCorsHeaders = (req, res) => {
+	if (req?.headers) {
+		const origin = req.headers['Origin'] || req.headers['origin'];
+		if (validOrigins.includes(origin)) {
+			if (!res.headers)
+				res.headers = {};
+			res.headers['Access-Control-Allow-Origin'] = origin;
+			res.headers['Access-Control-Allow-Methods'] = 'GET, POST, DELETE, OPTIONS';
+			res.headers['Access-Control-Allow-Headers'] = 'Authorization';
+		}
+	}
+};
 
 exports.handler = async function(event, context) {
 	let req = null;
@@ -52,21 +65,13 @@ exports.handler = async function(event, context) {
 			}
 		}
 
-		if (req.headers) {
-			let origin = req.headers['Origin'] || req.headers['origin'];
-			if (validOrigins.includes(origin)) {
-				if (!response.headers)
-					response.headers = {};
-				response.headers['Access-Control-Allow-Origin'] = origin;
-				response.headers['Access-Control-Allow-Methods'] = 'GET, POST, DELETE, OPTIONS';
-				response.headers['Access-Control-Allow-Headers'] = 'Authorization';
-			}
-		}
+		addCorsHeaders(req, response)
 
 		return response;
 	}
 	catch (error) {
 		let response = { statusCode: 500 };
+		addCorsHeaders(req, response);
 		if (error) {
 			logger.error('500_ERROR', error, null, req);
 			response.body = JSON.stringify({ error: { message: error.message, name: error.name, stack: error.stack } });
