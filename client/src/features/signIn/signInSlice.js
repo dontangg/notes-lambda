@@ -7,14 +7,13 @@ const initialState = {
 	authToken: pageLoadAuthToken,
 	signInStatus: FetchStatus.idle,
 	currentUserEmail: '',
+	currentUserIsAdmin: false,
 	error: '',
 };
 
 export const fetchSignIn = createAsyncThunk(
 	'signin/fetchSignIn',
 	async (arg, thunkAPI) => {
-		const signInState = thunkAPI.getState().signIn;
-
 		const body = arg;
 		const email = body.email;
 
@@ -25,7 +24,7 @@ export const fetchSignIn = createAsyncThunk(
 						throw new Error('Invalid username and/or password');
 					throw new Error('Unable to sign in');
 				}
-				return response.json().then(jsonResponse => ({ token: jsonResponse.token, email }));
+				return response.json().then(jsonResponse => ({ token: jsonResponse.token, admin: jsonResponse.admin, email }));
 			}, () => { throw new Error('Unable to sign in'); });
 
 	}, {
@@ -54,6 +53,7 @@ export const signInSlice = createSlice({
 			state.signInStatus = FetchStatus.success;
 			state.authToken = action.payload.token;
 			state.currentUserEmail = action.payload.email;
+			state.currentUserIsAdmin = action.payload.admin;
 		});
 		builder.addCase(fetchSignIn.rejected, (state, action) => {
 			state.signInStatus = FetchStatus.error;

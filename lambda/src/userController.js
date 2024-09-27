@@ -23,7 +23,7 @@ const userController = {
 				const json = JSON.stringify({ email: user.email, iat: new Date().getTime() });
 				const finalEncrypted = cryptoHelper.encrypt(json);
 
-				return { statusCode: 200, body: JSON.stringify({ token: finalEncrypted }) };
+				return { statusCode: 200, body: JSON.stringify({ token: finalEncrypted, admin: user.admin }) };
 			}
 		}
 
