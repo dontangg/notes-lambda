@@ -54,7 +54,10 @@ const Layout = () => {
 								<a className="nav-link" href="#">Competitions</a>
 							</li>
 							<li className="nav-item d-block d-md-none">
-								<a className="nav-link" href="#">Sign Out</a>
+								<NavLink className="nav-link" to="/account">Account</NavLink>
+							</li>
+							<li className="nav-item d-block d-md-none">
+								<a className="nav-link" href="#" onClick={onSignOutClick}>Sign Out</a>
 							</li>
 						</ul>
 						<ul className="navbar-nav d-flex d-none d-md-block">
