@@ -1,0 +1,2143 @@
+{
+	"pk": "Competition",
+	"sk": "2023",
+	"isActive": true,
+	"phase": "guessing",
+	"songs": [
+		{
+			"artist": "Jack Johnson",
+			"title": "Better Together",
+			"filename": "j1ym6lwf",
+			"extension": ".wav",
+			"userId": 4
+		},
+		{
+			"artist": "stories and dodie",
+			"title": "Eleanor Rigby",
+			"filename": "rx4yzn94",
+			"extension": ".mp3",
+			"userId": 6
+		},
+		{
+			"artist": "Passenger",
+			"title": "However It Comes, Wherever It Goes",
+			"filename": "pkxkj4f1",
+			"extension": ".mp3",
+			"userId": 2
+		},
+		{
+			"artist": "Harry Nilsson",
+			"title": "Without You",
+			"filename": "v6xybg47",
+			"extension": ".mp3",
+			"userId": 5
+		},
+		{
+			"artist": "Sam Cooke",
+			"title": "(What A) Wonderful World",
+			"filename": "xce3l3ql",
+			"extension": ".mp3",
+			"userId": 10
+		},
+		{
+			"artist": "Emilia Jones",
+			"title": "Both Sides Now",
+			"filename": "ceu71azd",
+			"extension": ".mp3",
+			"userId": 14
+		},
+		{
+			"artist": "Ed Sheeran, Andrea Bocelli",
+			"title": "Perfect Symphony (Ed Sheeran & Andrea Bocelli)",
+			"filename": "fzejgqui",
+			"extension": ".mp3",
+			"userId": 16
+		},
+		{
+			"artist": "Marcus Mumford",
+			"title": "You’ll Never Walk Alone",
+			"filename": "0su9ibwk",
+			"extension": ".mp3",
+			"userId": 1
+		},
+		{
+			"artist": "Twenty One Pilots",
+			"title": "Mulberry Street",
+			"filename": "hhb1on3v",
+			"extension": ".mp3",
+			"userId": 9
+		},
+		{
+			"artist": "Janis Joplin",
+			"title": "Me And Bobby mcGee",
+			"filename": "pw60ri80",
+			"extension": ".mp3",
+			"userId": 8
+		},
+		{
+			"artist": "MALINDA",
+			"title": "Brooklyn",
+			"filename": "wtrdgyu7",
+			"extension": ".mp3",
+			"userId": 4
+		},
+		{
+			"artist": "Jimi Hendrix",
+			"title": "Little Wing",
+			"filename": "n2kn5ji5",
+			"extension": ".mp3",
+			"userId": 7
+		},
+		{
+			"artist": "Lake Street Dive",
+			"title": "Better Than",
+			"filename": "3ke27ent",
+			"extension": ".mp3",
+			"userId": 15
+		},
+		{
+			"artist": "Drew Holcomb & The Neighbors",
+			"title": "What Would I Do Without You",
+			"filename": "wzejwefy",
+			"extension": ".mp3",
+			"userId": 3
+		}
+	],
+	"attempts": [
+		{
+			"createdAt": "2023-02-17T22:21:06.184-06:00",
+			"correctCount": "2",
+			"userId": "3",
+			"guesses": [
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 1
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 6
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 15
+				}
+			]
+		},
+		{
+			"createdAt": "2023-02-17T22:27:56.318-06:00",
+			"correctCount": "3",
+			"userId": "3",
+			"guesses": [
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 1
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 6
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 16
+				}
+			]
+		},
+		{
+			"createdAt": "2023-02-17T22:33:55.694-06:00",
+			"correctCount": "6",
+			"userId": "3",
+			"guesses": [
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 1
+				},
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 6
+				},
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 4
+				}
+			]
+		},
+		{
+			"createdAt": "2023-02-17T22:38:29.013-06:00",
+			"correctCount": "10",
+			"userId": "3",
+			"guesses": [
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 6
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 1
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 15
+				}
+			]
+		},
+		{
+			"createdAt": "2023-02-17T22:41:10.736-06:00",
+			"correctCount": "12",
+			"userId": "3",
+			"guesses": [
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 1
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 6
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 9
+				}
+			]
+		},
+		{
+			"createdAt": "2023-02-18T10:21:08.811-06:00",
+			"correctCount": "3",
+			"userId": "5",
+			"guesses": [
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 1
+				},
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 6
+				}
+			]
+		},
+		{
+			"createdAt": "2023-02-18T13:38:05.810-06:00",
+			"correctCount": "7",
+			"userId": "5",
+			"guesses": [
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 1
+				}
+			]
+		},
+		{
+			"createdAt": "2023-02-18T13:53:17.291-06:00",
+			"correctCount": "8",
+			"userId": "5",
+			"guesses": [
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 1
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 6
+				}
+			]
+		},
+		{
+			"createdAt": "2023-02-18T13:57:30.689-06:00",
+			"correctCount": "12",
+			"userId": "5",
+			"guesses": [
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 6
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 1
+				},
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 10
+				}
+			]
+		},
+		{
+			"createdAt": "2023-02-18T14:21:02.985-06:00",
+			"correctCount": "3",
+			"userId": "4",
+			"guesses": [
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 6
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 1
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 14
+				}
+			]
+		},
+		{
+			"createdAt": "2023-02-18T14:27:55.698-06:00",
+			"correctCount": "4",
+			"userId": "4",
+			"guesses": [
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 6
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 1
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 3
+				}
+			]
+		},
+		{
+			"createdAt": "2023-02-18T14:31:42.395-06:00",
+			"correctCount": "6",
+			"userId": "4",
+			"guesses": [
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 6
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 1
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 14
+				}
+			]
+		},
+		{
+			"createdAt": "2023-02-18T14:34:26.058-06:00",
+			"correctCount": "9",
+			"userId": "4",
+			"guesses": [
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 1
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 6
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 15
+				}
+			]
+		},
+		{
+			"createdAt": "2023-02-18T14:35:59.250-06:00",
+			"correctCount": "12",
+			"userId": "4",
+			"guesses": [
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 1
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 6
+				},
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 9
+				}
+			]
+		},
+		{
+			"createdAt": "2023-02-20T00:03:02.588-06:00",
+			"correctCount": "1",
+			"userId": "6",
+			"guesses": [
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 1
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 4
+				}
+			]
+		},
+		{
+			"createdAt": "2023-02-20T00:19:00.419-06:00",
+			"correctCount": "1",
+			"userId": "6",
+			"guesses": [
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 1
+				},
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				}
+			]
+		},
+		{
+			"createdAt": "2023-02-20T00:37:01.715-06:00",
+			"correctCount": "2",
+			"userId": "6",
+			"guesses": [
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 1
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 14
+				}
+			]
+		},
+		{
+			"createdAt": "2023-02-20T00:49:54.204-06:00",
+			"correctCount": "6",
+			"userId": "6",
+			"guesses": [
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 2
+				}
+			]
+		},
+		{
+			"createdAt": "2023-02-20T01:08:15.700-06:00",
+			"correctCount": "7",
+			"userId": "6",
+			"guesses": [
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 1
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				}
+			]
+		},
+		{
+			"createdAt": "2023-02-20T01:13:17.341-06:00",
+			"correctCount": "10",
+			"userId": "6",
+			"guesses": [
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 1
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 7
+				}
+			]
+		},
+		{
+			"createdAt": "2023-02-20T01:13:40.759-06:00",
+			"correctCount": "12",
+			"userId": "6",
+			"guesses": [
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 1
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 14
+				}
+			]
+		},
+		{
+			"createdAt": "2023-02-22T19:03:32.515-06:00",
+			"correctCount": "0",
+			"userId": "10",
+			"guesses": [
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 6
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 1
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 14
+				}
+			]
+		},
+		{
+			"createdAt": "2023-02-22T19:10:24.060-06:00",
+			"correctCount": "1",
+			"userId": "10",
+			"guesses": [
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 1
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 6
+				},
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 4
+				}
+			]
+		},
+		{
+			"createdAt": "2023-02-22T19:20:55.386-06:00",
+			"correctCount": "3",
+			"userId": "10",
+			"guesses": [
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 1
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 6
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 16
+				}
+			]
+		},
+		{
+			"createdAt": "2023-02-22T19:28:17.249-06:00",
+			"correctCount": "10",
+			"userId": "10",
+			"guesses": [
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 6
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 1
+				}
+			]
+		},
+		{
+			"createdAt": "2023-02-22T19:30:41.801-06:00",
+			"correctCount": "12",
+			"userId": "10",
+			"guesses": [
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 1
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 6
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 7
+				}
+			]
+		},
+		{
+			"createdAt": "2023-02-24T11:48:50.638-06:00",
+			"correctCount": "2",
+			"userId": "1",
+			"guesses": [
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 6
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 10
+				}
+			]
+		},
+		{
+			"createdAt": "2023-02-25T19:52:49.777-06:00",
+			"correctCount": "3",
+			"userId": "1",
+			"guesses": [
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 6
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				}
+			]
+		},
+		{
+			"createdAt": "2023-03-05T21:43:15.822-06:00",
+			"correctCount": "2",
+			"userId": "7",
+			"guesses": [
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 6
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 1
+				}
+			]
+		},
+		{
+			"createdAt": "2023-03-05T21:48:02.816-06:00",
+			"correctCount": "6",
+			"userId": "7",
+			"guesses": [
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 6
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 1
+				},
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 4
+				}
+			]
+		},
+		{
+			"createdAt": "2023-03-05T21:54:50.245-06:00",
+			"correctCount": "6",
+			"userId": "7",
+			"guesses": [
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 1
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 6
+				},
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 4
+				}
+			]
+		},
+		{
+			"createdAt": "2023-03-05T21:58:33.155-06:00",
+			"correctCount": "8",
+			"userId": "7",
+			"guesses": [
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 6
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 1
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 3
+				}
+			]
+		},
+		{
+			"createdAt": "2023-03-05T22:00:33.973-06:00",
+			"correctCount": "12",
+			"userId": "7",
+			"guesses": [
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "0su9ibwk",
+					"guessedUserId": 1
+				},
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 6
+				},
+				{
+					"songFilename": "fzejgqui",
+					"guessedUserId": 16
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 2
+				}
+			]
+		},
+		{
+			"createdAt": "2023-03-24T13:48:00.769-05:00",
+			"correctCount": "5",
+			"userId": "1",
+			"guesses": [
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 6
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 4
+				}
+			]
+		},
+		{
+			"createdAt": "2023-03-24T14:07:48.188-05:00",
+			"correctCount": "5",
+			"userId": "1",
+			"guesses": [
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 6
+				},
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				}
+			]
+		},
+		{
+			"createdAt": "2023-03-24T14:16:09.256-05:00",
+			"correctCount": "9",
+			"userId": "1",
+			"guesses": [
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 6
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				}
+			]
+		},
+		{
+			"createdAt": "2023-03-24T14:18:12.230-05:00",
+			"correctCount": "12",
+			"userId": "1",
+			"guesses": [
+				{
+					"songFilename": "ceu71azd",
+					"guessedUserId": 14
+				},
+				{
+					"songFilename": "hhb1on3v",
+					"guessedUserId": 9
+				},
+				{
+					"songFilename": "v6xybg47",
+					"guessedUserId": 5
+				},
+				{
+					"songFilename": "3ke27ent",
+					"guessedUserId": 15
+				},
+				{
+					"songFilename": "pkxkj4f1",
+					"guessedUserId": 2
+				},
+				{
+					"songFilename": "j1ym6lwf",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "xce3l3ql",
+					"guessedUserId": 10
+				},
+				{
+					"songFilename": "wtrdgyu7",
+					"guessedUserId": 4
+				},
+				{
+					"songFilename": "pw60ri80",
+					"guessedUserId": 8
+				},
+				{
+					"songFilename": "n2kn5ji5",
+					"guessedUserId": 7
+				},
+				{
+					"songFilename": "wzejwefy",
+					"guessedUserId": 3
+				},
+				{
+					"songFilename": "rx4yzn94",
+					"guessedUserId": 6
+				}
+			]
+		}
+	]
+}
