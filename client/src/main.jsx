@@ -7,6 +7,7 @@ import Layout from "./Layout";
 import ErrorPage from "./ErrorPage";
 import SignInPage from "./features/signIn/SignInPage";
 import AccountPage from "./features/account/AccountPage";
+import CompetitionsPage from "./features/competitions/CompetitionsPage";
 
 const router = createBrowserRouter([
 	{
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
 			{
 				path: "/account",
 				element: <AccountPage />,
+			},
+			{
+				path: "/competitions",
+				element: <CompetitionsPage />,
 			},
 		]
 	},

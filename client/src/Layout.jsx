@@ -51,7 +51,7 @@ const Layout = () => {
 								<a className="nav-link" href="#">My Songs</a>
 							</li>
 							<li className="nav-item">
-								<a className="nav-link" href="#">Competitions</a>
+								<NavLink className="nav-link" to="/competitions">Competitions</NavLink>
 							</li>
 							<li className="nav-item d-block d-md-none">
 								<NavLink className="nav-link" to="/account">Account</NavLink>
