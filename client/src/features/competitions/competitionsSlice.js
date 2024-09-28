@@ -7,13 +7,13 @@ const initialState = {
 };
 
 export const fetchCompetitions = createAsyncThunk(
-	'account/fetchCompetitions',
+	'competitions/fetchCompetitions',
 	async (arg, { dispatch, getState }) => {
 		return appFetch('/competitions', null, dispatch, getState).then(response => response.json());
 	}, {
 		condition: (arg, { getState, extra }) => {
 			const competitionsState = getState().competitions;
-			return competitionsState.accountFetchStatus !== FetchStatus.pending;
+			return competitionsState.competitionsFetchStatus !== FetchStatus.pending;
 		}
 	},
 );

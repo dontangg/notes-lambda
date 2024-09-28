@@ -22,7 +22,7 @@ export default function AccountPage() {
 						<thead>
 							<tr>
 								<th scope="col">Name</th>
-								<th scope="col">Active</th>
+								<th scope="col">Phase</th>
 								<th scope="col"></th>
 								<th scope="col"></th>
 							</tr>
@@ -31,7 +31,7 @@ export default function AccountPage() {
 							{competitionsState.competitions?.map(competition => (
 								<tr key={competition.name}>
 									<th scope="row">{competition.name}</th>
-									<td>{competition.isActive ? "yes" : "no"}</td>
+									<td>{competition.phase}</td>
 									<td>
 										<button type="button" className="btn btn-secondary">Edit</button>
 										{' '}

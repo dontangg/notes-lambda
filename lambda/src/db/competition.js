@@ -16,7 +16,7 @@ const mapFromDb = (comp) => {
 const competitionDb = {
 
 	list: async () => {
-		const comps = await db.query(tableName, 'pk = :pk', { ':pk': pk });
+		const comps = await db.query(tableName, 'pk = :pk', { ':pk': pk }, 'pk, sk, phase');
 		return comps.map(mapFromDb);
 	},
 

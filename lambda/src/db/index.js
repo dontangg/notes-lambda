@@ -62,7 +62,7 @@ const db = {
 	},
 
 	// Used to get all items with a single hash key (partition key) and filter on the sort key
-	query: async function(tableName, queryCondition, queryValues) {
+	query: async function(tableName, queryCondition, queryValues, projectionExpression = null) {
 		let items = [];
 
 		// Items will be paged if they reach more than 1MB total
@@ -75,6 +75,9 @@ const db = {
 				KeyConditionExpression: queryCondition, //'MyPrimaryKey = :pkey and MySortKey > :skey', or begins_with(MySortKey, :skey)
 				ExpressionAttributeValues: queryValues, //{ ':pkey': 'key', ':skey': 2015 },
 			};
+			if (projectionExpression) {
+				options.ProjectionExpression = projectionExpression;
+			}
 			if (exclusiveStartKey) {
 				options.ExclusiveStartKey = exclusiveStartKey;
 			}
