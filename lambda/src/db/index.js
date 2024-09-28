@@ -63,7 +63,6 @@ const db = {
 
 	// Used to get all items with a single hash key (partition key) and filter on the sort key
 	query: async function(tableName, queryCondition, queryValues) {
-		// console.log(queryCondition, queryValues);
 		let items = [];
 
 		// Items will be paged if they reach more than 1MB total
@@ -71,17 +70,17 @@ const db = {
 		let exclusiveStartKey = null;
 
 		do {
-			let options = {
+			const options = {
 				TableName: tableName,
-				KeyConditionExpression: queryCondition, //'HashKey = :pkey and SortKey > :skey', or begins_with(SortKey, :skey)
+				KeyConditionExpression: queryCondition, //'MyPrimaryKey = :pkey and MySortKey > :skey', or begins_with(MySortKey, :skey)
 				ExpressionAttributeValues: queryValues, //{ ':pkey': 'key', ':skey': 2015 },
 			};
 			if (exclusiveStartKey) {
 				options.ExclusiveStartKey = exclusiveStartKey;
 			}
-			let response = await dynamodb.query(options).promise();
+			const response = await dynamodb.query(options).promise();
 
-			let newItems = response.Items || [];
+			const newItems = response.Items || [];
 			items = [...items, ...newItems];
 
 			exclusiveStartKey = response.LastEvaluatedKey;
@@ -98,7 +97,7 @@ const db = {
 	},
 
 	getItem: async function(tableName, key) {
-		let response = await dynamodb.get({
+		const response = await dynamodb.get({
 			TableName: tableName,
 			Key: key,
 		}).promise();
@@ -111,7 +110,7 @@ const db = {
 	},
 
 	saveItem: async function(tableName, item, key, attributes) {
-		let params = new UpdateParams(tableName, key);
+		const params = new UpdateParams(tableName, key);
 
 		params.addProperties(item, attributes);
 

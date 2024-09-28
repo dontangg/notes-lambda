@@ -4,12 +4,15 @@ const authorizer = require('./authorizer');
 const Router = require('./router');
 const router = new Router();
 const logger = require('./logger');
-const UserController = require('./userController');
+const userController = require('./userController');
+const competitionController = require('./competitionController');
 
-router.get('/user', UserController.get);
-router.post('/user', UserController.save);
-router.get('/validate_user', UserController.validateUser);
-router.post('/get_token', UserController.getToken);
+router.get('/user', userController.get);
+router.post('/user', userController.save);
+router.get('/validate_user', userController.validateUser);
+router.post('/get_token', userController.getToken);
+
+router.get('/competitions', competitionController.list);
 
 /* TEST - These are test endpoints to test how errors & timeouts happen */
 router.get('/testerror', (req) => {

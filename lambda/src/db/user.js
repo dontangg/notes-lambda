@@ -16,7 +16,7 @@ const mapFromDb = (user) => {
 const userDb = {
 
 	get: async (email) => {
-		let user = await db.getItem(tableName, { pk, sk: email });
+		const user = await db.getItem(tableName, { pk, sk: email });
 		return user ? mapFromDb(user) : null;
 	},
 
