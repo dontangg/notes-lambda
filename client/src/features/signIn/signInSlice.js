@@ -2,12 +2,13 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { rawFetch, FetchStatus } from '../../app/appFetch';
 
 const pageLoadAuthToken = window.localStorage.getItem('authToken') || '';
+const pageLoadIsAdmin = window.localStorage.getItem('isAdmin') || false;
 
 const initialState = {
 	authToken: pageLoadAuthToken,
 	signInStatus: FetchStatus.idle,
 	currentUserEmail: '',
-	currentUserIsAdmin: false,
+	currentUserIsAdmin: pageLoadIsAdmin,
 	error: '',
 };
 
@@ -43,11 +44,13 @@ export const signInSlice = createSlice({
 			state.authToken = '';
 			state.signInStatus = FetchStatus.idle;
 			window.localStorage.removeItem('authToken');
+			window.localStorage.removeItem('isAdmin');
 		},
 	},
 	extraReducers: (builder) => {
 		builder.addCase(fetchSignIn.fulfilled, (state, action) => {
 			window.localStorage.setItem('authToken', action.payload.token);
+			window.localStorage.setItem('isAdmin', action.payload.admin);
 
 			state.error = '';
 			state.signInStatus = FetchStatus.success;
@@ -65,9 +68,10 @@ export const signInSlice = createSlice({
 	},
 	selectors: {
 		selectSignIn: state => state,
+		selectIsAdmin: state => state.currentUserIsAdmin,
 	},
 });
 
 export const { signOut } = signInSlice.actions;
 
-export const { selectSignIn } = signInSlice.selectors;
+export const { selectSignIn, selectIsAdmin } = signInSlice.selectors;
