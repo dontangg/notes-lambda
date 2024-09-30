@@ -26,7 +26,6 @@ const competitionDb = {
 	},
 
 	save: async (comp) => {
-
 		return db.saveItem(tableName, comp, { pk, sk: comp.name }, attributes);
 	},
 };

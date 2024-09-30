@@ -13,6 +13,7 @@ router.get('/validate_user', userController.validateUser);
 router.post('/get_token', userController.getToken);
 
 router.get('/competitions', competitionController.list);
+router.post('/competition', competitionController.save);
 
 /* TEST - These are test endpoints to test how errors & timeouts happen */
 router.get('/testerror', (req) => {
