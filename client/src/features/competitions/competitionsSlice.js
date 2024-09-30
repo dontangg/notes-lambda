@@ -3,6 +3,7 @@ import appFetch, { FetchStatus } from '../../app/appFetch';
 
 const initialState = {
 	competitionsFetchStatus: FetchStatus.idle,
+	competitionSaveStatus: FetchStatus.idle,
 	competitions: null,
 };
 
@@ -17,6 +18,20 @@ export const fetchCompetitions = createAsyncThunk(
 		}
 	},
 );
+
+export const saveCompetition = createAsyncThunk(
+	'competitions/saveCompetition',
+	async (arg, { dispatch, getState }) => {
+		const body = JSON.stringify(arg);
+		return appFetch('/competition', { method: 'POST', body }, dispatch, getState).then(() => arg);
+	}, {
+		condition: (arg, { getState, extra }) => {
+			const competitionsState = getState().competitions;
+			return competitionsState.competitionSaveStatus !== FetchStatus.pending;
+		}
+	},
+);
+
 
 export const competitionsSlice = createSlice({
 	name: 'competitions',
@@ -39,6 +54,20 @@ export const competitionsSlice = createSlice({
 		});
 		builder.addCase(fetchCompetitions.pending, (state, action) => {
 			state.competitionsFetchStatus = FetchStatus.pending;
+		});
+		// saveCompetition
+		builder.addCase(saveCompetition.fulfilled, (state, action) => {
+			state.error = '';
+			state.competitionSaveStatus = FetchStatus.success;
+			const updatedComp = state.competitions.find(c => c.name === action.payload.name);
+			updatedComp.phase = action.payload.phase;
+		});
+		builder.addCase(saveCompetition.rejected, (state, action) => {
+			state.competitionSaveStatus = FetchStatus.error;
+			state.error = action.error.message;
+		});
+		builder.addCase(saveCompetition.pending, (state, action) => {
+			state.competitionSaveStatus = FetchStatus.pending;
 		});
 	},
 	selectors: {
