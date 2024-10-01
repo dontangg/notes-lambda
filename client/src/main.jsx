@@ -8,6 +8,7 @@ import ErrorPage from "./ErrorPage";
 import SignInPage from "./features/signIn/SignInPage";
 import AccountPage from "./features/account/AccountPage";
 import CompetitionsPage from "./features/competitions/CompetitionsPage";
+import NewCompetitionPage from "./features/competitions/NewCompetitionPage";
 
 const router = createBrowserRouter([
 	{
@@ -26,7 +27,11 @@ const router = createBrowserRouter([
 				path: "/competitions",
 				element: <CompetitionsPage />,
 			},
-		]
+			{
+				path: "/competitions/new",
+				element: <NewCompetitionPage />,
+			},
+		],
 	},
 	{
 		element: <SignInPage />,

@@ -28,6 +28,10 @@ const competitionDb = {
 	save: async (comp) => {
 		return db.saveItem(tableName, comp, { pk, sk: comp.name }, attributes);
 	},
+
+	delete: async (comp) => {
+		return db.deleteItem(tableName, { pk, sk: comp.name });
+	},
 };
 
 module.exports = competitionDb;

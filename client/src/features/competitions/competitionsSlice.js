@@ -32,14 +32,27 @@ export const saveCompetition = createAsyncThunk(
 	},
 );
 
+export const deleteCompetition = createAsyncThunk(
+	'competitions/deleteCompetition',
+	async (comp, { dispatch, getState }) => {
+		const body = JSON.stringify(comp);
+		return appFetch('/competition', { method: 'DELETE', body }, dispatch, getState).then(() => comp);
+	}, {
+		condition: (arg, { getState, extra }) => {
+			const competitionsState = getState().competitions;
+			return competitionsState.competitionSaveStatus !== FetchStatus.pending;
+		}
+	},
+);
+
 
 export const competitionsSlice = createSlice({
 	name: 'competitions',
 	initialState,
 	reducers: {
-		changeSignInField: (state, action) => {
-			state[action.payload.fieldName] = action.payload.text;
-		},
+		// changeSignInField: (state, action) => {
+		// 	state[action.payload.fieldName] = action.payload.text;
+		// },
 	},
 	extraReducers: (builder) => {
 		// fetchCompetitions
@@ -60,13 +73,30 @@ export const competitionsSlice = createSlice({
 			state.error = '';
 			state.competitionSaveStatus = FetchStatus.success;
 			const updatedComp = state.competitions.find(c => c.name === action.payload.name);
-			updatedComp.phase = action.payload.phase;
+			if (updatedComp) {
+				updatedComp.phase = action.payload.phase;
+			} else {
+				state.competitions.push(action.payload);
+			}
 		});
 		builder.addCase(saveCompetition.rejected, (state, action) => {
 			state.competitionSaveStatus = FetchStatus.error;
 			state.error = action.error.message;
 		});
 		builder.addCase(saveCompetition.pending, (state, action) => {
+			state.competitionSaveStatus = FetchStatus.pending;
+		});
+		// deleteCompetition
+		builder.addCase(deleteCompetition.fulfilled, (state, action) => {
+			state.error = '';
+			state.competitionSaveStatus = FetchStatus.success;
+			state.competitions = state.competitions.filter(c => c.name !== action.payload.name);
+		});
+		builder.addCase(deleteCompetition.rejected, (state, action) => {
+			state.competitionSaveStatus = FetchStatus.error;
+			state.error = action.error.message;
+		});
+		builder.addCase(deleteCompetition.pending, (state, action) => {
 			state.competitionSaveStatus = FetchStatus.pending;
 		});
 	},
@@ -76,3 +106,5 @@ export const competitionsSlice = createSlice({
 });
 
 export const { selectCompetitions } = competitionsSlice.selectors;
+
+// export const { changeSignInField } = competitionsSlice.actions;

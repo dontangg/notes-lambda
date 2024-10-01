@@ -93,7 +93,7 @@ export default function AccountPage() {
 					Save {accountState.savePasswordStatus === FetchStatus.pending ? (<Spinner />) : null}
 				</button>
 				{' '}
-				<button type="submit" className="btn btn-secondary" onClick={() => setIsChangingPassword(false)}>Cancel</button>
+				<button type="button" className="btn btn-secondary" onClick={() => setIsChangingPassword(false)}>Cancel</button>
 			</form>
 		);
 	} else if (isChangingPI) {
@@ -114,7 +114,7 @@ export default function AccountPage() {
 					Save {accountState.saveInfoStatus === FetchStatus.pending ? (<Spinner />) : null}
 				</button>
 				{' '}
-				<button type="submit" className="btn btn-secondary" onClick={() => setIsChangingPI(false)}>Cancel</button>
+				<button type="button" className="btn btn-secondary" onClick={() => setIsChangingPI(false)}>Cancel</button>
 			</form>
 		);
 	} else {

@@ -51,11 +51,6 @@ export const savePassword = createAsyncThunk(
 export const accountSlice = createSlice({
 	name: 'account',
 	initialState,
-	reducers: {
-		changeSignInField: (state, action) => {
-			state[action.payload.fieldName] = action.payload.text;
-		},
-	},
 	extraReducers: (builder) => {
 		// fetchCurrentUser
 		builder.addCase(fetchCurrentUser.fulfilled, (state, action) => {
