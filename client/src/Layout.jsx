@@ -1,11 +1,13 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { Outlet, Link, Navigate, NavLink } from "react-router-dom";
 import { selectSignIn, signOut } from "./features/signIn/signInSlice";
+import { CompetitionPhase, fetchCurrentCompetition, selectCurrentCompetition } from "./features/competitions/competitionsSlice";
 
 const Layout = () => {
 	const dispatch = useDispatch();
 	const signInState = useSelector(selectSignIn);
+	const currentCompetition = useSelector(selectCurrentCompetition);
 	const [mainMenuIsOpen, setMainMenuIsOpen] = useState(false);
 	const [userMenuIsOpen, setUserMenuIsOpen] = useState(false);
 	const accountDropdownRef = useRef(null);
@@ -13,6 +15,10 @@ const Layout = () => {
 	if (!signInState.authToken) {
 		return (<Navigate to="/signin" replace />);
 	}
+
+	useEffect(() => {
+		dispatch(fetchCurrentCompetition());
+	}, []);
 
 	const onBodyClick = (e) => {
 		if (accountDropdownRef.current && !accountDropdownRef.current.contains(e.target)) {
@@ -37,19 +43,25 @@ const Layout = () => {
 						aria-expanded={mainMenuIsOpen ? 'true' : 'false'}
 						aria-label="Toggle navigation"
 						onClick={() => setMainMenuIsOpen(!mainMenuIsOpen)}>
-							<span className="navbar-toggler-icon"></span>
+						<span className="navbar-toggler-icon"></span>
 					</button>
 					<div className={'collapse navbar-collapse' + (mainMenuIsOpen ? ' show' : '')} id="navbarSupportedContent">
 						<ul className="navbar-nav me-auto mb-2 mb-lg-0">
-							<li className="nav-item">
-								<a className="nav-link" aria-current="page" href="#">New Guess</a>
-							</li>
-							<li className="nav-item">
-								<a className="nav-link" href="#">Scorecard</a>
-							</li>
-							<li className="nav-item">
-								<a className="nav-link" href="#">My Songs</a>
-							</li>
+							{currentCompetition?.phase === CompetitionPhase.guessing && (
+								<li className="nav-item">
+									<a className="nav-link" aria-current="page" href="#">New Guess</a>
+								</li>
+							)}
+							{currentCompetition && (
+								<li className="nav-item">
+									<a className="nav-link" href="#">Scorecard</a>
+								</li>
+							)}
+							{currentCompetition?.phase === CompetitionPhase.submitting && (
+								<li className="nav-item">
+									<NavLink className="nav-link" to="/songs">My Songs</NavLink>
+								</li>
+							)}
 							<li className="nav-item">
 								<NavLink className="nav-link" to="/competitions">Competitions</NavLink>
 							</li>
@@ -68,7 +80,7 @@ const Layout = () => {
 									aria-expanded={userMenuIsOpen ? 'true' : 'false'}
 									onClick={() => setUserMenuIsOpen(!userMenuIsOpen)}
 									ref={accountDropdownRef}>
-										Don
+									Don
 								</button>
 								<ul className={'dropdown-menu dropdown-menu-end' + (userMenuIsOpen ? ' show' : '')} style={{ right: 0 }}>
 									<li><NavLink className="dropdown-item" to="/account">Account</NavLink></li>

@@ -13,6 +13,7 @@ router.get('/validate_user', userController.validateUser);
 router.post('/get_token', userController.getToken);
 
 router.get('/competitions', competitionController.list);
+router.get('/competition/current', competitionController.getCurrent);
 router.post('/competition', competitionController.save);
 router.delete('/competition', competitionController.delete);
 

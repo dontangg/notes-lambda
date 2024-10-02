@@ -4,6 +4,11 @@ const competitionDb = require('./db/competition');
 
 const competitionController = {
 
+	getCurrent: async (req) => {
+		const currentCompetition = await competitionDb.getCurrent();
+		return { statusCode: 200, body: JSON.stringify(currentCompetition) };
+	},
+
 	list: async (req) => {
 		const competitions = await competitionDb.list();
 		competitions.sort((a, b) => a.name.localeCompare(b.name) * -1);

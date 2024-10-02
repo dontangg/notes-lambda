@@ -3,8 +3,17 @@ import appFetch, { FetchStatus } from '../../app/appFetch';
 
 const initialState = {
 	competitionsFetchStatus: FetchStatus.idle,
+	curCompFetchStatus: FetchStatus.idle,
 	competitionSaveStatus: FetchStatus.idle,
 	competitions: null,
+	currentCompetition: null,
+	error: '',
+};
+
+export const CompetitionPhase = {
+	submitting: 'submitting',
+	guessing: 'guessing',
+	closed: 'closed',
 };
 
 export const fetchCompetitions = createAsyncThunk(
@@ -15,6 +24,18 @@ export const fetchCompetitions = createAsyncThunk(
 		condition: (arg, { getState, extra }) => {
 			const competitionsState = getState().competitions;
 			return competitionsState.competitionsFetchStatus !== FetchStatus.pending;
+		}
+	},
+);
+
+export const fetchCurrentCompetition = createAsyncThunk(
+	'competitions/fetchCurrentCompetition',
+	async (arg, { dispatch, getState }) => {
+		return appFetch('/competition/current', null, dispatch, getState).then(response => response.json());
+	}, {
+		condition: (arg, { getState, extra }) => {
+			const competitionsState = getState().competitions;
+			return competitionsState.curCompFetchStatus !== FetchStatus.pending;
 		}
 	},
 );
@@ -68,6 +89,19 @@ export const competitionsSlice = createSlice({
 		builder.addCase(fetchCompetitions.pending, (state, action) => {
 			state.competitionsFetchStatus = FetchStatus.pending;
 		});
+		// fetchCurrentCompetition
+		builder.addCase(fetchCurrentCompetition.fulfilled, (state, action) => {
+			state.error = '';
+			state.curCompFetchStatus = FetchStatus.success;
+			state.currentCompetition = action.payload;
+		});
+		builder.addCase(fetchCurrentCompetition.rejected, (state, action) => {
+			state.curCompFetchStatus = FetchStatus.error;
+			state.error = action.error.message;
+		});
+		builder.addCase(fetchCurrentCompetition.pending, (state, action) => {
+			state.curCompFetchStatus = FetchStatus.pending;
+		});
 		// saveCompetition
 		builder.addCase(saveCompetition.fulfilled, (state, action) => {
 			state.error = '';
@@ -75,6 +109,13 @@ export const competitionsSlice = createSlice({
 			const updatedComp = state.competitions.find(c => c.name === action.payload.name);
 			if (updatedComp) {
 				updatedComp.phase = action.payload.phase;
+				if (updatedComp.name === state.currentCompetition?.name) {
+					if (updatedComp.phase === CompetitionPhase.closed) {
+						state.currentCompetition = null;
+					} else {
+						state.currentCompetition.phase = updatedComp.phase;
+					}
+				}
 			} else {
 				state.competitions.push(action.payload);
 			}
@@ -102,9 +143,10 @@ export const competitionsSlice = createSlice({
 	},
 	selectors: {
 		selectCompetitions: state => state,
+		selectCurrentCompetition: state => state.currentCompetition,
 	},
 });
 
-export const { selectCompetitions } = competitionsSlice.selectors;
+export const { selectCompetitions, selectCurrentCompetition } = competitionsSlice.selectors;
 
 // export const { changeSignInField } = competitionsSlice.actions;

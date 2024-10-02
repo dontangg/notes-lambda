@@ -61,6 +61,34 @@ const db = {
 		return items;
 	},
 
+	scan: async function(tableName, filterExpression, expressionAttributeValues) {
+		let items = [];
+
+		// Items will be paged if they reach more than 1MB total
+		// LastEvaluatedKey and ExclusiveStartKey are used to request the next page
+		let exclusiveStartKey = null;
+
+		do {
+			const options = {
+				TableName: tableName,
+				FilterExpression: filterExpression,
+				ExpressionAttributeValues: expressionAttributeValues,
+			};
+			if (exclusiveStartKey) {
+				options.ExclusiveStartKey = exclusiveStartKey;
+			}
+			console.log('options', options);
+			const response = await dynamodb.scan(options).promise();
+
+			const newItems = response.Items || [];
+			items = [...items, ...newItems];
+
+			exclusiveStartKey = response.LastEvaluatedKey;
+		} while(exclusiveStartKey);
+
+		return items;
+	},
+
 	// Used to get all items with a single hash key (partition key) and filter on the sort key
 	query: async function(tableName, queryCondition, queryValues, projectionExpression = null) {
 		let items = [];

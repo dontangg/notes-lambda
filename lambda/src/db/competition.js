@@ -25,6 +25,12 @@ const competitionDb = {
 		return comp ? mapFromDb(comp) : null;
 	},
 
+	getCurrent: async () => {
+		const nonClosedComps = await db.scan(tableName, 'pk = :pk AND phase <> :phase', { ':pk': pk, ':phase': 'closed' });
+		const curComp = nonClosedComps.length ? mapFromDb(nonClosedComps[0]) : null;
+		return curComp;
+	},
+
 	save: async (comp) => {
 		return db.saveItem(tableName, comp, { pk, sk: comp.name }, attributes);
 	},

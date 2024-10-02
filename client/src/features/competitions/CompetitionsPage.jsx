@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { deleteCompetition, fetchCompetitions, saveCompetition, selectCompetitions } from "./competitionsSlice";
+import { CompetitionPhase, deleteCompetition, fetchCompetitions, fetchCurrentCompetition, saveCompetition, selectCompetitions } from "./competitionsSlice";
 import { selectIsAdmin } from "../signIn/signInSlice";
 import { FetchStatus } from "../../app/appFetch";
 import Spinner from "../../common/Spinner";
+import { unwrapResult } from "@reduxjs/toolkit";
 
 export default function AccountPage() {
 	const dispatch = useDispatch();
@@ -40,7 +41,14 @@ export default function AccountPage() {
 
 	const onSaveCompClick = (competition) => {
 		return (e) => {
-			dispatch(saveCompetition({ name: competition.name, phase: competitionPhaseInEdit }));
+			const newPhase = competitionPhaseInEdit;
+			dispatch(saveCompetition({ name: competition.name, phase: competitionPhaseInEdit }))
+				.then(unwrapResult)
+				.then(() => {
+					if (!competitionsState.currentCompetition && newPhase !== CompetitionPhase.closed) {
+						dispatch(fetchCurrentCompetition());
+					}
+				});
 		};
 	};
 
