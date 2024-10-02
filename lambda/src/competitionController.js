@@ -13,15 +13,35 @@ const competitionController = {
 		}
 
 		if (currentCompetition) {
-			// Filter out the userIds of the songs not submitted by the user or the user's partner
-			currentCompetition.songs.forEach(song => {
-				if (!allowedUserIds.includes(song.userId)) {
-					delete song.userId;
+			if (currentCompetition.phase === 'submitting') {
+				// Filter out the songs not submitted by the user or the user's partner
+				if (currentCompetition.songs) {
+					currentCompetition.songs = currentCompetition.songs.filter(song => allowedUserIds.includes(song.userId));
 				}
-			});
+			} else if (currentCompetition.phase === 'guessing') {
+				// Find the songs guessed correctly
+				const correctlyGuessedSongs = [];
+				const lastAttempt = currentCompetition.attempts?.[currentCompetition.attempts?.length - 1];
+				lastAttempt?.guesses?.forEach(guess => {
+					const isCorrect = currentCompetition.songs.some(song => song.filename === guess.songFilename && song.userId === guess.guessedUserId);
+					if (isCorrect) {
+						correctlyGuessedSongs.push(guess.songFilename);
+					}
+				});
+
+				const hasForfeited = currentCompetition?.forfeitedUserIds?.some(ffUserId => allowedUserIds.includes(ffUserId));
+				if (!hasForfeited) {
+					// Filter out the userIds of the songs not submitted by the user or the user's partner and not guessed correctly
+					currentCompetition.songs?.forEach(song => {
+						if (!allowedUserIds.includes(song.userId) && !correctlyGuessedSongs.includes(song.filename)) {
+							delete song.userId;
+						}
+					});
+				}
+			}
 
 			// Remove the array of the guesses inside attempts not made by the user or the user's partner
-			currentCompetition.attempts.forEach(attempt => {
+			currentCompetition.attempts?.forEach(attempt => {
 				if (!allowedUserIds.includes(attempt.userId)) {
 					delete attempt.guesses;
 				}
