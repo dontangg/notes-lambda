@@ -48,11 +48,6 @@ const competitionController = {
 			});
 		}
 
-		const fix = (c) => {
-			c.attempts.forEach(att => att.userId = Number(att.userId));
-			copy(JSON.stringify(c));
-		};
-
 		return { statusCode: 200, body: JSON.stringify(currentCompetition) };
 	},
 
