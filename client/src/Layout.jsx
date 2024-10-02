@@ -12,13 +12,14 @@ const Layout = () => {
 	const [userMenuIsOpen, setUserMenuIsOpen] = useState(false);
 	const accountDropdownRef = useRef(null);
 
-	if (!signInState.authToken) {
-		return (<Navigate to="/signin" replace />);
-	}
-
 	useEffect(() => {
 		dispatch(fetchCurrentCompetition());
 	}, []);
+
+	// NOTE: This has to be included after all hooks
+	if (!signInState.authToken) {
+		return (<Navigate to="/signin" replace />);
+	}
 
 	const onBodyClick = (e) => {
 		if (accountDropdownRef.current && !accountDropdownRef.current.contains(e.target)) {

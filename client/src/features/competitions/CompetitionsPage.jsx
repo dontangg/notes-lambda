@@ -6,6 +6,7 @@ import { selectIsAdmin } from "../signIn/signInSlice";
 import { FetchStatus } from "../../app/appFetch";
 import Spinner from "../../common/Spinner";
 import { unwrapResult } from "@reduxjs/toolkit";
+import { useDocumentTitle } from "../../app/customHooks";
 
 export default function AccountPage() {
 	const dispatch = useDispatch();
@@ -14,6 +15,8 @@ export default function AccountPage() {
 	const [competitionInEdit, setCompetitionInEdit] = useState(null);
 	const [competitionPhaseInEdit, setCompetitionPhaseInEdit] = useState(null);
 	const [isConfirmingDelete, setIsConfirmingDelete] = useState(false);
+
+	useDocumentTitle('Competitions');
 
 	useEffect(() => {
 		dispatch(fetchCompetitions());

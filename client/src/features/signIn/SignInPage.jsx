@@ -4,6 +4,7 @@ import { Navigate, useLocation } from "react-router-dom";
 import { fetchSignIn, selectSignIn } from "./signInSlice";
 import Spinner from "../../common/Spinner";
 import { FetchStatus } from "../../app/appFetch";
+import { useDocumentTitle } from "../../app/customHooks";
 
 export default function SignInPage() {
 	const dispatch = useDispatch();
@@ -12,6 +13,7 @@ export default function SignInPage() {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [didSubmit, setDidSubmit] = useState(false);
+	useDocumentTitle('Sign In');
 
 	if (signInState.authToken) {
 		const route = (location.state?.from) || { pathname: "/" };

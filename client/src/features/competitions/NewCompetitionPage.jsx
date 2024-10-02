@@ -5,6 +5,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { saveCompetition, selectCompetitions } from "./competitionsSlice";
 import { FetchStatus } from "../../app/appFetch";
 import Spinner from "../../common/Spinner";
+import { useDocumentTitle } from "../../app/customHooks";
 
 export default function NewCompetitionPage() {
 	const dispatch = useDispatch();
@@ -12,6 +13,7 @@ export default function NewCompetitionPage() {
 	const navigate = useNavigate();
 	const [compName, setCompName] = useState('');
 	const [wasValidated, setWasValidated] = useState(false);
+	useDocumentTitle('New Competition');
 
 	const onSaveCompClick = (competition) => {
 		setWasValidated(true);

@@ -1,11 +1,14 @@
 import React from "react";
 import { Link, useRouteError } from "react-router-dom";
+import { useDocumentTitle } from "./app/customHooks";
 
 export default function ErrorPage() {
 	const error = useRouteError();
 	console.error(error);
 
 	const is404 = error.status === 404;
+
+	useDocumentTitle(is404 ? 'Not Found' : 'Error');
 
 	return (
 		<>

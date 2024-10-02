@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCurrentUser, savePassword, savePersonalInfo, selectAccount } from "./accountSlice";
 import { FetchStatus } from "../../app/appFetch";
 import Spinner from "../../common/Spinner";
+import { useDocumentTitle } from "../../app/customHooks";
 
 export default function AccountPage() {
 	const dispatch = useDispatch();
@@ -18,6 +19,8 @@ export default function AccountPage() {
 	const [typedNewPassword, setTypedNewPassword] = useState('');
 	const [typedNewPasswordConfirm, setTypedNewPasswordConfirm] = useState('');
 	const [passwordWasValidated, setPasswordWasValidated] = useState(false);
+
+	useDocumentTitle('Account');
 
 
 	useEffect(() => {
