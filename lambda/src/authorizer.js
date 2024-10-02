@@ -32,6 +32,8 @@ module.exports = function(req) {
 
 		req.user = {
 			email: token.email,
+			id: token.userId,
+			partnerId: token.partnerId,
 		};
 	} catch(err) {
 		logger.error("authorizer", err, null, req);

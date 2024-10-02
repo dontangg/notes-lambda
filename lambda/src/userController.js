@@ -20,7 +20,7 @@ const userController = {
 		if (user) {
 			const isCorrectPassword = await cryptoHelper.comparePassword(password, user.passwordHash);
 			if (isCorrectPassword) {
-				const json = JSON.stringify({ email: user.email, iat: new Date().getTime() });
+				const json = JSON.stringify({ email: user.email, iat: new Date().getTime(), partnerId: user.partnerId, userId: user.id });
 				const finalEncrypted = cryptoHelper.encrypt(json);
 
 				return { statusCode: 200, body: JSON.stringify({ token: finalEncrypted, admin: user.admin }) };
