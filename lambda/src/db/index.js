@@ -90,7 +90,7 @@ const db = {
 	},
 
 	// Used to get all items with a single hash key (partition key) and filter on the sort key
-	query: async function(tableName, queryCondition, queryValues, projectionExpression = null) {
+	query: async function(tableName, queryCondition, queryValues, projectionExpression = null, expressionAttributeNames = null) {
 		let items = [];
 
 		// Items will be paged if they reach more than 1MB total
@@ -105,6 +105,9 @@ const db = {
 			};
 			if (projectionExpression) {
 				options.ProjectionExpression = projectionExpression;
+				if (expressionAttributeNames) {
+					options.ExpressionAttributeNames = expressionAttributeNames;
+				}
 			}
 			if (exclusiveStartKey) {
 				options.ExclusiveStartKey = exclusiveStartKey;

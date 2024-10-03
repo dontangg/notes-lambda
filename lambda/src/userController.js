@@ -23,13 +23,25 @@ const userController = {
 				const json = JSON.stringify({ email: user.email, iat: new Date().getTime(), partnerId: user.partnerId, userId: user.id });
 				const finalEncrypted = cryptoHelper.encrypt(json);
 
-				return { statusCode: 200, body: JSON.stringify({ token: finalEncrypted, admin: user.admin }) };
+				return { statusCode: 200, body: JSON.stringify({
+					token: finalEncrypted,
+					user: {
+						admin: user.admin,
+						id: user.id,
+						partnerId: user.partnerId,
+					},
+				})};
 			}
 		}
 
 		return { statusCode: 401, body: '' };
 	},
+	
+	list: async (req) => {
+		const users = await userDb.list();
 
+		return { statusCode: 200, body: JSON.stringify(users) };
+	},
 
 	get: async (req) => {
 		const user = await userDb.get(req.user.email);

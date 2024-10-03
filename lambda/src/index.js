@@ -7,6 +7,7 @@ const logger = require('./logger');
 const userController = require('./userController');
 const competitionController = require('./competitionController');
 
+router.get('/users', userController.list);
 router.get('/user', userController.get);
 router.post('/user', userController.save);
 router.get('/validate_user', userController.validateUser);
