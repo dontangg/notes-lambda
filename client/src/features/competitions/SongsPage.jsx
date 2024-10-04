@@ -12,7 +12,6 @@ export default function NewCompetitionPage() {
 	const competitionsState = useSelector(selectCompetitions);
 	const audioPlayerState = useSelector(selectAudioPlayer);
 	const currentUser = useSelector(selectCurrentUser);
-	const [audioContext] = useState(new AudioContext());
 	const [playingSongFilename, setPlayingSongFilename] = useState(null);
 
 	useEffect(() => {
@@ -36,11 +35,8 @@ export default function NewCompetitionPage() {
 		return user ? user.name : 'Unknown';
 	};
 
-	const onSongClick = (songFilename) => {
+	const onPlaySongClick = (songFilename) => {
 		return (e) => {
-			if (audioContext.state === "suspended") {
-				audioContext.resume();
-			}
 			setPlayingSongFilename(songFilename);
 			if (playingSongFilename === songFilename) {
 				dispatch(setIsPlaying(!audioPlayerState.isPlaying));
@@ -62,7 +58,7 @@ export default function NewCompetitionPage() {
 							{songs.map((song, idx) => (
 								<tr key={song.title}>
 									<td>
-										<button title="Play song" onClick={onSongClick(song.filename)}>
+										<button title="Play song" onClick={onPlaySongClick(song.filename)}>
 											{(playingSongFilename === song.filename && audioPlayerState.isPlaying)
 												? (<i className="fa-solid fa-pause"></i>)
 												: (<i className="fa-solid fa-play"></i>)
@@ -85,7 +81,7 @@ export default function NewCompetitionPage() {
 				</div>
 			</div>
 
-			<AudioPlayer audioContext={audioContext} songs={songs} currentSongFilename={playingSongFilename} />
+			<AudioPlayer songs={songs} currentSongFilename={playingSongFilename} />
 		</>
 	);
 };

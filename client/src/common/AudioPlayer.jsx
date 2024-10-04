@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectAudioPlayer, setCanPlay, setAudioDuration, setIsSourceConnected, setIsPlaying } from './audioPlayerSlice';
 
 
-export default function AudioPlayer({ audioContext, currentSongFilename, songs }) {
+export default function AudioPlayer({ currentSongFilename, songs }) {
 	const dispatch = useDispatch();
 	const audioRefs = useRef([]);
 	const scrubberRef = useRef();
@@ -11,9 +11,9 @@ export default function AudioPlayer({ audioContext, currentSongFilename, songs }
 
 	// FYI The default value for gain is 1; this keeps the current volume the same.
 	// Gain can be set to a minimum of about -3.4028235E38 and a max of about 3.4028235E38
-	const [audioGain] = useState(audioContext.createGain());
 	const [volume, setVolume] = useState(1);
 	const [audioCurrentTime, setAudioCurrentTime] = useState(0);
+
 
 	useEffect(() => {
 		for (const filename in audioRefs.current) {
@@ -23,6 +23,7 @@ export default function AudioPlayer({ audioContext, currentSongFilename, songs }
 		if (audioRefs.current && audioRefs.current?.[currentSongFilename]) {
 			audioRefs.current[currentSongFilename].currentTime = 0;
 			if (audioPlayerState.isPlaying) {
+				audioRefs.current[currentSongFilename].volume = volume;
 				audioRefs.current[currentSongFilename].play();
 			}
 		}
@@ -30,24 +31,11 @@ export default function AudioPlayer({ audioContext, currentSongFilename, songs }
 	}, [currentSongFilename]);
 
 	useEffect(() => {
-		if (Object.keys(audioRefs.current).length !== songs.length) return;
-
-		for (const filename in audioRefs.current) {
-			if (!audioPlayerState.audioInfo[filename]?.isSourceConnected) {
-				const track = audioContext.createMediaElementSource(audioRefs.current[filename]);
-				track.connect(audioGain).connect(audioContext.destination);
-
-				dispatch(setIsSourceConnected({ filename, isSourceConnected: true }));
-			}
-		}
-
-	}, [Object.keys(audioRefs.current).length]);
-
-	useEffect(() => {
 		if (!audioRefs.current[currentSongFilename]) return;
 
 		// If it's supposed to play, but it's not playing
 		if (audioPlayerState.isPlaying && audioRefs.current[currentSongFilename].paused) {
+			audioRefs.current[currentSongFilename].volume = volume;
 			audioRefs.current[currentSongFilename].play();
 		} else if (!audioPlayerState.isPlaying && !audioRefs.current[currentSongFilename].paused) {
 			audioRefs.current[currentSongFilename].pause();
@@ -55,11 +43,6 @@ export default function AudioPlayer({ audioContext, currentSongFilename, songs }
 	}, [audioPlayerState.isPlaying]);
 
 	const onPlayClick = (e) => {
-		// Check if context is in suspended state (autoplay policy)
-		if (audioContext.state === "suspended") {
-			audioContext.resume();
-		}
-
 		dispatch(setIsPlaying(!audioPlayerState.isPlaying));
 	};
 	const onLoadedMetadata = (songFilename) => {
@@ -87,7 +70,9 @@ export default function AudioPlayer({ audioContext, currentSongFilename, songs }
 	const onChangeVolume = (e) => {
 		const newVolume = e.target.value;
 		setVolume(newVolume);
-		audioGain.gain.value = newVolume;
+		if (audioRefs.current[currentSongFilename]) {
+			audioRefs.current[currentSongFilename].volume = newVolume;
+		}
 	};
 
 	const currentAudioInfo = audioPlayerState.audioInfo[currentSongFilename] || { canPlay: false, duration: 0, isSourceConnected: false };
