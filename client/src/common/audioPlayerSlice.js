@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
 	audioInfo: {},
+	currentSongFilename: null,
 	isPlaying: false,
 };
 
@@ -29,6 +30,10 @@ export const audioPlayerSlice = createSlice({
 		setIsPlaying: (state, action) => {
 			state.isPlaying = action.payload;
 		},
+		setCurrentSongFilename: (state, action) => {
+			state.currentSongFilename = action.payload;
+			state.isPlaying = true;
+		},
 	},
 	selectors: {
 		selectAudioPlayer: state => state,
@@ -37,4 +42,4 @@ export const audioPlayerSlice = createSlice({
 
 export const { selectAudioPlayer } = audioPlayerSlice.selectors;
 
-export const { setAudioDuration, setCanPlay, setIsPlaying } = audioPlayerSlice.actions;
+export const { setAudioDuration, setCanPlay, setIsPlaying, setCurrentSongFilename } = audioPlayerSlice.actions;

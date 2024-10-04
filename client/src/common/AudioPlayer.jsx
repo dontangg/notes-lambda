@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAudioPlayer, setCanPlay, setAudioDuration, setIsPlaying } from './audioPlayerSlice';
+import { convertMsToStr } from '../app/utilities';
 
 
-export default function AudioPlayer({ currentSongFilename, songs }) {
+export default function AudioPlayer({ songs }) {
 	const dispatch = useDispatch();
 	const audioRefs = useRef([]);
 	const scrubberRef = useRef();
@@ -11,6 +12,7 @@ export default function AudioPlayer({ currentSongFilename, songs }) {
 	const [volume, setVolume] = useState(1);
 	const [audioCurrentTime, setAudioCurrentTime] = useState(0);
 
+	const currentSongFilename = audioPlayerState.currentSongFilename;
 
 	useEffect(() => {
 		for (const filename in audioRefs.current) {
@@ -58,6 +60,12 @@ export default function AudioPlayer({ currentSongFilename, songs }) {
 			setAudioCurrentTime(audioRefs.current[currentSongFilename].currentTime);
 		};
 	};
+	const onEnded = (songFilename) => {
+		return (e) => {
+			if (songFilename !== currentSongFilename) return;
+			dispatch(setIsPlaying(false));
+		};
+	};
 
 	const onScrub = (e) => {
 		const scrubTime = (e.nativeEvent.offsetX / scrubberRef.current.offsetWidth) * audioRefs.current[currentSongFilename].duration;
@@ -75,8 +83,8 @@ export default function AudioPlayer({ currentSongFilename, songs }) {
 	const currentAudioInfo = audioPlayerState.audioInfo[currentSongFilename] || { canPlay: false, duration: 0 };
 	const currentSong = songs.find(song => song.filename === currentSongFilename);
 
-	const audioCurrentTimeStr = new Date(audioCurrentTime * 1000).toISOString().substring(14, 19);
-	const audioDurationStr = new Date(currentAudioInfo.duration * 1000).toISOString().substring(14, 19);
+	const audioCurrentTimeStr = convertMsToStr(audioCurrentTime);
+	const audioDurationStr = convertMsToStr(currentAudioInfo.duration);
 	const percentComplete = (audioCurrentTime / currentAudioInfo.duration) * 100;
 
 	const isPlaying = audioRefs.current[currentSongFilename]?.paused === false;
@@ -84,7 +92,7 @@ export default function AudioPlayer({ currentSongFilename, songs }) {
 	return (
 		<div className={'fixed-bottom player ' + (currentSongFilename ? 'd-flex' : 'd-none')}>
 			{songs.map(song => (
-				<audio key={song.filename} ref={el => { audioRefs.current[song.filename] = el; }} crossOrigin="anonymous" onLoadedMetadata={onLoadedMetadata(song.filename)} onTimeUpdate={onTimeUpdate(song.filename)} onCanPlay={onCanPlay(song.filename)}>
+				<audio key={song.filename} ref={el => { audioRefs.current[song.filename] = el; }} crossOrigin="anonymous" onLoadedMetadata={onLoadedMetadata(song.filename)} onTimeUpdate={onTimeUpdate(song.filename)} onCanPlay={onCanPlay(song.filename)} onEnded={onEnded(song.filename)}>
 					<source src={`https://wilson-notes.s3.amazonaws.com/t/${song.filename}/playlist.m3u8`} type="audio/mpeg" />
 					<source src={`https://wilson-notes.s3.amazonaws.com/t/${song.filename}/song.mp3`} type="audio/mpeg" />
 				</audio>

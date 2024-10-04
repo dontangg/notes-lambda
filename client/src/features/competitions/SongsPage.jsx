@@ -4,7 +4,8 @@ import { fetchAllUsers, selectCompetitions } from "./competitionsSlice";
 import { useDocumentTitle } from "../../app/customHooks";
 import { selectCurrentUser } from "../signIn/signInSlice";
 import AudioPlayer from '../../common/AudioPlayer';
-import { selectAudioPlayer, setIsPlaying } from "../../common/audioPlayerSlice";
+import { selectAudioPlayer, setIsPlaying, setCurrentSongFilename } from "../../common/audioPlayerSlice";
+import { convertMsToStr } from '../../app/utilities';
 
 export default function NewCompetitionPage() {
 	const dispatch = useDispatch();
@@ -12,7 +13,6 @@ export default function NewCompetitionPage() {
 	const competitionsState = useSelector(selectCompetitions);
 	const audioPlayerState = useSelector(selectAudioPlayer);
 	const currentUser = useSelector(selectCurrentUser);
-	const [playingSongFilename, setPlayingSongFilename] = useState(null);
 
 	useEffect(() => {
 		if (!competitionsState.allUsers) {
@@ -37,18 +37,17 @@ export default function NewCompetitionPage() {
 
 	const onPlaySongClick = (songFilename) => {
 		return (e) => {
-			setPlayingSongFilename(songFilename);
-			if (playingSongFilename === songFilename) {
+			if (audioPlayerState.currentSongFilename === songFilename) {
 				dispatch(setIsPlaying(!audioPlayerState.isPlaying));
 			} else {
-				dispatch(setIsPlaying(true));
+				dispatch(setCurrentSongFilename(songFilename));
 			}
 		};
 	};
 
 	return (
 		<>
-			<h1>My Songs</h1>
+			<h1 className="mb-4">My Songs</h1>
 			{competitionsState.error && (<div className="alert alert-danger" role="alert">{competitionsState.error}</div>)}
 
 			<div className="row">
@@ -56,10 +55,10 @@ export default function NewCompetitionPage() {
 					<table className="table table-hover align-middle playlist">
 						<tbody>
 							{songs.map((song, idx) => (
-								<tr key={song.title}>
+								<tr key={song.title} className={(audioPlayerState.currentSongFilename === song.filename && audioPlayerState.isPlaying) ? 'table-active' : ''}>
 									<td>
 										<button title="Play song" onClick={onPlaySongClick(song.filename)}>
-											{(playingSongFilename === song.filename && audioPlayerState.isPlaying)
+											{(audioPlayerState.currentSongFilename === song.filename && audioPlayerState.isPlaying)
 												? (<i className="fa-solid fa-pause"></i>)
 												: (<i className="fa-solid fa-play"></i>)
 											}
@@ -69,8 +68,11 @@ export default function NewCompetitionPage() {
 										<div>{song.title}</div>
 										<small className="text-body-secondary">{song.artist}</small>
 									</td>
-									<td className="small text-end">0:00</td>
+									<td className="small text-end">{convertMsToStr(audioPlayerState.audioInfo[song.filename]?.duration)}</td>
 									<td>{getUserName(song.userId)}</td>
+									<td className="song-controls-cell">
+										<button title="Edit"><i className="fa-regular fa-comment"></i></button>
+									</td>
 									<td className="song-controls-cell">
 										<button title="Edit"><i className="fa-solid fa-pen"></i></button>
 									</td>
@@ -81,7 +83,7 @@ export default function NewCompetitionPage() {
 				</div>
 			</div>
 
-			<AudioPlayer songs={songs} currentSongFilename={playingSongFilename} />
+			<AudioPlayer songs={songs} />
 		</>
 	);
 };
