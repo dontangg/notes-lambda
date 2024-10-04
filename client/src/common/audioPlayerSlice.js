@@ -8,7 +8,6 @@ const initialState = {
 const getDefaultInfo = () => ({
 	canPlay: false,
 	duration: 0,
-	isSourceConnected: false,
 });
 
 export const audioPlayerSlice = createSlice({
@@ -27,12 +26,6 @@ export const audioPlayerSlice = createSlice({
 			}
 			state.audioInfo[action.payload.filename].duration = action.payload.duration;
 		},
-		setIsSourceConnected: (state, action) => {
-			if (!state.audioInfo[action.payload.filename]) {
-				state.audioInfo[action.payload.filename] = getDefaultInfo();
-			}
-			state.audioInfo[action.payload.filename].isSourceConnected = action.payload.isSourceConnected;
-		},
 		setIsPlaying: (state, action) => {
 			state.isPlaying = action.payload;
 		},
@@ -44,4 +37,4 @@ export const audioPlayerSlice = createSlice({
 
 export const { selectAudioPlayer } = audioPlayerSlice.selectors;
 
-export const { setAudioDuration, setCanPlay, setIsPlaying, setIsSourceConnected } = audioPlayerSlice.actions;
+export const { setAudioDuration, setCanPlay, setIsPlaying } = audioPlayerSlice.actions;

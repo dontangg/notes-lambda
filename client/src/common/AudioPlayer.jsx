@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectAudioPlayer, setCanPlay, setAudioDuration, setIsSourceConnected, setIsPlaying } from './audioPlayerSlice';
+import { selectAudioPlayer, setCanPlay, setAudioDuration, setIsPlaying } from './audioPlayerSlice';
 
 
 export default function AudioPlayer({ currentSongFilename, songs }) {
@@ -8,9 +8,6 @@ export default function AudioPlayer({ currentSongFilename, songs }) {
 	const audioRefs = useRef([]);
 	const scrubberRef = useRef();
 	const audioPlayerState = useSelector(selectAudioPlayer);
-
-	// FYI The default value for gain is 1; this keeps the current volume the same.
-	// Gain can be set to a minimum of about -3.4028235E38 and a max of about 3.4028235E38
 	const [volume, setVolume] = useState(1);
 	const [audioCurrentTime, setAudioCurrentTime] = useState(0);
 
@@ -75,7 +72,7 @@ export default function AudioPlayer({ currentSongFilename, songs }) {
 		}
 	};
 
-	const currentAudioInfo = audioPlayerState.audioInfo[currentSongFilename] || { canPlay: false, duration: 0, isSourceConnected: false };
+	const currentAudioInfo = audioPlayerState.audioInfo[currentSongFilename] || { canPlay: false, duration: 0 };
 	const currentSong = songs.find(song => song.filename === currentSongFilename);
 
 	const audioCurrentTimeStr = new Date(audioCurrentTime * 1000).toISOString().substring(14, 19);
