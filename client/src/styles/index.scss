@@ -1,11 +1,56 @@
 // Import all of Bootstrap's CSS
 @import "bootstrap/scss/bootstrap";
+@import "./player.scss";
 
-.signInPage form {
+.sign-in-page form {
 	max-width: 400px;
 }
 
-.signInPage h1 {
+.sign-in-page h1 {
 	background-image: '../logo.png';
 	padding-left: '40px' !important;
+}
+
+.playlist {
+	td:nth-child(1) {
+		width: 50px;
+		text-align: center;
+		position: relative;
+
+		button {
+			display: inline-block;
+			background: none;
+			border: 0;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			top: 0;
+			
+			&:hover {
+				background-color: var(--bs-secondary);
+				color: #fff;
+			}
+		}
+	}
+}
+
+.song-controls-cell {
+	position: relative;
+	width: 50px;
+
+	button {
+		background: none;
+		border: 0;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		top: 0;
+
+		&:hover {
+			background-color: var(--bs-secondary);
+			color: #fff;
+		}
+	}
 }

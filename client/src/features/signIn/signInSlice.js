@@ -2,13 +2,20 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { rawFetch, FetchStatus } from '../../app/appFetch';
 
 const pageLoadAuthToken = window.localStorage.getItem('authToken') || '';
-const pageLoadIsAdmin = window.localStorage.getItem('isAdmin') || false;
+const pageLoadUserStr = window.localStorage.getItem('user');
+let pageLoadUser = null;
+if (pageLoadUserStr) {
+	try {
+		pageLoadUser = JSON.parse(pageLoadUserStr);
+	} catch (e) {
+		console.error(e);
+	}
+}
 
 const initialState = {
 	authToken: pageLoadAuthToken,
 	signInStatus: FetchStatus.idle,
-	currentUserEmail: '',
-	currentUserIsAdmin: pageLoadIsAdmin,
+	currentUser: pageLoadUser,
 	error: '',
 };
 
@@ -25,7 +32,7 @@ export const fetchSignIn = createAsyncThunk(
 						throw new Error('Invalid username and/or password');
 					throw new Error('Unable to sign in');
 				}
-				return response.json().then(jsonResponse => ({ token: jsonResponse.token, admin: jsonResponse.admin, email }));
+				return response.json();
 			}, () => { throw new Error('Unable to sign in'); });
 
 	}, {
@@ -44,19 +51,18 @@ export const signInSlice = createSlice({
 			state.authToken = '';
 			state.signInStatus = FetchStatus.idle;
 			window.localStorage.removeItem('authToken');
-			window.localStorage.removeItem('isAdmin');
+			window.localStorage.removeItem('user');
 		},
 	},
 	extraReducers: (builder) => {
 		builder.addCase(fetchSignIn.fulfilled, (state, action) => {
 			window.localStorage.setItem('authToken', action.payload.token);
-			window.localStorage.setItem('isAdmin', action.payload.admin);
+			window.localStorage.setItem('user', JSON.stringify(action.payload.user));
 
 			state.error = '';
 			state.signInStatus = FetchStatus.success;
 			state.authToken = action.payload.token;
-			state.currentUserEmail = action.payload.email;
-			state.currentUserIsAdmin = action.payload.admin;
+			state.currentUser = action.payload.user;
 		});
 		builder.addCase(fetchSignIn.rejected, (state, action) => {
 			state.signInStatus = FetchStatus.error;
@@ -68,10 +74,10 @@ export const signInSlice = createSlice({
 	},
 	selectors: {
 		selectSignIn: state => state,
-		selectIsAdmin: state => state.currentUserIsAdmin,
+		selectCurrentUser: state => state.currentUser,
 	},
 });
 
 export const { signOut } = signInSlice.actions;
 
-export const { selectSignIn, selectIsAdmin } = signInSlice.selectors;
+export const { selectSignIn, selectCurrentUser } = signInSlice.selectors;

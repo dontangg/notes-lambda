@@ -9,6 +9,7 @@ import SignInPage from "./features/signIn/SignInPage";
 import AccountPage from "./features/account/AccountPage";
 import CompetitionsPage from "./features/competitions/CompetitionsPage";
 import NewCompetitionPage from "./features/competitions/NewCompetitionPage";
+import SongsPage from "./features/competitions/SongsPage";
 
 const router = createBrowserRouter([
 	{
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
 			{
 				path: "/competitions/new",
 				element: <NewCompetitionPage />,
+			},
+			{
+				path: "/songs",
+				element: <SongsPage />,
 			},
 		],
 	},

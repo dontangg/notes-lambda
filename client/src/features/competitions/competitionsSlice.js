@@ -2,6 +2,8 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import appFetch, { FetchStatus } from '../../app/appFetch';
 
 const initialState = {
+	allUsers: null,
+	allUsersFetchStatus: FetchStatus.idle,
 	competitionsFetchStatus: FetchStatus.idle,
 	curCompFetchStatus: FetchStatus.idle,
 	competitionSaveStatus: FetchStatus.idle,
@@ -15,6 +17,18 @@ export const CompetitionPhase = {
 	guessing: 'guessing',
 	closed: 'closed',
 };
+
+export const fetchAllUsers = createAsyncThunk(
+	'competitions/fetchAllUsers',
+	async (arg, { dispatch, getState }) => {
+		return appFetch('/users', null, dispatch, getState).then(response => response.json());
+	}, {
+		condition: (arg, { getState, extra }) => {
+			const competitionsState = getState().competitions;
+			return competitionsState.allUsersFetchStatus !== FetchStatus.pending;
+		}
+	},
+);
 
 export const fetchCompetitions = createAsyncThunk(
 	'competitions/fetchCompetitions',
@@ -76,6 +90,19 @@ export const competitionsSlice = createSlice({
 		// },
 	},
 	extraReducers: (builder) => {
+		// fetchCompetitions
+		builder.addCase(fetchAllUsers.fulfilled, (state, action) => {
+			state.error = '';
+			state.allUsersFetchStatus = FetchStatus.success;
+			state.allUsers = action.payload;
+		});
+		builder.addCase(fetchAllUsers.rejected, (state, action) => {
+			state.allUsersFetchStatus = FetchStatus.error;
+			state.error = action.error.message;
+		});
+		builder.addCase(fetchAllUsers.pending, (state, action) => {
+			state.allUsersFetchStatus = FetchStatus.pending;
+		});
 		// fetchCompetitions
 		builder.addCase(fetchCompetitions.fulfilled, (state, action) => {
 			state.error = '';

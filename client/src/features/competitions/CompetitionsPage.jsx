@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { CompetitionPhase, deleteCompetition, fetchCompetitions, fetchCurrentCompetition, saveCompetition, selectCompetitions } from "./competitionsSlice";
-import { selectIsAdmin } from "../signIn/signInSlice";
+import { selectCurrentUser } from "../signIn/signInSlice";
 import { FetchStatus } from "../../app/appFetch";
 import Spinner from "../../common/Spinner";
 import { unwrapResult } from "@reduxjs/toolkit";
@@ -11,7 +11,7 @@ import { useDocumentTitle } from "../../app/customHooks";
 export default function AccountPage() {
 	const dispatch = useDispatch();
 	const competitionsState = useSelector(selectCompetitions);
-	const userIsAdmin = useSelector(selectIsAdmin);
+	const userIsAdmin = useSelector(selectCurrentUser).admin;
 	const [competitionInEdit, setCompetitionInEdit] = useState(null);
 	const [competitionPhaseInEdit, setCompetitionPhaseInEdit] = useState(null);
 	const [isConfirmingDelete, setIsConfirmingDelete] = useState(false);

@@ -32,7 +32,7 @@ export default function SignInPage() {
 	const isPasswordValid = !didSubmit || password;
 
 	return (
-		<div className="signInPage d-flex align-items-center vh-100 vw-100 bg-body-secondary">
+		<div className="sign-in-page d-flex align-items-center vh-100 vw-100 bg-body-secondary">
 			<form className={'container bg-body border rounded border-secondary-subtle p-4' + (didSubmit ? ' was-validated' : '')} noValidate>
 				<h1>
 					<svg width="40" height="45" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
