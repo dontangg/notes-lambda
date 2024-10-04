@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Fragment } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllUsers, selectCompetitions } from "./competitionsSlice";
 import { useDocumentTitle } from "../../app/customHooks";
@@ -54,30 +54,41 @@ export default function NewCompetitionPage() {
 				<div className="col-lg-6">
 					<table className="table table-hover align-middle playlist">
 						<tbody>
-							{songs.map((song, idx) => (
-								<tr key={song.title} className={(audioPlayerState.currentSongFilename === song.filename && audioPlayerState.isPlaying) ? 'table-active' : ''}>
-									<td>
-										<button title="Play song" onClick={onPlaySongClick(song.filename)}>
-											{(audioPlayerState.currentSongFilename === song.filename && audioPlayerState.isPlaying)
-												? (<i className="fa-solid fa-pause"></i>)
-												: (<i className="fa-solid fa-play"></i>)
-											}
-										</button>
-									</td>
-									<td>
-										<div>{song.title}</div>
-										<small className="text-body-secondary">{song.artist}</small>
-									</td>
-									<td className="small text-end">{convertMsToStr(audioPlayerState.audioInfo[song.filename]?.duration)}</td>
-									<td>{getUserName(song.userId)}</td>
-									<td className="song-controls-cell">
-										<button title="Edit"><i className="fa-regular fa-comment"></i></button>
-									</td>
-									<td className="song-controls-cell">
-										<button title="Edit"><i className="fa-solid fa-pen"></i></button>
-									</td>
-								</tr>
-							))}
+							{songs.map((song) => {
+								const isThisSongPlaying = (audioPlayerState.currentSongFilename === song.filename && audioPlayerState.isPlaying);
+								return (
+									<Fragment key={song.title}>
+										<tr className={isThisSongPlaying ? 'table-active' : null}>
+											<td>
+												<button title="Play song" onClick={onPlaySongClick(song.filename)}>
+													{isThisSongPlaying
+														? (<i className="fa-solid fa-pause"></i>)
+														: (<i className="fa-solid fa-play"></i>)
+													}
+												</button>
+											</td>
+											<td>
+												<div>{song.title}</div>
+												<small className="text-body-secondary">{song.artist}</small>
+											</td>
+											<td className="small text-end">{convertMsToStr(audioPlayerState.audioInfo[song.filename]?.duration)}</td>
+											<td>{getUserName(song.userId)}</td>
+											<td className="song-controls-cell">
+												<button title="Edit"><i className="fa-solid fa-pen"></i></button>
+											</td>
+										</tr>
+										{song.reason
+											? (
+												<tr className={'song-reason' + (isThisSongPlaying ? ' table-active' : '')}>
+													<td></td>
+													<td colSpan="4">{song.reason}</td>
+												</tr>
+											)
+											: null
+										}
+									</Fragment>
+								);
+							})}
 						</tbody>
 					</table>
 				</div>

@@ -33,6 +33,10 @@
 			}
 		}
 	}
+
+	tr:has(+ .song-reason) td {
+		border: 0;
+	}
 }
 
 .song-controls-cell {
