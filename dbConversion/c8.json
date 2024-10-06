@@ -1,113 +1,112 @@
 {
 	"pk": "Competition",
 	"sk": "2021",
-	"isActive": false,
 	"phase": "closed",
-	"songs": [
-		{
+	"songs": {
+		"klkf5366": {
 			"artist": "Finneas",
 			"title": "What They'll Say About Us",
 			"filename": "1kqq08a7",
 			"extension": ".mp3",
 			"userId": 3
 		},
-		{
+		"klr9cjzy": {
 			"artist": "FINNEAS",
 			"title": "Break My Heart Again",
 			"filename": "guunj7v8",
 			"extension": ".mp3",
 			"userId": 5
 		},
-		{
+		"klr9d7ao": {
 			"artist": "The Band of Heathens",
 			"title": "Hurricane",
 			"filename": "8ntrt8t5",
 			"extension": ".mp3",
 			"userId": 5
 		},
-		{
+		"klvlwysl": {
 			"artist": "Coldplay",
 			"title": "Warning Sign",
 			"filename": "e2ue4axp",
 			"extension": ".mp3",
 			"userId": 10
 		},
-		{
+		"klyeiytw": {
 			"artist": "Louis Armstrong",
 			"title": "What a Wonderful World",
 			"filename": "sehfru7q",
 			"extension": ".mp3",
 			"userId": 2
 		},
-		{
+		"km0w5tbr": {
 			"artist": "Styx",
 			"title": "Come Sail Away",
 			"filename": "ykreinzt",
 			"extension": ".m4a",
 			"userId": 1
 		},
-		{
+		"kll1afoj": {
 			"artist": "Lori McKenna",
 			"title": "When You're My Age",
 			"filename": "ly31jyso",
 			"extension": ".mp3",
 			"userId": 7
 		},
-		{
+		"km113g9o": {
 			"artist": "Ariana Grande and Lady Gaga",
 			"title": "Rain On Me",
 			"filename": "wfnvve5p",
 			"extension": ".mp3",
 			"userId": 11
 		},
-		{
+		"klvlq6xi": {
 			"artist": "JP Saxe (Feat. Julia Michaels)",
 			"title": "If the World Was Ending",
 			"filename": "9hj4cg5p",
 			"extension": ".mp3",
 			"userId": 12
 		},
-		{
+		"klk5aqec": {
 			"artist": "Ben Platt",
 			"title": "So Will I",
 			"filename": "o84mx24m",
 			"extension": ".mp3",
 			"userId": 4
 		},
-		{
+		"klzzwkb8": {
 			"artist": "One Republic ",
 			"title": "Connection",
 			"filename": "6mcqy3zy",
 			"extension": ".mp3",
 			"userId": 8
 		},
-		{
+		"klk53na3": {
 			"artist": "Clay Finnesand",
 			"title": "Courage",
 			"filename": "0fk9tcax",
 			"extension": ".mp3",
 			"userId": 4
 		},
-		{
+		"klmkrtdv": {
 			"artist": "nervous_testpilot",
 			"title": "Noisemaker",
 			"filename": "xs4ai545",
 			"extension": ".mp3",
 			"userId": 6
 		},
-		{
+		"kll6kcce": {
 			"artist": "Kid Bloom",
 			"title": "Hazy Miss Daisy",
 			"filename": "jyjugbv9",
 			"extension": ".mp3",
 			"userId": 9
 		}
-	],
+	},
 	"attempts": [
 		{
 			"createdAt": "2021-03-13T10:49:49.671-06:00",
 			"correctCount": "3",
-			"userId": "4",
+			"userId": 4,
 			"guesses": [
 				{
 					"songFilename": "wfnvve5p",
@@ -162,7 +161,7 @@
 		{
 			"createdAt": "2021-03-13T10:52:39.969-06:00",
 			"correctCount": "4",
-			"userId": "4",
+			"userId": 4,
 			"guesses": [
 				{
 					"songFilename": "guunj7v8",
@@ -217,7 +216,7 @@
 		{
 			"createdAt": "2021-03-13T11:00:37.824-06:00",
 			"correctCount": "6",
-			"userId": "4",
+			"userId": 4,
 			"guesses": [
 				{
 					"songFilename": "ykreinzt",
@@ -272,7 +271,7 @@
 		{
 			"createdAt": "2021-03-13T11:09:38.602-06:00",
 			"correctCount": "12",
-			"userId": "4",
+			"userId": 4,
 			"guesses": [
 				{
 					"songFilename": "jyjugbv9",
@@ -327,7 +326,7 @@
 		{
 			"createdAt": "2021-03-13T12:06:07.403-06:00",
 			"correctCount": "3",
-			"userId": "3",
+			"userId": 3,
 			"guesses": [
 				{
 					"songFilename": "o84mx24m",
@@ -382,7 +381,7 @@
 		{
 			"createdAt": "2021-03-13T12:11:04.739-06:00",
 			"correctCount": "5",
-			"userId": "3",
+			"userId": 3,
 			"guesses": [
 				{
 					"songFilename": "9hj4cg5p",
@@ -437,7 +436,7 @@
 		{
 			"createdAt": "2021-03-13T12:18:16.881-06:00",
 			"correctCount": "12",
-			"userId": "3",
+			"userId": 3,
 			"guesses": [
 				{
 					"songFilename": "guunj7v8",
@@ -492,7 +491,7 @@
 		{
 			"createdAt": "2021-03-13T12:23:23.920-06:00",
 			"correctCount": "4",
-			"userId": "10",
+			"userId": 10,
 			"guesses": [
 				{
 					"songFilename": "wfnvve5p",
@@ -547,7 +546,7 @@
 		{
 			"createdAt": "2021-03-13T12:29:07.360-06:00",
 			"correctCount": "5",
-			"userId": "10",
+			"userId": 10,
 			"guesses": [
 				{
 					"songFilename": "o84mx24m",
@@ -602,7 +601,7 @@
 		{
 			"createdAt": "2021-03-13T12:34:52.311-06:00",
 			"correctCount": "9",
-			"userId": "10",
+			"userId": 10,
 			"guesses": [
 				{
 					"songFilename": "wfnvve5p",
@@ -657,7 +656,7 @@
 		{
 			"createdAt": "2021-03-13T12:37:22.916-06:00",
 			"correctCount": "11",
-			"userId": "10",
+			"userId": 10,
 			"guesses": [
 				{
 					"songFilename": "jyjugbv9",
@@ -712,7 +711,7 @@
 		{
 			"createdAt": "2021-03-13T12:37:52.089-06:00",
 			"correctCount": "12",
-			"userId": "10",
+			"userId": 10,
 			"guesses": [
 				{
 					"songFilename": "o84mx24m",
@@ -767,7 +766,7 @@
 		{
 			"createdAt": "2021-03-13T16:17:38.478-06:00",
 			"correctCount": "1",
-			"userId": "5",
+			"userId": 5,
 			"guesses": [
 				{
 					"songFilename": "wfnvve5p",
@@ -822,7 +821,7 @@
 		{
 			"createdAt": "2021-03-13T16:45:18.759-06:00",
 			"correctCount": "4",
-			"userId": "5",
+			"userId": 5,
 			"guesses": [
 				{
 					"songFilename": "sehfru7q",
@@ -877,7 +876,7 @@
 		{
 			"createdAt": "2021-03-13T19:03:29.923-06:00",
 			"correctCount": "6",
-			"userId": "5",
+			"userId": 5,
 			"guesses": [
 				{
 					"songFilename": "ykreinzt",
@@ -932,7 +931,7 @@
 		{
 			"createdAt": "2021-03-13T19:08:57.970-06:00",
 			"correctCount": "9",
-			"userId": "5",
+			"userId": 5,
 			"guesses": [
 				{
 					"songFilename": "9hj4cg5p",
@@ -987,7 +986,7 @@
 		{
 			"createdAt": "2021-03-13T19:10:07.952-06:00",
 			"correctCount": "12",
-			"userId": "5",
+			"userId": 5,
 			"guesses": [
 				{
 					"songFilename": "jyjugbv9",
@@ -1042,7 +1041,7 @@
 		{
 			"createdAt": "2021-03-13T21:17:16.809-06:00",
 			"correctCount": "2",
-			"userId": "9",
+			"userId": 9,
 			"guesses": [
 				{
 					"songFilename": "ykreinzt",
@@ -1097,7 +1096,7 @@
 		{
 			"createdAt": "2021-03-13T21:42:25.382-06:00",
 			"correctCount": "8",
-			"userId": "9",
+			"userId": 9,
 			"guesses": [
 				{
 					"songFilename": "9hj4cg5p",
@@ -1152,7 +1151,7 @@
 		{
 			"createdAt": "2021-03-13T21:55:50.250-06:00",
 			"correctCount": "10",
-			"userId": "9",
+			"userId": 9,
 			"guesses": [
 				{
 					"songFilename": "8ntrt8t5",
@@ -1207,7 +1206,7 @@
 		{
 			"createdAt": "2021-03-13T21:57:31.322-06:00",
 			"correctCount": "12",
-			"userId": "9",
+			"userId": 9,
 			"guesses": [
 				{
 					"songFilename": "e2ue4axp",
@@ -1262,7 +1261,7 @@
 		{
 			"createdAt": "2021-03-14T12:36:41.722-05:00",
 			"correctCount": "1",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "o84mx24m",
@@ -1317,7 +1316,7 @@
 		{
 			"createdAt": "2021-03-14T12:46:09.132-05:00",
 			"correctCount": "2",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "guunj7v8",
@@ -1372,7 +1371,7 @@
 		{
 			"createdAt": "2021-03-14T12:52:47.065-05:00",
 			"correctCount": "2",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "1kqq08a7",
@@ -1427,7 +1426,7 @@
 		{
 			"createdAt": "2021-03-14T13:00:15.581-05:00",
 			"correctCount": "7",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "guunj7v8",
@@ -1482,7 +1481,7 @@
 		{
 			"createdAt": "2021-03-14T13:05:08.654-05:00",
 			"correctCount": "12",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "sehfru7q",
@@ -1537,7 +1536,7 @@
 		{
 			"createdAt": "2021-03-18T22:20:20.717-05:00",
 			"correctCount": "3",
-			"userId": "8",
+			"userId": 8,
 			"guesses": [
 				{
 					"songFilename": "e2ue4axp",
@@ -1592,7 +1591,7 @@
 		{
 			"createdAt": "2021-03-18T22:27:10.403-05:00",
 			"correctCount": "3",
-			"userId": "8",
+			"userId": 8,
 			"guesses": [
 				{
 					"songFilename": "o84mx24m",

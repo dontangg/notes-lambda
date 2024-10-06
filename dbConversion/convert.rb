@@ -8,8 +8,9 @@ def convert(id)
         phase = "closed"
     end
     songs = comp.songs.map {|song|
+        id = song.created_at.utc.strftime("%s%L").to_i.to_s(36)
         <<TEXT.chomp
-        {
+        "#{id}": {
             "artist": "#{song.artist}",
             "title": "#{song.name}",
             "filename": "#{song.file_name}",
@@ -42,11 +43,10 @@ TEXT
 {
     "pk": "Competition",
     "sk": "#{comp.name}",
-    "isActive": #{comp.active? ? "true" : "false"},
     "phase": "#{phase}",
-    "songs": [
+    "songs": {
 #{songs}
-    ],
+    },
     "attempts": [
 #{attempts}
     ]

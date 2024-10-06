@@ -1,113 +1,112 @@
 {
 	"pk": "Competition",
 	"sk": "2017",
-	"isActive": false,
 	"phase": "closed",
-	"songs": [
-		{
+	"songs": {
+		"iz559ivk": {
 			"artist": "Ruth B.",
 			"title": "Lost Boy",
 			"filename": "xm0f235m",
 			"extension": ".m4a",
 			"userId": 4
 		},
-		{
+		"iz55qlhh": {
 			"artist": "twenty one pilots",
 			"title": "Stressed Out",
 			"filename": "ilpk9kn2",
 			"extension": ".m4a",
 			"userId": 4
 		},
-		{
+		"iz76woe3": {
 			"artist": "Foo Fighters",
 			"title": "Still",
 			"filename": "qosbbxjx",
 			"extension": ".mp3",
 			"userId": 6
 		},
-		{
+		"iz7pkiwa": {
 			"artist": "Airplane Man",
 			"title": "Take Me All the Way Home",
 			"filename": "s4415fyn",
 			"extension": ".m4a",
 			"userId": 10
 		},
-		{
+		"iz7sqo0r": {
 			"artist": "Beats Antique",
 			"title": "Beauty Beats",
 			"filename": "6d7zq1oz",
 			"extension": ".mp3",
 			"userId": 5
 		},
-		{
+		"iz7sr6iu": {
 			"artist": "Imagine Dragons",
 			"title": "Believer",
 			"filename": "k45p7tl7",
 			"extension": ".mp3",
 			"userId": 5
 		},
-		{
+		"iz8x2b0c": {
 			"artist": "Josh Groban",
 			"title": "Le Temps Des Cathédrales",
 			"filename": "fdta6b1l",
 			"extension": ".m4a",
 			"userId": 9
 		},
-		{
+		"izaqraa7": {
 			"artist": "Pentatonix",
 			"title": "Hallelujah",
 			"filename": "kkhri7rd",
 			"extension": ".mp3",
 			"userId": 2
 		},
-		{
+		"izarmwga": {
 			"artist": "Justin Timberlake and Anna Kendrick",
 			"title": "True Colors",
 			"filename": "oqbcn7nu",
 			"extension": ".m4a",
 			"userId": 3
 		},
-		{
+		"izas37n7": {
 			"artist": "London Session Orchestra, Ewan McGregor & Nicole Kidman",
 			"title": "Come What May",
 			"filename": "s567jlbk",
 			"extension": ".m4a",
 			"userId": 1
 		},
-		{
+		"izasbtbx": {
 			"artist": "The Girl and the Dreamcatcher",
 			"title": "Someone You Like",
 			"filename": "a7dh0xfg",
 			"extension": ".m4a",
 			"userId": 11
 		},
-		{
+		"iz9f08mt": {
 			"artist": "Hunter Hayes",
 			"title": "I Want Crazy",
 			"filename": "3mgi9yox",
 			"extension": ".m4a",
 			"userId": 12
 		},
-		{
+		"iz5kocfz": {
 			"artist": "Sean Rowe",
 			"title": "To Leave Something Behind",
 			"filename": "kf68qvrg",
 			"extension": ".mp3",
 			"userId": 7
 		},
-		{
+		"iz8tybw2": {
 			"artist": "Imagine Dragons ",
 			"title": "Blank Space/Stand By Me Live",
 			"filename": "aa9kov0w",
 			"extension": ".mp3",
 			"userId": 8
 		}
-	],
+	},
 	"attempts": [
 		{
 			"createdAt": "2017-02-18T10:46:55.155-06:00",
 			"correctCount": "1",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "kf68qvrg",
@@ -162,7 +161,7 @@
 		{
 			"createdAt": "2017-02-18T12:12:58.965-06:00",
 			"correctCount": "3",
-			"userId": "5",
+			"userId": 5,
 			"guesses": [
 				{
 					"songFilename": "a7dh0xfg",
@@ -217,7 +216,7 @@
 		{
 			"createdAt": "2017-02-18T14:47:14.104-06:00",
 			"correctCount": "5",
-			"userId": "9",
+			"userId": 9,
 			"guesses": [
 				{
 					"songFilename": "oqbcn7nu",
@@ -272,7 +271,7 @@
 		{
 			"createdAt": "2017-02-18T22:24:19.285-06:00",
 			"correctCount": "4",
-			"userId": "3",
+			"userId": 3,
 			"guesses": [
 				{
 					"songFilename": "s567jlbk",
@@ -327,7 +326,7 @@
 		{
 			"createdAt": "2017-02-18T22:24:56.539-06:00",
 			"correctCount": "3",
-			"userId": "8",
+			"userId": 8,
 			"guesses": [
 				{
 					"songFilename": "fdta6b1l",
@@ -382,7 +381,7 @@
 		{
 			"createdAt": "2017-02-18T22:26:48.442-06:00",
 			"correctCount": "3",
-			"userId": "12",
+			"userId": 12,
 			"guesses": [
 				{
 					"songFilename": "s567jlbk",
@@ -437,7 +436,7 @@
 		{
 			"createdAt": "2017-02-18T23:33:41.627-06:00",
 			"correctCount": "3",
-			"userId": "4",
+			"userId": 4,
 			"guesses": [
 				{
 					"songFilename": "s567jlbk",
@@ -492,7 +491,7 @@
 		{
 			"createdAt": "2017-02-19T00:15:07.281-06:00",
 			"correctCount": "6",
-			"userId": "10",
+			"userId": 10,
 			"guesses": [
 				{
 					"songFilename": "6d7zq1oz",
@@ -547,7 +546,7 @@
 		{
 			"createdAt": "2017-02-19T00:59:53.829-06:00",
 			"correctCount": "6",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "kf68qvrg",
@@ -602,7 +601,7 @@
 		{
 			"createdAt": "2017-02-19T12:01:11.268-06:00",
 			"correctCount": "9",
-			"userId": "9",
+			"userId": 9,
 			"guesses": [
 				{
 					"songFilename": "6d7zq1oz",
@@ -657,7 +656,7 @@
 		{
 			"createdAt": "2017-02-19T13:30:22.058-06:00",
 			"correctCount": "4",
-			"userId": "8",
+			"userId": 8,
 			"guesses": [
 				{
 					"songFilename": "fdta6b1l",
@@ -712,7 +711,7 @@
 		{
 			"createdAt": "2017-02-19T18:44:29.066-06:00",
 			"correctCount": "7",
-			"userId": "5",
+			"userId": 5,
 			"guesses": [
 				{
 					"songFilename": "s567jlbk",
@@ -767,7 +766,7 @@
 		{
 			"createdAt": "2017-02-19T23:33:51.280-06:00",
 			"correctCount": "6",
-			"userId": "2",
+			"userId": 2,
 			"guesses": [
 				{
 					"songFilename": "s4415fyn",
@@ -822,7 +821,7 @@
 		{
 			"createdAt": "2017-02-19T23:55:09.649-06:00",
 			"correctCount": "3",
-			"userId": "4",
+			"userId": 4,
 			"guesses": [
 				{
 					"songFilename": "s567jlbk",
@@ -877,7 +876,7 @@
 		{
 			"createdAt": "2017-02-20T00:00:16.303-06:00",
 			"correctCount": "12",
-			"userId": "6",
+			"userId": 6,
 			"guesses": [
 				{
 					"songFilename": "kf68qvrg",
@@ -932,7 +931,7 @@
 		{
 			"createdAt": "2017-02-20T00:02:19.924-06:00",
 			"correctCount": "7",
-			"userId": "10",
+			"userId": 10,
 			"guesses": [
 				{
 					"songFilename": "qosbbxjx",
@@ -987,7 +986,7 @@
 		{
 			"createdAt": "2017-02-20T00:08:11.799-06:00",
 			"correctCount": "8",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "xm0f235m",
@@ -1042,7 +1041,7 @@
 		{
 			"createdAt": "2017-02-20T15:41:56.522-06:00",
 			"correctCount": "8",
-			"userId": "3",
+			"userId": 3,
 			"guesses": [
 				{
 					"songFilename": "qosbbxjx",
@@ -1097,7 +1096,7 @@
 		{
 			"createdAt": "2017-02-21T00:41:27.743-06:00",
 			"correctCount": "9",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "6d7zq1oz",
@@ -1152,7 +1151,7 @@
 		{
 			"createdAt": "2017-02-21T10:05:47.256-06:00",
 			"correctCount": "10",
-			"userId": "3",
+			"userId": 3,
 			"guesses": [
 				{
 					"songFilename": "aa9kov0w",
@@ -1207,7 +1206,7 @@
 		{
 			"createdAt": "2017-02-21T10:18:39.970-06:00",
 			"correctCount": "8",
-			"userId": "5",
+			"userId": 5,
 			"guesses": [
 				{
 					"songFilename": "a7dh0xfg",
@@ -1262,7 +1261,7 @@
 		{
 			"createdAt": "2017-02-21T22:35:37.194-06:00",
 			"correctCount": "4",
-			"userId": "8",
+			"userId": 8,
 			"guesses": [
 				{
 					"songFilename": "oqbcn7nu",
@@ -1317,7 +1316,7 @@
 		{
 			"createdAt": "2017-02-22T10:33:39.233-06:00",
 			"correctCount": "12",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "6d7zq1oz",
@@ -1372,7 +1371,7 @@
 		{
 			"createdAt": "2017-02-25T13:39:17.621-06:00",
 			"correctCount": "12",
-			"userId": "3",
+			"userId": 3,
 			"guesses": [
 				{
 					"songFilename": "ilpk9kn2",

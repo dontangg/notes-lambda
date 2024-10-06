@@ -1,113 +1,112 @@
 {
 	"pk": "Competition",
 	"sk": "2023",
-	"isActive": true,
 	"phase": "guessing",
-	"songs": [
-		{
+	"songs": {
+		"ldyq39qk": {
 			"artist": "Jack Johnson",
 			"title": "Better Together",
 			"filename": "j1ym6lwf",
 			"extension": ".wav",
 			"userId": 4
 		},
-		{
+		"ldyqh8n7": {
 			"artist": "stories and dodie",
 			"title": "Eleanor Rigby",
 			"filename": "rx4yzn94",
 			"extension": ".mp3",
 			"userId": 6
 		},
-		{
+		"le0yc2tg": {
 			"artist": "Passenger",
 			"title": "However It Comes, Wherever It Goes",
 			"filename": "pkxkj4f1",
 			"extension": ".mp3",
 			"userId": 2
 		},
-		{
+		"le1qror7": {
 			"artist": "Harry Nilsson",
 			"title": "Without You",
 			"filename": "v6xybg47",
 			"extension": ".mp3",
 			"userId": 5
 		},
-		{
+		"le2ae3lp": {
 			"artist": "Sam Cooke",
 			"title": "(What A) Wonderful World",
 			"filename": "xce3l3ql",
 			"extension": ".mp3",
 			"userId": 10
 		},
-		{
+		"le2bjz00": {
 			"artist": "Emilia Jones",
 			"title": "Both Sides Now",
 			"filename": "ceu71azd",
 			"extension": ".mp3",
 			"userId": 14
 		},
-		{
+		"le1qnnes": {
 			"artist": "Ed Sheeran, Andrea Bocelli",
 			"title": "Perfect Symphony (Ed Sheeran & Andrea Bocelli)",
 			"filename": "fzejgqui",
 			"extension": ".mp3",
 			"userId": 16
 		},
-		{
+		"ldyxvjse": {
 			"artist": "Marcus Mumford",
 			"title": "You’ll Never Walk Alone",
 			"filename": "0su9ibwk",
 			"extension": ".mp3",
 			"userId": 1
 		},
-		{
+		"le0tsmat": {
 			"artist": "Twenty One Pilots",
 			"title": "Mulberry Street",
 			"filename": "hhb1on3v",
 			"extension": ".mp3",
 			"userId": 9
 		},
-		{
+		"le4l17qj": {
 			"artist": "Janis Joplin",
 			"title": "Me And Bobby mcGee",
 			"filename": "pw60ri80",
 			"extension": ".mp3",
 			"userId": 8
 		},
-		{
+		"ldyq3mss": {
 			"artist": "MALINDA",
 			"title": "Brooklyn",
 			"filename": "wtrdgyu7",
 			"extension": ".mp3",
 			"userId": 4
 		},
-		{
+		"le3iufb4": {
 			"artist": "Jimi Hendrix",
 			"title": "Little Wing",
 			"filename": "n2kn5ji5",
 			"extension": ".mp3",
 			"userId": 7
 		},
-		{
+		"ldwmeqoa": {
 			"artist": "Lake Street Dive",
 			"title": "Better Than",
 			"filename": "3ke27ent",
 			"extension": ".mp3",
 			"userId": 15
 		},
-		{
+		"ldy485ur": {
 			"artist": "Drew Holcomb & The Neighbors",
 			"title": "What Would I Do Without You",
 			"filename": "wzejwefy",
 			"extension": ".mp3",
 			"userId": 3
 		}
-	],
+	},
 	"attempts": [
 		{
 			"createdAt": "2023-02-17T22:21:06.184-06:00",
 			"correctCount": "2",
-			"userId": "3",
+			"userId": 3,
 			"guesses": [
 				{
 					"songFilename": "ceu71azd",
@@ -162,7 +161,7 @@
 		{
 			"createdAt": "2023-02-17T22:27:56.318-06:00",
 			"correctCount": "3",
-			"userId": "3",
+			"userId": 3,
 			"guesses": [
 				{
 					"songFilename": "wtrdgyu7",
@@ -217,7 +216,7 @@
 		{
 			"createdAt": "2023-02-17T22:33:55.694-06:00",
 			"correctCount": "6",
-			"userId": "3",
+			"userId": 3,
 			"guesses": [
 				{
 					"songFilename": "v6xybg47",
@@ -272,7 +271,7 @@
 		{
 			"createdAt": "2023-02-17T22:38:29.013-06:00",
 			"correctCount": "10",
-			"userId": "3",
+			"userId": 3,
 			"guesses": [
 				{
 					"songFilename": "wtrdgyu7",
@@ -327,7 +326,7 @@
 		{
 			"createdAt": "2023-02-17T22:41:10.736-06:00",
 			"correctCount": "12",
-			"userId": "3",
+			"userId": 3,
 			"guesses": [
 				{
 					"songFilename": "ceu71azd",
@@ -382,7 +381,7 @@
 		{
 			"createdAt": "2023-02-18T10:21:08.811-06:00",
 			"correctCount": "3",
-			"userId": "5",
+			"userId": 5,
 			"guesses": [
 				{
 					"songFilename": "rx4yzn94",
@@ -437,7 +436,7 @@
 		{
 			"createdAt": "2023-02-18T13:38:05.810-06:00",
 			"correctCount": "7",
-			"userId": "5",
+			"userId": 5,
 			"guesses": [
 				{
 					"songFilename": "pw60ri80",
@@ -492,7 +491,7 @@
 		{
 			"createdAt": "2023-02-18T13:53:17.291-06:00",
 			"correctCount": "8",
-			"userId": "5",
+			"userId": 5,
 			"guesses": [
 				{
 					"songFilename": "xce3l3ql",
@@ -547,7 +546,7 @@
 		{
 			"createdAt": "2023-02-18T13:57:30.689-06:00",
 			"correctCount": "12",
-			"userId": "5",
+			"userId": 5,
 			"guesses": [
 				{
 					"songFilename": "n2kn5ji5",
@@ -602,7 +601,7 @@
 		{
 			"createdAt": "2023-02-18T14:21:02.985-06:00",
 			"correctCount": "3",
-			"userId": "4",
+			"userId": 4,
 			"guesses": [
 				{
 					"songFilename": "fzejgqui",
@@ -657,7 +656,7 @@
 		{
 			"createdAt": "2023-02-18T14:27:55.698-06:00",
 			"correctCount": "4",
-			"userId": "4",
+			"userId": 4,
 			"guesses": [
 				{
 					"songFilename": "xce3l3ql",
@@ -712,7 +711,7 @@
 		{
 			"createdAt": "2023-02-18T14:31:42.395-06:00",
 			"correctCount": "6",
-			"userId": "4",
+			"userId": 4,
 			"guesses": [
 				{
 					"songFilename": "hhb1on3v",
@@ -767,7 +766,7 @@
 		{
 			"createdAt": "2023-02-18T14:34:26.058-06:00",
 			"correctCount": "9",
-			"userId": "4",
+			"userId": 4,
 			"guesses": [
 				{
 					"songFilename": "wzejwefy",
@@ -822,7 +821,7 @@
 		{
 			"createdAt": "2023-02-18T14:35:59.250-06:00",
 			"correctCount": "12",
-			"userId": "4",
+			"userId": 4,
 			"guesses": [
 				{
 					"songFilename": "0su9ibwk",
@@ -877,7 +876,7 @@
 		{
 			"createdAt": "2023-02-20T00:03:02.588-06:00",
 			"correctCount": "1",
-			"userId": "6",
+			"userId": 6,
 			"guesses": [
 				{
 					"songFilename": "j1ym6lwf",
@@ -932,7 +931,7 @@
 		{
 			"createdAt": "2023-02-20T00:19:00.419-06:00",
 			"correctCount": "1",
-			"userId": "6",
+			"userId": 6,
 			"guesses": [
 				{
 					"songFilename": "pkxkj4f1",
@@ -987,7 +986,7 @@
 		{
 			"createdAt": "2023-02-20T00:37:01.715-06:00",
 			"correctCount": "2",
-			"userId": "6",
+			"userId": 6,
 			"guesses": [
 				{
 					"songFilename": "ceu71azd",
@@ -1042,7 +1041,7 @@
 		{
 			"createdAt": "2023-02-20T00:49:54.204-06:00",
 			"correctCount": "6",
-			"userId": "6",
+			"userId": 6,
 			"guesses": [
 				{
 					"songFilename": "v6xybg47",
@@ -1097,7 +1096,7 @@
 		{
 			"createdAt": "2023-02-20T01:08:15.700-06:00",
 			"correctCount": "7",
-			"userId": "6",
+			"userId": 6,
 			"guesses": [
 				{
 					"songFilename": "wtrdgyu7",
@@ -1152,7 +1151,7 @@
 		{
 			"createdAt": "2023-02-20T01:13:17.341-06:00",
 			"correctCount": "10",
-			"userId": "6",
+			"userId": 6,
 			"guesses": [
 				{
 					"songFilename": "xce3l3ql",
@@ -1207,7 +1206,7 @@
 		{
 			"createdAt": "2023-02-20T01:13:40.759-06:00",
 			"correctCount": "12",
-			"userId": "6",
+			"userId": 6,
 			"guesses": [
 				{
 					"songFilename": "j1ym6lwf",
@@ -1262,7 +1261,7 @@
 		{
 			"createdAt": "2023-02-22T19:03:32.515-06:00",
 			"correctCount": "0",
-			"userId": "10",
+			"userId": 10,
 			"guesses": [
 				{
 					"songFilename": "wzejwefy",
@@ -1317,7 +1316,7 @@
 		{
 			"createdAt": "2023-02-22T19:10:24.060-06:00",
 			"correctCount": "1",
-			"userId": "10",
+			"userId": 10,
 			"guesses": [
 				{
 					"songFilename": "0su9ibwk",
@@ -1372,7 +1371,7 @@
 		{
 			"createdAt": "2023-02-22T19:20:55.386-06:00",
 			"correctCount": "3",
-			"userId": "10",
+			"userId": 10,
 			"guesses": [
 				{
 					"songFilename": "v6xybg47",
@@ -1427,7 +1426,7 @@
 		{
 			"createdAt": "2023-02-22T19:28:17.249-06:00",
 			"correctCount": "10",
-			"userId": "10",
+			"userId": 10,
 			"guesses": [
 				{
 					"songFilename": "pw60ri80",
@@ -1482,7 +1481,7 @@
 		{
 			"createdAt": "2023-02-22T19:30:41.801-06:00",
 			"correctCount": "12",
-			"userId": "10",
+			"userId": 10,
 			"guesses": [
 				{
 					"songFilename": "hhb1on3v",
@@ -1537,7 +1536,7 @@
 		{
 			"createdAt": "2023-02-24T11:48:50.638-06:00",
 			"correctCount": "2",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "ceu71azd",
@@ -1592,7 +1591,7 @@
 		{
 			"createdAt": "2023-02-25T19:52:49.777-06:00",
 			"correctCount": "3",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "xce3l3ql",
@@ -1647,7 +1646,7 @@
 		{
 			"createdAt": "2023-03-05T21:43:15.822-06:00",
 			"correctCount": "2",
-			"userId": "7",
+			"userId": 7,
 			"guesses": [
 				{
 					"songFilename": "wtrdgyu7",
@@ -1702,7 +1701,7 @@
 		{
 			"createdAt": "2023-03-05T21:48:02.816-06:00",
 			"correctCount": "6",
-			"userId": "7",
+			"userId": 7,
 			"guesses": [
 				{
 					"songFilename": "pkxkj4f1",
@@ -1757,7 +1756,7 @@
 		{
 			"createdAt": "2023-03-05T21:54:50.245-06:00",
 			"correctCount": "6",
-			"userId": "7",
+			"userId": 7,
 			"guesses": [
 				{
 					"songFilename": "0su9ibwk",
@@ -1812,7 +1811,7 @@
 		{
 			"createdAt": "2023-03-05T21:58:33.155-06:00",
 			"correctCount": "8",
-			"userId": "7",
+			"userId": 7,
 			"guesses": [
 				{
 					"songFilename": "xce3l3ql",
@@ -1867,7 +1866,7 @@
 		{
 			"createdAt": "2023-03-05T22:00:33.973-06:00",
 			"correctCount": "12",
-			"userId": "7",
+			"userId": 7,
 			"guesses": [
 				{
 					"songFilename": "ceu71azd",
@@ -1922,7 +1921,7 @@
 		{
 			"createdAt": "2023-03-24T13:48:00.769-05:00",
 			"correctCount": "5",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "v6xybg47",
@@ -1977,7 +1976,7 @@
 		{
 			"createdAt": "2023-03-24T14:07:48.188-05:00",
 			"correctCount": "5",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "wtrdgyu7",
@@ -2032,7 +2031,7 @@
 		{
 			"createdAt": "2023-03-24T14:16:09.256-05:00",
 			"correctCount": "9",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "rx4yzn94",
@@ -2087,7 +2086,7 @@
 		{
 			"createdAt": "2023-03-24T14:18:12.230-05:00",
 			"correctCount": "12",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "ceu71azd",

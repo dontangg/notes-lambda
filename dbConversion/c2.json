@@ -1,112 +1,112 @@
 {
-	"isActive": false,
+	"pk": "Competition",
+	"sk": "2015",
 	"phase": "closed",
-	"name": "2015",
-	"songs": [
-		{
+	"songs": {
+		"i4y4omrj": {
 			"artist": "Jason Mraz",
 			"title": "Rocket man (Elton John cover) ",
 			"filename": "lah9s3l3",
 			"extension": ".mp3",
 			"userId": 8
 		},
-		{
+		"i4xm3v6f": {
 			"artist": "Young the Giant",
 			"title": "Cough Syrup",
 			"filename": "wdsmg924",
 			"extension": ".m4a",
 			"userId": 12
 		},
-		{
+		"i4z1d3is": {
 			"artist": "The MIlk Carton KIds",
 			"title": "Michigan",
 			"filename": "lof4ubf0",
 			"extension": ".m4a",
 			"userId": 7
 		},
-		{
+		"i4wwjsxb": {
 			"artist": "Damien Rice",
 			"title": "The Blower's Daughter",
 			"filename": "xkfx1g2l",
 			"extension": ".mp3",
 			"userId": 5
 		},
-		{
+		"i4wwkhyq": {
 			"artist": "Matt McAndrew",
 			"title": "A Thousand Years",
 			"filename": "gmp8wnae",
 			"extension": ".mp3",
 			"userId": 5
 		},
-		{
+		"i4x70p3b": {
 			"artist": "Muse",
 			"title": "Madness",
 			"filename": "vjdkkj1e",
 			"extension": ".mp3",
 			"userId": 10
 		},
-		{
+		"i4y7zsx6": {
 			"artist": "Avicii",
 			"title": "The Nights",
 			"filename": "c35y1nfi",
 			"extension": ".mp3",
 			"userId": 2
 		},
-		{
+		"i4xop6j5": {
 			"artist": "Ed Sheeran",
 			"title": "Thinking Out Loud",
 			"filename": "xc4ihmy2",
 			"extension": ".m4a",
 			"userId": 11
 		},
-		{
+		"i4yhklt6": {
 			"artist": "Hayley Mills & Maurice Chevalier",
 			"title": "Enjoy It",
 			"filename": "0s5rwn4l",
 			"extension": ".m4a",
 			"userId": 1
 		},
-		{
+		"i4ykihl4": {
 			"artist": "Ingrid Michaelson",
 			"title": "Be OK",
 			"filename": "hjeaxugk",
 			"extension": ".m4a",
 			"userId": 4
 		},
-		{
+		"i4ykg849": {
 			"artist": "Capital Cities",
 			"title": "Safe and Sound",
 			"filename": "hyumq576",
 			"extension": ".m4a",
 			"userId": 4
 		},
-		{
+		"i4rsmcrs": {
 			"artist": "The Paper Kites",
 			"title": "Bloom",
 			"filename": "mr9dsltc",
 			"extension": ".m4a",
 			"userId": 3
 		},
-		{
+		"i4tekpts": {
 			"artist": "Earth Wind and Fire",
 			"title": "September",
 			"filename": "1y97uc0p",
 			"extension": ".m4a",
 			"userId": 9
 		},
-		{
-			"artist": "Ryan Farish",
+		"i4w3qg1l": {
+			"artist": "Ryan Farish ",
 			"title": "Life in Stereo",
 			"filename": "o4hq7cez",
 			"extension": ".m4a",
 			"userId": 6
 		}
-	],
+	},
 	"attempts": [
 		{
 			"createdAt": "2015-01-15T23:20:12.157-06:00",
 			"correctCount": "2",
-			"userId": "10",
+			"userId": 10,
 			"guesses": [
 				{
 					"songFilename": "1y97uc0p",
@@ -161,7 +161,7 @@
 		{
 			"createdAt": "2015-01-16T13:25:12.857-06:00",
 			"correctCount": "6",
-			"userId": "5",
+			"userId": 5,
 			"guesses": [
 				{
 					"songFilename": "lof4ubf0",
@@ -216,7 +216,7 @@
 		{
 			"createdAt": "2015-01-16T19:07:34.918-06:00",
 			"correctCount": "2",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "o4hq7cez",
@@ -271,7 +271,7 @@
 		{
 			"createdAt": "2015-01-16T21:47:11.826-06:00",
 			"correctCount": "4",
-			"userId": "4",
+			"userId": 4,
 			"guesses": [
 				{
 					"songFilename": "lah9s3l3",
@@ -326,7 +326,7 @@
 		{
 			"createdAt": "2015-01-16T21:50:08.555-06:00",
 			"correctCount": "2",
-			"userId": "2",
+			"userId": 2,
 			"guesses": [
 				{
 					"songFilename": "lof4ubf0",
@@ -381,7 +381,7 @@
 		{
 			"createdAt": "2015-01-16T21:53:06.927-06:00",
 			"correctCount": "1",
-			"userId": "8",
+			"userId": 8,
 			"guesses": [
 				{
 					"songFilename": "mr9dsltc",
@@ -436,7 +436,7 @@
 		{
 			"createdAt": "2015-01-16T22:10:13.888-06:00",
 			"correctCount": "3",
-			"userId": "9",
+			"userId": 9,
 			"guesses": [
 				{
 					"songFilename": "0s5rwn4l",
@@ -491,7 +491,7 @@
 		{
 			"createdAt": "2015-01-17T00:37:08.137-06:00",
 			"correctCount": "4",
-			"userId": "10",
+			"userId": 10,
 			"guesses": [
 				{
 					"songFilename": "1y97uc0p",
@@ -546,7 +546,7 @@
 		{
 			"createdAt": "2015-01-17T07:56:56.606-06:00",
 			"correctCount": "2",
-			"userId": "8",
+			"userId": 8,
 			"guesses": [
 				{
 					"songFilename": "xc4ihmy2",
@@ -601,7 +601,7 @@
 		{
 			"createdAt": "2015-01-17T09:24:05.522-06:00",
 			"correctCount": "4",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "1y97uc0p",
@@ -656,7 +656,7 @@
 		{
 			"createdAt": "2015-01-17T12:33:44.969-06:00",
 			"correctCount": "5",
-			"userId": "9",
+			"userId": 9,
 			"guesses": [
 				{
 					"songFilename": "c35y1nfi",
@@ -711,7 +711,7 @@
 		{
 			"createdAt": "2015-01-17T15:22:17.347-06:00",
 			"correctCount": "7",
-			"userId": "5",
+			"userId": 5,
 			"guesses": [
 				{
 					"songFilename": "0s5rwn4l",
@@ -766,7 +766,7 @@
 		{
 			"createdAt": "2015-01-17T23:18:25.941-06:00",
 			"correctCount": "4",
-			"userId": "2",
+			"userId": 2,
 			"guesses": [
 				{
 					"songFilename": "gmp8wnae",
@@ -821,7 +821,7 @@
 		{
 			"createdAt": "2015-01-17T23:24:12.250-06:00",
 			"correctCount": "7",
-			"userId": "4",
+			"userId": 4,
 			"guesses": [
 				{
 					"songFilename": "lah9s3l3",
@@ -876,7 +876,7 @@
 		{
 			"createdAt": "2015-01-18T01:06:05.529-06:00",
 			"correctCount": "10",
-			"userId": "5",
+			"userId": 5,
 			"guesses": [
 				{
 					"songFilename": "0s5rwn4l",
@@ -931,7 +931,7 @@
 		{
 			"createdAt": "2015-01-18T10:32:33.507-06:00",
 			"correctCount": "4",
-			"userId": "8",
+			"userId": 8,
 			"guesses": [
 				{
 					"songFilename": "wdsmg924",
@@ -986,7 +986,7 @@
 		{
 			"createdAt": "2015-01-18T13:42:09.788-06:00",
 			"correctCount": "7",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "mr9dsltc",
@@ -1041,7 +1041,7 @@
 		{
 			"createdAt": "2015-01-18T15:03:42.586-06:00",
 			"correctCount": "6",
-			"userId": "9",
+			"userId": 9,
 			"guesses": [
 				{
 					"songFilename": "wdsmg924",
@@ -1096,7 +1096,7 @@
 		{
 			"createdAt": "2015-01-18T18:37:39.017-06:00",
 			"correctCount": "10",
-			"userId": "10",
+			"userId": 10,
 			"guesses": [
 				{
 					"songFilename": "hjeaxugk",
@@ -1151,7 +1151,7 @@
 		{
 			"createdAt": "2015-01-18T23:41:45.077-06:00",
 			"correctCount": "5",
-			"userId": "2",
+			"userId": 2,
 			"guesses": [
 				{
 					"songFilename": "xkfx1g2l",
@@ -1206,7 +1206,7 @@
 		{
 			"createdAt": "2015-01-19T01:00:30.959-06:00",
 			"correctCount": "12",
-			"userId": "5",
+			"userId": 5,
 			"guesses": [
 				{
 					"songFilename": "lof4ubf0",
@@ -1261,7 +1261,7 @@
 		{
 			"createdAt": "2015-01-19T01:01:18.141-06:00",
 			"correctCount": "12",
-			"userId": "10",
+			"userId": 10,
 			"guesses": [
 				{
 					"songFilename": "o4hq7cez",
@@ -1316,7 +1316,7 @@
 		{
 			"createdAt": "2015-01-19T06:36:02.921-06:00",
 			"correctCount": "8",
-			"userId": "9",
+			"userId": 9,
 			"guesses": [
 				{
 					"songFilename": "0s5rwn4l",
@@ -1371,7 +1371,7 @@
 		{
 			"createdAt": "2015-01-19T08:57:07.247-06:00",
 			"correctCount": "10",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "hjeaxugk",
@@ -1426,7 +1426,7 @@
 		{
 			"createdAt": "2015-01-19T20:25:10.028-06:00",
 			"correctCount": "6",
-			"userId": "8",
+			"userId": 8,
 			"guesses": [
 				{
 					"songFilename": "mr9dsltc",
@@ -1481,7 +1481,7 @@
 		{
 			"createdAt": "2015-01-19T22:47:05.450-06:00",
 			"correctCount": "7",
-			"userId": "4",
+			"userId": 4,
 			"guesses": [
 				{
 					"songFilename": "lah9s3l3",
@@ -1536,7 +1536,7 @@
 		{
 			"createdAt": "2015-01-20T02:02:10.043-06:00",
 			"correctCount": "12",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "lah9s3l3",
@@ -1591,7 +1591,7 @@
 		{
 			"createdAt": "2015-01-20T09:55:19.955-06:00",
 			"correctCount": "8",
-			"userId": "2",
+			"userId": 2,
 			"guesses": [
 				{
 					"songFilename": "hyumq576",
@@ -1646,7 +1646,7 @@
 		{
 			"createdAt": "2015-01-20T10:08:11.566-06:00",
 			"correctCount": "12",
-			"userId": "9",
+			"userId": 9,
 			"guesses": [
 				{
 					"songFilename": "vjdkkj1e",
@@ -1701,7 +1701,7 @@
 		{
 			"createdAt": "2015-01-20T21:52:50.139-06:00",
 			"correctCount": "7",
-			"userId": "8",
+			"userId": 8,
 			"guesses": [
 				{
 					"songFilename": "vjdkkj1e",

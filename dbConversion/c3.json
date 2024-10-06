@@ -1,112 +1,112 @@
 {
-	"isActive": false,
+	"pk": "Competition",
+	"sk": "2016",
 	"phase": "closed",
-	"name": "2016",
-	"songs": [
-		{
+	"songs": {
+		"in9pz2jw": {
 			"artist": "Vance Joy",
 			"title": "Fire and the Flood",
 			"filename": "i28e7fo2",
 			"extension": ".mp3",
 			"userId": 5
 		},
-		{
+		"in9q7bvb": {
 			"artist": "Passenger",
 			"title": "When We Were Young",
 			"filename": "pbc4nlu2",
 			"extension": ".mp3",
 			"userId": 2
 		},
-		{
+		"in9qcn1s": {
 			"artist": "Arvo Pärt",
 			"title": "Spiegel im Spiegel",
 			"filename": "u50234zr",
 			"extension": ".mp3",
 			"userId": 5
 		},
-		{
+		"in9qokxx": {
 			"artist": "Oscar Isaac & Marcus Mumford",
 			"title": "Fare Thee Well",
 			"filename": "2zs0uowd",
 			"extension": ".m4a",
 			"userId": 3
 		},
-		{
+		"incppzk7": {
 			"artist": "Arctic Monkeys",
 			"title": "Do I Wanna Know",
 			"filename": "d96kbeju",
 			"extension": ".m4a",
 			"userId": 10
 		},
-		{
+		"incqmmxx": {
 			"artist": "Us",
 			"title": "No Matter Where You Are",
 			"filename": "x3ox5c61",
 			"extension": ".m4a",
 			"userId": 12
 		},
-		{
+		"indebocg": {
 			"artist": "Michael McHale",
 			"title": "The Beardless Boy",
 			"filename": "nnksu3ja",
 			"extension": ".m4a",
 			"userId": 6
 		},
-		{
+		"in92tfnm": {
 			"artist": "MisterWives",
 			"title": "Our Own House",
 			"filename": "htpnqdqc",
 			"extension": ".m4a",
 			"userId": 9
 		},
-		{
+		"indpa0vb": {
 			"artist": "Micaela",
 			"title": "Micaela",
 			"filename": "",
 			"extension": "",
 			"userId": 4
 		},
-		{
+		"indpaeuz": {
 			"artist": "Micaela",
 			"title": "Micaela",
 			"filename": "",
 			"extension": "",
 			"userId": 4
 		},
-		{
+		"ind6ohra": {
 			"artist": "Train",
 			"title": "Calling All Angels",
 			"filename": "9lsgclxs",
 			"extension": ".m4a",
 			"userId": 1
 		},
-		{
+		"ind75v77": {
 			"artist": "Luciano Pavarotti",
 			"title": "Nessun Dorma",
 			"filename": "2dta5fir",
 			"extension": ".m4a",
 			"userId": 11
 		},
-		{
+		"inbs8igk": {
 			"artist": "Franky Perez",
 			"title": "Los tiempos van cambiando",
 			"filename": "vcl5fhw0",
 			"extension": ".m4a",
 			"userId": 8
 		},
-		{
+		"incmpgkr": {
 			"artist": "Lex de Azevedo",
 			"title": "If you could hie to Kolob",
 			"filename": "apxfphks",
 			"extension": ".mp3",
 			"userId": 7
 		}
-	],
+	},
 	"attempts": [
 		{
 			"createdAt": "2016-04-23T19:12:53.604-05:00",
 			"correctCount": "5",
-			"userId": "10",
+			"userId": 10,
 			"guesses": [
 				{
 					"songFilename": "nnksu3ja",
@@ -161,7 +161,7 @@
 		{
 			"createdAt": "2016-04-23T19:41:20.812-05:00",
 			"correctCount": "3",
-			"userId": "5",
+			"userId": 5,
 			"guesses": [
 				{
 					"songFilename": "d96kbeju",
@@ -216,7 +216,7 @@
 		{
 			"createdAt": "2016-04-23T19:57:51.455-05:00",
 			"correctCount": "6",
-			"userId": "3",
+			"userId": 3,
 			"guesses": [
 				{
 					"songFilename": "nnksu3ja",
@@ -271,7 +271,7 @@
 		{
 			"createdAt": "2016-04-23T20:25:09.332-05:00",
 			"correctCount": "3",
-			"userId": "9",
+			"userId": 9,
 			"guesses": [
 				{
 					"songFilename": "2dta5fir",
@@ -326,7 +326,7 @@
 		{
 			"createdAt": "2016-04-23T21:30:29.489-05:00",
 			"correctCount": "6",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "nnksu3ja",
@@ -381,7 +381,7 @@
 		{
 			"createdAt": "2016-04-24T01:59:35.101-05:00",
 			"correctCount": "4",
-			"userId": "5",
+			"userId": 5,
 			"guesses": [
 				{
 					"songFilename": "nnksu3ja",
@@ -436,7 +436,7 @@
 		{
 			"createdAt": "2016-04-24T15:15:27.026-05:00",
 			"correctCount": "5",
-			"userId": "10",
+			"userId": 10,
 			"guesses": [
 				{
 					"songFilename": "",
@@ -491,7 +491,7 @@
 		{
 			"createdAt": "2016-04-24T19:26:35.732-05:00",
 			"correctCount": "10",
-			"userId": "3",
+			"userId": 3,
 			"guesses": [
 				{
 					"songFilename": "vcl5fhw0",
@@ -546,7 +546,7 @@
 		{
 			"createdAt": "2016-04-24T19:58:10.436-05:00",
 			"correctCount": "4",
-			"userId": "9",
+			"userId": 9,
 			"guesses": [
 				{
 					"songFilename": "2zs0uowd",
@@ -601,7 +601,7 @@
 		{
 			"createdAt": "2016-04-24T21:26:26.790-05:00",
 			"correctCount": "3",
-			"userId": "8",
+			"userId": 8,
 			"guesses": [
 				{
 					"songFilename": "i28e7fo2",
@@ -656,7 +656,7 @@
 		{
 			"createdAt": "2016-04-25T01:33:53.745-05:00",
 			"correctCount": "8",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "pbc4nlu2",
@@ -711,7 +711,7 @@
 		{
 			"createdAt": "2016-04-25T10:01:07.196-05:00",
 			"correctCount": "12",
-			"userId": "3",
+			"userId": 3,
 			"guesses": [
 				{
 					"songFilename": "2dta5fir",
@@ -766,7 +766,7 @@
 		{
 			"createdAt": "2016-04-25T10:30:08.447-05:00",
 			"correctCount": "5",
-			"userId": "5",
+			"userId": 5,
 			"guesses": [
 				{
 					"songFilename": "9lsgclxs",
@@ -821,7 +821,7 @@
 		{
 			"createdAt": "2016-04-25T19:30:32.169-05:00",
 			"correctCount": "9",
-			"userId": "9",
+			"userId": 9,
 			"guesses": [
 				{
 					"songFilename": "9lsgclxs",
@@ -876,7 +876,7 @@
 		{
 			"createdAt": "2016-04-25T20:26:59.766-05:00",
 			"correctCount": "5",
-			"userId": "8",
+			"userId": 8,
 			"guesses": [
 				{
 					"songFilename": "d96kbeju",
@@ -931,7 +931,7 @@
 		{
 			"createdAt": "2016-04-25T23:34:32.185-05:00",
 			"correctCount": "5",
-			"userId": "10",
+			"userId": 10,
 			"guesses": [
 				{
 					"songFilename": "pbc4nlu2",
@@ -986,7 +986,7 @@
 		{
 			"createdAt": "2016-04-26T07:40:11.445-05:00",
 			"correctCount": "6",
-			"userId": "8",
+			"userId": 8,
 			"guesses": [
 				{
 					"songFilename": "2dta5fir",
@@ -1041,7 +1041,7 @@
 		{
 			"createdAt": "2016-04-26T08:27:57.705-05:00",
 			"correctCount": "12",
-			"userId": "9",
+			"userId": 9,
 			"guesses": [
 				{
 					"songFilename": "i28e7fo2",
@@ -1096,7 +1096,7 @@
 		{
 			"createdAt": "2016-04-26T11:16:48.116-05:00",
 			"correctCount": "5",
-			"userId": "5",
+			"userId": 5,
 			"guesses": [
 				{
 					"songFilename": "9lsgclxs",
@@ -1151,7 +1151,7 @@
 		{
 			"createdAt": "2016-04-26T22:29:19.861-05:00",
 			"correctCount": "9",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "",
@@ -1206,7 +1206,7 @@
 		{
 			"createdAt": "2016-04-27T20:46:13.824-05:00",
 			"correctCount": "12",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "i28e7fo2",
@@ -1261,7 +1261,7 @@
 		{
 			"createdAt": "2016-04-27T21:52:00.336-05:00",
 			"correctCount": "7",
-			"userId": "8",
+			"userId": 8,
 			"guesses": [
 				{
 					"songFilename": "htpnqdqc",
@@ -1316,7 +1316,7 @@
 		{
 			"createdAt": "2016-04-28T11:51:26.831-05:00",
 			"correctCount": "10",
-			"userId": "7",
+			"userId": 7,
 			"guesses": [
 				{
 					"songFilename": "2zs0uowd",
@@ -1371,7 +1371,7 @@
 		{
 			"createdAt": "2016-04-28T14:20:54.527-05:00",
 			"correctCount": "8",
-			"userId": "5",
+			"userId": 5,
 			"guesses": [
 				{
 					"songFilename": "htpnqdqc",
@@ -1426,7 +1426,7 @@
 		{
 			"createdAt": "2016-04-29T23:42:41.900-05:00",
 			"correctCount": "12",
-			"userId": "5",
+			"userId": 5,
 			"guesses": [
 				{
 					"songFilename": "pbc4nlu2",

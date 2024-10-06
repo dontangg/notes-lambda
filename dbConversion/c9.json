@@ -1,113 +1,112 @@
 {
 	"pk": "Competition",
 	"sk": "2022",
-	"isActive": false,
 	"phase": "closed",
-	"songs": [
-		{
+	"songs": {
+		"kzh9zabr": {
 			"artist": "Drew Holcomb and the Neighbors",
 			"title": "What Would I Do Without You",
 			"filename": "6b8mmot4",
 			"extension": ".mp3",
 			"userId": 5
 		},
-		{
+		"kzhbq9lk": {
 			"artist": "Nathan Evans",
 			"title": "Wellerman - Sea Shanty",
 			"filename": "fy1iddv5",
 			"extension": ".mp3",
 			"userId": 6
 		},
-		{
+		"kzi222k9": {
 			"artist": "Louyah",
 			"title": "I Used To Care",
 			"filename": "63ywmga2",
 			"extension": ".mp3",
 			"userId": 10
 		},
-		{
+		"kzi237sr": {
 			"artist": "Laufey",
 			"title": "Like the Movies",
 			"filename": "8lo5v5h3",
 			"extension": ".mp3",
 			"userId": 10
 		},
-		{
+		"kzlt0hag": {
 			"artist": "Dave Barnes",
 			"title": "Song for My Children",
 			"filename": "cf0s8qih",
 			"extension": ".mp3",
 			"userId": 3
 		},
-		{
+		"kzm8g3ui": {
 			"artist": "Rihanna",
 			"title": "Sledgehammer",
 			"filename": "jvjyiyfa",
 			"extension": ".mp3",
 			"userId": 14
 		},
-		{
+		"kzrwbjx2": {
 			"artist": "Dan Fogelberg",
 			"title": "Leader of the Band",
 			"filename": "h1o5u70w",
 			"extension": ".mp3",
 			"userId": 2
 		},
-		{
+		"kzt18r2b": {
 			"artist": "Elton John & Dua Lipa",
 			"title": "Cold Heart",
 			"filename": "84xuyojx",
 			"extension": ".mp3",
 			"userId": 11
 		},
-		{
+		"kzh3py7m": {
 			"artist": "Lauren Daigle",
 			"title": "Hold On To Me",
 			"filename": "zbknfpb1",
 			"extension": ".mp3",
 			"userId": 4
 		},
-		{
+		"kzrnfo4o": {
 			"artist": "P!nk & Willow Sage Hart",
 			"title": "Cover Me In Sunshine",
 			"filename": "0a7a22vi",
 			"extension": ".mp3",
 			"userId": 9
 		},
-		{
+		"kzgztxg9": {
 			"artist": "Brandi Carlile ",
 			"title": "Hold Out Your hand ",
 			"filename": "msphvq9s",
 			"extension": ".mp3",
 			"userId": 8
 		},
-		{
+		"kzivua0g": {
 			"artist": "Daniel Lanois",
 			"title": "Sonho Dourado",
 			"filename": "0h6s1twv",
 			"extension": ".mp3",
 			"userId": 7
 		},
-		{
+		"kzt15sj5": {
 			"artist": "Twenty One Pilots",
 			"title": "Stressed Out",
 			"filename": "flc9lj7w",
 			"extension": ".mp3",
 			"userId": 1
 		},
-		{
+		"kzh3svk3": {
 			"artist": "Brandi Carlile",
 			"title": "Carried Me With You",
 			"filename": "naa5awb6",
 			"extension": ".mp3",
 			"userId": 4
 		}
-	],
+	},
 	"attempts": [
 		{
 			"createdAt": "2022-02-19T01:07:18.505-06:00",
 			"correctCount": "5",
-			"userId": "5",
+			"userId": 5,
 			"guesses": [
 				{
 					"songFilename": "flc9lj7w",
@@ -162,7 +161,7 @@
 		{
 			"createdAt": "2022-02-19T01:17:55.119-06:00",
 			"correctCount": "8",
-			"userId": "5",
+			"userId": 5,
 			"guesses": [
 				{
 					"songFilename": "84xuyojx",
@@ -217,7 +216,7 @@
 		{
 			"createdAt": "2022-02-19T01:21:26.411-06:00",
 			"correctCount": "10",
-			"userId": "5",
+			"userId": 5,
 			"guesses": [
 				{
 					"songFilename": "0a7a22vi",
@@ -272,7 +271,7 @@
 		{
 			"createdAt": "2022-02-19T01:22:35.424-06:00",
 			"correctCount": "12",
-			"userId": "5",
+			"userId": 5,
 			"guesses": [
 				{
 					"songFilename": "0h6s1twv",
@@ -327,7 +326,7 @@
 		{
 			"createdAt": "2022-02-19T11:01:09.820-06:00",
 			"correctCount": "6",
-			"userId": "6",
+			"userId": 6,
 			"guesses": [
 				{
 					"songFilename": "naa5awb6",
@@ -382,7 +381,7 @@
 		{
 			"createdAt": "2022-02-19T11:15:44.015-06:00",
 			"correctCount": "7",
-			"userId": "6",
+			"userId": 6,
 			"guesses": [
 				{
 					"songFilename": "naa5awb6",
@@ -437,7 +436,7 @@
 		{
 			"createdAt": "2022-02-19T11:26:05.970-06:00",
 			"correctCount": "12",
-			"userId": "6",
+			"userId": 6,
 			"guesses": [
 				{
 					"songFilename": "zbknfpb1",
@@ -492,7 +491,7 @@
 		{
 			"createdAt": "2022-02-19T17:17:09.509-06:00",
 			"correctCount": "1",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "jvjyiyfa",
@@ -547,7 +546,7 @@
 		{
 			"createdAt": "2022-02-19T17:25:39.744-06:00",
 			"correctCount": "5",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "0h6s1twv",
@@ -602,7 +601,7 @@
 		{
 			"createdAt": "2022-02-19T17:31:41.420-06:00",
 			"correctCount": "8",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "0h6s1twv",
@@ -657,7 +656,7 @@
 		{
 			"createdAt": "2022-02-19T17:35:52.098-06:00",
 			"correctCount": "12",
-			"userId": "1",
+			"userId": 1,
 			"guesses": [
 				{
 					"songFilename": "msphvq9s",
@@ -712,7 +711,7 @@
 		{
 			"createdAt": "2022-02-19T18:43:58.129-06:00",
 			"correctCount": "3",
-			"userId": "3",
+			"userId": 3,
 			"guesses": [
 				{
 					"songFilename": "msphvq9s",
@@ -767,7 +766,7 @@
 		{
 			"createdAt": "2022-02-19T18:52:38.486-06:00",
 			"correctCount": "4",
-			"userId": "3",
+			"userId": 3,
 			"guesses": [
 				{
 					"songFilename": "flc9lj7w",
@@ -822,7 +821,7 @@
 		{
 			"createdAt": "2022-02-19T18:58:05.729-06:00",
 			"correctCount": "6",
-			"userId": "3",
+			"userId": 3,
 			"guesses": [
 				{
 					"songFilename": "8lo5v5h3",
@@ -877,7 +876,7 @@
 		{
 			"createdAt": "2022-02-19T19:07:54.399-06:00",
 			"correctCount": "10",
-			"userId": "3",
+			"userId": 3,
 			"guesses": [
 				{
 					"songFilename": "zbknfpb1",
@@ -932,7 +931,7 @@
 		{
 			"createdAt": "2022-02-19T19:08:59.612-06:00",
 			"correctCount": "12",
-			"userId": "3",
+			"userId": 3,
 			"guesses": [
 				{
 					"songFilename": "8lo5v5h3",
@@ -987,7 +986,7 @@
 		{
 			"createdAt": "2022-02-19T23:04:05.972-06:00",
 			"correctCount": "2",
-			"userId": "4",
+			"userId": 4,
 			"guesses": [
 				{
 					"songFilename": "msphvq9s",
@@ -1042,7 +1041,7 @@
 		{
 			"createdAt": "2022-02-19T23:06:37.086-06:00",
 			"correctCount": "4",
-			"userId": "4",
+			"userId": 4,
 			"guesses": [
 				{
 					"songFilename": "cf0s8qih",
@@ -1097,7 +1096,7 @@
 		{
 			"createdAt": "2022-02-19T23:10:29.983-06:00",
 			"correctCount": "6",
-			"userId": "4",
+			"userId": 4,
 			"guesses": [
 				{
 					"songFilename": "63ywmga2",
@@ -1152,7 +1151,7 @@
 		{
 			"createdAt": "2022-02-19T23:17:56.825-06:00",
 			"correctCount": "9",
-			"userId": "4",
+			"userId": 4,
 			"guesses": [
 				{
 					"songFilename": "84xuyojx",
@@ -1207,7 +1206,7 @@
 		{
 			"createdAt": "2022-02-19T23:18:54.271-06:00",
 			"correctCount": "12",
-			"userId": "4",
+			"userId": 4,
 			"guesses": [
 				{
 					"songFilename": "h1o5u70w",
@@ -1262,7 +1261,7 @@
 		{
 			"createdAt": "2022-02-20T15:21:31.848-06:00",
 			"correctCount": "1",
-			"userId": "10",
+			"userId": 10,
 			"guesses": [
 				{
 					"songFilename": "0a7a22vi",
@@ -1317,7 +1316,7 @@
 		{
 			"createdAt": "2022-02-20T15:25:15.080-06:00",
 			"correctCount": "6",
-			"userId": "10",
+			"userId": 10,
 			"guesses": [
 				{
 					"songFilename": "84xuyojx",
@@ -1372,7 +1371,7 @@
 		{
 			"createdAt": "2022-02-20T15:27:54.715-06:00",
 			"correctCount": "7",
-			"userId": "10",
+			"userId": 10,
 			"guesses": [
 				{
 					"songFilename": "84xuyojx",
@@ -1427,7 +1426,7 @@
 		{
 			"createdAt": "2022-02-20T15:30:09.085-06:00",
 			"correctCount": "12",
-			"userId": "10",
+			"userId": 10,
 			"guesses": [
 				{
 					"songFilename": "naa5awb6",
@@ -1482,7 +1481,7 @@
 		{
 			"createdAt": "2022-03-01T21:04:43.553-06:00",
 			"correctCount": "2",
-			"userId": "8",
+			"userId": 8,
 			"guesses": [
 				{
 					"songFilename": "h1o5u70w",
@@ -1537,7 +1536,7 @@
 		{
 			"createdAt": "2022-03-01T21:08:42.360-06:00",
 			"correctCount": "6",
-			"userId": "8",
+			"userId": 8,
 			"guesses": [
 				{
 					"songFilename": "6b8mmot4",
@@ -1592,7 +1591,7 @@
 		{
 			"createdAt": "2022-03-01T21:26:13.703-06:00",
 			"correctCount": "9",
-			"userId": "8",
+			"userId": 8,
 			"guesses": [
 				{
 					"songFilename": "zbknfpb1",
@@ -1647,7 +1646,7 @@
 		{
 			"createdAt": "2022-03-01T21:28:44.854-06:00",
 			"correctCount": "12",
-			"userId": "8",
+			"userId": 8,
 			"guesses": [
 				{
 					"songFilename": "naa5awb6",
