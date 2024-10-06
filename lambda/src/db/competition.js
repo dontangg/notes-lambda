@@ -11,7 +11,9 @@ const mapFromDb = (comp) => {
 	delete comp.sk;
 
 	// Convert songs from an object with ids as keys to an array
-	comp.songs = Object.keys(comp.songs).map(id => ({ id, ...comp.songs[id] }));
+	if (comp.songs) {
+		comp.songs = Object.keys(comp.songs).map(id => ({ id, ...comp.songs[id] }));
+	}
 
 	return comp;
 };
@@ -40,6 +42,14 @@ const competitionDb = {
 
 	delete: async (comp) => {
 		return db.deleteItem(tableName, { pk, sk: comp.name });
+	},
+
+	saveSong: async (compName, song) => {
+		const songId = song.id;
+		const songToSave = { ...song };
+		delete songToSave.id;
+
+		return db.saveDeepItem(tableName, { pk, sk: compName }, `songs.${songId}`, songToSave);
 	},
 };
 

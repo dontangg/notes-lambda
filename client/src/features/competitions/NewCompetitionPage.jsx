@@ -20,7 +20,7 @@ export default function NewCompetitionPage() {
 		dispatch(saveCompetition({ name: compName, phase: 'submitting' }))
 			.then(unwrapResult)
 			.then(() => {
-				navigate('/competitions');
+				navigate('/competition');
 			});
 	};
 
@@ -49,7 +49,7 @@ export default function NewCompetitionPage() {
 							Save {competitionsState.competitionSaveStatus === FetchStatus.pending ? (<Spinner />) : null}
 						</button>
 						{' '}
-						<NavLink className="btn btn-secondary" to="/competitions">Cancel</NavLink>
+						<NavLink className="btn btn-secondary" to="/competition">Cancel</NavLink>
 					</form>
 				</div>
 			</div>

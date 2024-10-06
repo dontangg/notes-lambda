@@ -36,6 +36,21 @@ class UpdateParams {
 		}
 	}
 
+	updateDeepObject(objPath, updatedObject) {
+		const propNames = objPath.split('.');
+
+		const exprPropName = propNames.map(p => '#' + p).join('.');
+
+		for (let i = 0; i < propNames.length; i++) {
+			const p = propNames[i];
+			this.attributeNames['#' + p] = p;
+		};
+
+		const exprValueName = ':new_' + propNames.join('_');
+		this.propertiesToSet.push(`${exprPropName} = ${exprValueName}`);
+		this.attributeValues[exprValueName] = updatedObject;
+	}
+
 	isEmpty() {
 		return this.propertiesToSet.length === 0 && this.propertiesToRemove.length === 0;
 	}

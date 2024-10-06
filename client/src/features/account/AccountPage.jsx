@@ -162,7 +162,7 @@ export default function AccountPage() {
 
 	return (
 		<>
-			<h1>Account</h1>
+			<h1 className="mb-4">Account</h1>
 			{accountState.error && (<div className="alert alert-danger" role="alert">{accountState.error}</div>)}
 			<div className="row">
 				<div className="col-lg-6">

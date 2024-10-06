@@ -6,6 +6,7 @@ const router = new Router();
 const logger = require('./logger');
 const userController = require('./userController');
 const competitionController = require('./competitionController');
+const songController = require('./songController');
 
 router.get('/users', userController.list);
 router.get('/user', userController.get);
@@ -17,6 +18,9 @@ router.get('/competitions', competitionController.list);
 router.get('/competition/current', competitionController.getCurrent);
 router.post('/competition', competitionController.save);
 router.delete('/competition', competitionController.delete);
+
+router.post('/song', songController.save);
+router.delete('/song', songController.delete);
 
 /* TEST - These are test endpoints to test how errors & timeouts happen */
 router.get('/testerror', (req) => {

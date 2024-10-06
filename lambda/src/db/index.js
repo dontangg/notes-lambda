@@ -153,6 +153,17 @@ const db = {
 
 		return dynamodb.update(params.toJson()).promise();
 	},
+
+	saveDeepItem: async function(tableName, key, objPath, updatedObject) {
+		const params = new UpdateParams(tableName, key);
+
+		params.updateDeepObject(objPath, updatedObject);
+
+		if (params.isEmpty())
+			return;
+
+		return dynamodb.update(params.toJson()).promise();
+	},
 };
 
 module.exports = db;

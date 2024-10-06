@@ -10,6 +10,7 @@ import AccountPage from "./features/account/AccountPage";
 import CompetitionsPage from "./features/competitions/CompetitionsPage";
 import NewCompetitionPage from "./features/competitions/NewCompetitionPage";
 import SongsPage from "./features/competitions/SongsPage";
+import SongEditPage from "./features/competitions/SongEditPage";
 
 const router = createBrowserRouter([
 	{
@@ -25,16 +26,20 @@ const router = createBrowserRouter([
 				element: <AccountPage />,
 			},
 			{
-				path: "/competitions",
+				path: "/competition",
 				element: <CompetitionsPage />,
 			},
 			{
-				path: "/competitions/new",
+				path: "/competition/new",
 				element: <NewCompetitionPage />,
 			},
 			{
-				path: "/songs",
+				path: "/song",
 				element: <SongsPage />,
+			},
+			{
+				path: "/song/:id",
+				element: <SongEditPage />,
 			},
 		],
 	},

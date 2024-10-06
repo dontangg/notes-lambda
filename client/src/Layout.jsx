@@ -2,18 +2,24 @@ import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { Outlet, Link, Navigate, NavLink } from "react-router-dom";
 import { selectSignIn, signOut } from "./features/signIn/signInSlice";
-import { CompetitionPhase, fetchCurrentCompetition, selectCurrentCompetition } from "./features/competitions/competitionsSlice";
+import { CompetitionPhase, fetchAllUsers, fetchCurrentCompetition, selectAllUsers, selectCurrentCompetition } from "./features/competitions/competitionsSlice";
 
 const Layout = () => {
 	const dispatch = useDispatch();
 	const signInState = useSelector(selectSignIn);
 	const currentCompetition = useSelector(selectCurrentCompetition);
+	const allUsers = useSelector(selectAllUsers);
 	const [mainMenuIsOpen, setMainMenuIsOpen] = useState(false);
 	const [userMenuIsOpen, setUserMenuIsOpen] = useState(false);
 	const accountDropdownRef = useRef(null);
 
 	useEffect(() => {
-		dispatch(fetchCurrentCompetition());
+		if (!currentCompetition) {
+			dispatch(fetchCurrentCompetition());
+		}
+		if (!allUsers) {
+			dispatch(fetchAllUsers());
+		}
 	}, []);
 
 	// NOTE: This has to be included after all hooks
@@ -60,11 +66,11 @@ const Layout = () => {
 							)}
 							{currentCompetition?.phase === CompetitionPhase.submitting && (
 								<li className="nav-item">
-									<NavLink className="nav-link" to="/songs">My Songs</NavLink>
+									<NavLink className="nav-link" to="/song">My Songs</NavLink>
 								</li>
 							)}
 							<li className="nav-item">
-								<NavLink className="nav-link" to="/competitions">Competitions</NavLink>
+								<NavLink className="nav-link" to="/competition">Competitions</NavLink>
 							</li>
 							<li className="nav-item d-block d-md-none">
 								<NavLink className="nav-link" to="/account">Account</NavLink>

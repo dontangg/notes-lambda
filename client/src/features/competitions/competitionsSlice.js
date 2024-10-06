@@ -7,6 +7,7 @@ const initialState = {
 	competitionsFetchStatus: FetchStatus.idle,
 	curCompFetchStatus: FetchStatus.idle,
 	competitionSaveStatus: FetchStatus.idle,
+	songSaveStatus: FetchStatus.idle,
 	competitions: null,
 	currentCompetition: null,
 	error: '',
@@ -76,6 +77,19 @@ export const deleteCompetition = createAsyncThunk(
 		condition: (arg, { getState, extra }) => {
 			const competitionsState = getState().competitions;
 			return competitionsState.competitionSaveStatus !== FetchStatus.pending;
+		}
+	},
+);
+
+export const saveSong = createAsyncThunk(
+	'competitions/saveSong',
+	async (comp, { dispatch, getState }) => {
+		const body = JSON.stringify(comp);
+		return appFetch('/song', { method: 'POST', body }, dispatch, getState).then(response => response.json());
+	}, {
+		condition: (arg, { getState, extra }) => {
+			const competitionsState = getState().competitions;
+			return competitionsState.songSaveStatus !== FetchStatus.pending;
 		}
 	},
 );
@@ -167,13 +181,31 @@ export const competitionsSlice = createSlice({
 		builder.addCase(deleteCompetition.pending, (state, action) => {
 			state.competitionSaveStatus = FetchStatus.pending;
 		});
+		// saveSong
+		builder.addCase(saveSong.fulfilled, (state, action) => {
+			state.error = '';
+			state.songSaveStatus = FetchStatus.success;
+			const updatedSong = action.payload.song;
+			const songToUpdate = state.currentCompetition.songs.find(s => s.id === updatedSong.id);
+			for (const prop in songToUpdate) {
+				songToUpdate[prop] = updatedSong[prop];
+			}
+		});
+		builder.addCase(saveSong.rejected, (state, action) => {
+			state.songSaveStatus = FetchStatus.error;
+			state.error = action.error.message;
+		});
+		builder.addCase(saveSong.pending, (state, action) => {
+			state.songSaveStatus = FetchStatus.pending;
+		});
 	},
 	selectors: {
 		selectCompetitions: state => state,
 		selectCurrentCompetition: state => state.currentCompetition,
+		selectAllUsers: state => state.allUsers,
 	},
 });
 
-export const { selectCompetitions, selectCurrentCompetition } = competitionsSlice.selectors;
+export const { selectAllUsers, selectCompetitions, selectCurrentCompetition } = competitionsSlice.selectors;
 
 // export const { changeSignInField } = competitionsSlice.actions;

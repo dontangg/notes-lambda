@@ -1,6 +1,7 @@
 import React, { useEffect, useState, Fragment } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAllUsers, selectCompetitions } from "./competitionsSlice";
+import { NavLink } from 'react-router-dom';
+import { selectCompetitions } from "./competitionsSlice";
 import { useDocumentTitle } from "../../app/customHooks";
 import { selectCurrentUser } from "../signIn/signInSlice";
 import AudioPlayer from '../../common/AudioPlayer';
@@ -13,12 +14,6 @@ export default function NewCompetitionPage() {
 	const competitionsState = useSelector(selectCompetitions);
 	const audioPlayerState = useSelector(selectAudioPlayer);
 	const currentUser = useSelector(selectCurrentUser);
-
-	useEffect(() => {
-		if (!competitionsState.allUsers) {
-			dispatch(fetchAllUsers());
-		}
-	}, []);
 
 	const currentCompetition = competitionsState.currentCompetition;
 
@@ -74,7 +69,7 @@ export default function NewCompetitionPage() {
 											<td className="small text-end">{convertMsToStr(audioPlayerState.audioInfo[song.filename]?.duration)}</td>
 											<td>{getUserName(song.userId)}</td>
 											<td className="song-controls-cell">
-												<button title="Edit"><i className="fa-solid fa-pen"></i></button>
+												<NavLink className="d-flex" to={song.id} title="Edit"><i className="fa-solid fa-pen align-self-center flex-fill"></i></NavLink>
 											</td>
 										</tr>
 										{song.reason
