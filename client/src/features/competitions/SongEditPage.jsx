@@ -5,32 +5,40 @@ import { unwrapResult } from "@reduxjs/toolkit";
 import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import { FetchStatus } from "../../app/appFetch";
 import Spinner from "../../common/Spinner";
-import { selectCompetitions, saveSong } from "./competitionsSlice";
+import { selectCompetitions, saveSong, selectAllUsers } from "./competitionsSlice";
+import { selectCurrentUser } from "../signIn/signInSlice";
 
 export default function SongEditPage() {
 	const { id: songId } = useParams();
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 	const competitionsState = useSelector(selectCompetitions);
+	const allUsers = useSelector(selectAllUsers);
+	const currentUser = useSelector(selectCurrentUser);
 	const song = competitionsState.currentCompetition?.songs?.find(song => song.id === songId);
 
-	const [typedTitle, setTypedTitle] = useState(song?.title);
-	const [typedArtist, setTypedArtsit] = useState(song?.artist);
-	const [typedReason, setTypedReason] = useState(song?.reason);
+	const [typedTitle, setTypedTitle] = useState(song?.title || '');
+	const [typedArtist, setTypedArtsit] = useState(song?.artist || '');
+	const [typedReason, setTypedReason] = useState(song?.reason || '');
+	const [selectedUserId, setSelectedUserId] = useState(song?.userId || '');
 	const [songFilename, setSongFilename] = useState('');
 	const [formWasValidated, setFormWasValidated] = useState(false);
 
 	useEffect(() => {
-		setTypedTitle(song?.title);
-		setTypedArtsit(song?.artist);
-		setTypedReason(song?.reason);
+		setTypedTitle(song?.title || '');
+		setTypedArtsit(song?.artist || '');
+		setTypedReason(song?.reason || '');
+		setSelectedUserId(song?.userId || '');
 	}, [song]);
 
 	const onSaveClick = (e) => {
 		e.preventDefault();
 		setFormWasValidated(true);
 		if (typedTitle && typedArtist && typedReason) {
-			const songToSave = { id: songId, title: typedTitle, artist: typedArtist, reason: typedReason };
+			const songToSave = { title: typedTitle, artist: typedArtist, reason: typedReason, userId: Number(selectedUserId) };
+			if (songId !== 'new') {
+				songToSave.id = songId;
+			}
 			if (songFilename) {
 				songToSave.filename = songFilename;
 			}
@@ -42,13 +50,40 @@ export default function SongEditPage() {
 		}
 	};
 
+	let usersForDropdown = [];
+	if (competitionsState.currentCompetition) {
+		const mySong = competitionsState.currentCompetition.songs?.find(s => s.userId === currentUser.id);
+		const partnerSong = competitionsState.currentCompetition.songs?.find(s => s.userId === currentUser.partnerId);
+
+		usersForDropdown = allUsers?.filter(u => {
+			if (!competitionsState.currentCompetition) return false;
+
+			if (u.id === currentUser.id && (!mySong || mySong.id === song?.id)) {
+				return true;
+			}
+			if (u.id === currentUser.partnerId && (!partnerSong || partnerSong.id === song?.id)) {
+				return true;
+			}
+			return false;
+		});
+
+		// Set a default
+		if (!selectedUserId && usersForDropdown?.length) {
+			if (usersForDropdown.some(u => u.id === currentUser.id)) {
+				setSelectedUserId(currentUser.id)
+			} else {
+				setSelectedUserId(usersForDropdown[0].id)
+			}
+		}
+	}
+
 	return (
 		<div>
 			<h1 className="mb-4">Edit song</h1>
 			{competitionsState.error && (<div className="alert alert-danger" role="alert">{competitionsState.error}</div>)}
 			<div className="row">
 				<div className="col-lg-6">
-					{song ? (
+					{competitionsState.currentCompetition ? (
 						<form className={formWasValidated ? 'was-validated' : ''} noValidate>
 							<div className="mb-3">
 								<label htmlFor="titleInput" className="form-label">Title</label>
@@ -70,6 +105,14 @@ export default function SongEditPage() {
 								<div className="invalid-feedback">
 									Please enter the reason you are selecting this song.
 								</div>
+							</div>
+							<div className="mb-3">
+								<label htmlFor="userSelect" className="form-label">For whom</label>
+								<select className="form-select" id="userSelect" value={selectedUserId} onChange={e => setSelectedUserId(e.target.value)} disabled={usersForDropdown?.length === 1}>
+									{usersForDropdown?.map(user => (
+										<option key={user.id} value={user.id}>{user.name}</option>
+									))}
+								</select>
 							</div>
 							<div className="mb-3">
 								<label htmlFor="uploadInput" className="form-label">Upload the file</label>

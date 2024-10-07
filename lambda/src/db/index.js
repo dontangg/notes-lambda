@@ -19,7 +19,11 @@ const dynamodb = new AWS.DynamoDB.DocumentClient();
 
 const db = {
 	generateId: function() {
-		return Math.random().toString(36).substr(2) + Date.now().toString(36);
+		return Math.random().toString(36).substring(2) + Date.now().toString(36);
+	},
+
+	generateSimpleId: function() {
+		return Date.now().toString(36);
 	},
 
 	numericizeColumns: function(item, numericColumns) {
@@ -161,6 +165,8 @@ const db = {
 
 		if (params.isEmpty())
 			return;
+
+		console.log(params.toJson());
 
 		return dynamodb.update(params.toJson()).promise();
 	},

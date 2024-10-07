@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { rawFetch, FetchStatus } from '../../app/appFetch';
 
 const pageLoadAuthToken = window.localStorage.getItem('authToken') || '';
-const pageLoadUserStr = window.localStorage.getItem('user');
+const pageLoadUserStr = window.localStorage.getItem('user'); // {"admin":true,"id":1,"partnerId":16}
 let pageLoadUser = null;
 if (pageLoadUserStr) {
 	try {

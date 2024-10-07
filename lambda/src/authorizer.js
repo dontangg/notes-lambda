@@ -32,6 +32,7 @@ module.exports = function(req) {
 
 		req.user = {
 			email: token.email,
+			admin: token.admin,
 			id: token.userId,
 			partnerId: token.partnerId,
 		};

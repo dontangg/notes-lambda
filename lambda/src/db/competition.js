@@ -44,12 +44,26 @@ const competitionDb = {
 		return db.deleteItem(tableName, { pk, sk: comp.name });
 	},
 
-	saveSong: async (compName, song) => {
-		const songId = song.id;
+	saveSong: async (comp, song) => {
+		let songId = song.id;
+		
+		song.userId = Number(song.userId);
 		const songToSave = { ...song };
-		delete songToSave.id;
 
-		return db.saveDeepItem(tableName, { pk, sk: compName }, `songs.${songId}`, songToSave);
+		if (songId) {
+			delete songToSave.id;
+		} else {
+			songId = db.generateSimpleId();
+			song.id = songId;
+
+			// If the songs don't even exist yet, just create the list with one item
+			if (!comp.songs || comp.songs.length === 0) {
+				const compToSave = { songs: { [songId]: song } };
+				return db.saveItem(tableName, compToSave, { pk, sk: comp.name }, ['songs']);
+			}
+		}
+
+		return db.saveDeepItem(tableName, { pk, sk: comp.name }, `songs.${songId}`, songToSave);
 	},
 };
 

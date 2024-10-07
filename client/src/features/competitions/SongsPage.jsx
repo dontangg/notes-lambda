@@ -49,18 +49,21 @@ export default function NewCompetitionPage() {
 				<div className="col-lg-6">
 					<table className="table table-hover align-middle playlist">
 						<tbody>
-							{songs.map((song) => {
+							{songs.map((song, idx) => {
 								const isThisSongPlaying = (audioPlayerState.currentSongFilename === song.filename && audioPlayerState.isPlaying);
 								return (
 									<Fragment key={song.title}>
 										<tr className={isThisSongPlaying ? 'table-active' : null}>
 											<td>
-												<button title="Play song" onClick={onPlaySongClick(song.filename)}>
-													{isThisSongPlaying
-														? (<i className="fa-solid fa-pause"></i>)
-														: (<i className="fa-solid fa-play"></i>)
-													}
-												</button>
+												{song.filename ? (
+													<button title="Play song" onClick={onPlaySongClick(song.filename)}>
+														{isThisSongPlaying
+															? (<i className="fa-solid fa-pause"></i>)
+															: (<i className="fa-solid fa-play"></i>)
+														}
+													</button>
+												) : (idx + 1)}
+												
 											</td>
 											<td>
 												<div>{song.title}</div>
@@ -86,6 +89,7 @@ export default function NewCompetitionPage() {
 							})}
 						</tbody>
 					</table>
+					{currentCompetition && songs.length < 2 ? (<NavLink to="new" className="btn btn-primary">Add Song</NavLink>) : null}
 				</div>
 			</div>
 
