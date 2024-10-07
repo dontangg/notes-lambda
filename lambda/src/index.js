@@ -20,7 +20,7 @@ router.post('/competition', competitionController.save);
 router.delete('/competition', competitionController.delete);
 
 router.post('/song', songController.save);
-router.delete('/song', songController.delete);
+router.delete('/song/:id', songController.delete);
 
 /* TEST - These are test endpoints to test how errors & timeouts happen */
 router.get('/testerror', (req) => {

@@ -30,8 +30,14 @@ const songController = {
 	},
 
 	delete: async (req) => {
-		const comp = JSON.parse(req.body);
-		await competitionDb.delete(comp);
+		const songId = req.routeParams['id'];
+
+		const curComp = await competitionDb.getCurrent();
+		if (!curComp.songs?.some(s => s.id === songId)) {
+			return { statusCode: 404, body: JSON.stringify({ message: 'Song not found' }) };
+		}
+
+		await competitionDb.deleteSong(curComp.name, songId);
 
 		return { statusCode: 200, body: JSON.stringify({ message: 'success' }) };
 	}

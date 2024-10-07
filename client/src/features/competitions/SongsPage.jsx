@@ -54,7 +54,7 @@ export default function NewCompetitionPage() {
 								return (
 									<Fragment key={song.title}>
 										<tr className={isThisSongPlaying ? 'table-active' : null}>
-											<td>
+											<td className="text-center">
 												{song.filename ? (
 													<button title="Play song" onClick={onPlaySongClick(song.filename)}>
 														{isThisSongPlaying
@@ -69,7 +69,7 @@ export default function NewCompetitionPage() {
 												<div>{song.title}</div>
 												<small className="text-body-secondary">{song.artist}</small>
 											</td>
-											<td className="small text-end">{convertMsToStr(audioPlayerState.audioInfo[song.filename]?.duration)}</td>
+											<td className="small text-end">{song.filename && convertMsToStr(audioPlayerState.audioInfo[song.filename]?.duration)}</td>
 											<td>{getUserName(song.userId)}</td>
 											<td className="song-controls-cell">
 												<NavLink className="d-flex" to={song.id} title="Edit"><i className="fa-solid fa-pen align-self-center flex-fill"></i></NavLink>

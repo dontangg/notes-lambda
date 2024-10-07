@@ -81,7 +81,7 @@ const db = {
 			if (exclusiveStartKey) {
 				options.ExclusiveStartKey = exclusiveStartKey;
 			}
-			console.log('options', options);
+			
 			const response = await dynamodb.scan(options).promise();
 
 			const newItems = response.Items || [];
@@ -166,7 +166,16 @@ const db = {
 		if (params.isEmpty())
 			return;
 
-		console.log(params.toJson());
+		return dynamodb.update(params.toJson()).promise();
+	},
+
+	removeDeepItem: async function(tableName, key, objPath) {
+		const params = new UpdateParams(tableName, key);
+
+		params.removeDeepObject(objPath);
+
+		if (params.isEmpty())
+			return;
 
 		return dynamodb.update(params.toJson()).promise();
 	},

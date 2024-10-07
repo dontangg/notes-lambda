@@ -5,7 +5,7 @@ import { unwrapResult } from "@reduxjs/toolkit";
 import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import { FetchStatus } from "../../app/appFetch";
 import Spinner from "../../common/Spinner";
-import { selectCompetitions, saveSong, selectAllUsers } from "./competitionsSlice";
+import { deleteSong, selectCompetitions, saveSong, selectAllUsers } from "./competitionsSlice";
 import { selectCurrentUser } from "../signIn/signInSlice";
 
 export default function SongEditPage() {
@@ -23,6 +23,7 @@ export default function SongEditPage() {
 	const [selectedUserId, setSelectedUserId] = useState(song?.userId || '');
 	const [songFilename, setSongFilename] = useState('');
 	const [formWasValidated, setFormWasValidated] = useState(false);
+	const [isConfirmingDelete, setIsConfirmingDelete] = useState(false);
 
 	useEffect(() => {
 		setTypedTitle(song?.title || '');
@@ -47,6 +48,19 @@ export default function SongEditPage() {
 				.then(() => {
 					navigate('/song');
 				});
+		}
+	};
+
+	const onDeleteClick = (e) => {
+		e.preventDefault();
+		if (isConfirmingDelete) {
+			dispatch(deleteSong(songId))
+				.then(unwrapResult)
+				.then(() => {
+					navigate('/song');
+				});
+		} else {
+			setIsConfirmingDelete(true);
 		}
 	};
 
@@ -119,12 +133,15 @@ export default function SongEditPage() {
 								<input type="file" className="form-control" id="uploadInput" accept="audio/*" value={songFilename} onChange={e => setSongFilename(e.target.value)} />
 							</div>
 							<button type="submit" className="btn btn-primary" onClick={onSaveClick} disabled={competitionsState.songSaveStatus === FetchStatus.pending}>
-								Save {competitionsState.songSaveStatus === FetchStatus.pending ? (<Spinner />) : null}
+								Save
 							</button>
 							{' '}
 							<NavLink className="btn btn-secondary" to="/song">Cancel</NavLink>
 							{' '}
-							<button type="button" className="btn btn-danger" onClick={() => { }}>Delete</button>
+							<button type="button" className="btn btn-danger" onClick={onDeleteClick} disabled={competitionsState.songSaveStatus === FetchStatus.pending}>
+								{isConfirmingDelete ? 'Are you sure?' : 'Delete'}
+							</button>
+							{competitionsState.songSaveStatus === FetchStatus.pending ? (<>{' '}<Spinner /></>) : null}
 						</form>
 					) : (
 						<p className="opacity-75">Loading....</p>

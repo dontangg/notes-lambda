@@ -51,6 +51,19 @@ class UpdateParams {
 		this.attributeValues[exprValueName] = updatedObject;
 	}
 
+	removeDeepObject(objPath) {
+		const propNames = objPath.split('.');
+
+		const exprPropName = propNames.map(p => '#' + p).join('.');
+
+		for (let i = 0; i < propNames.length; i++) {
+			const p = propNames[i];
+			this.attributeNames['#' + p] = p;
+		};
+
+		this.propertiesToRemove.push(exprPropName);
+	}
+
 	isEmpty() {
 		return this.propertiesToSet.length === 0 && this.propertiesToRemove.length === 0;
 	}
@@ -64,13 +77,17 @@ class UpdateParams {
 				updateExpression += ' ';
 			updateExpression += 'REMOVE ' + this.propertiesToRemove.join(', ');
 		}
-		return {
+		const json = {
 			TableName: this.tableName,
 			Key: this.key,
 			UpdateExpression: updateExpression,
 			ExpressionAttributeNames: this.attributeNames,
-			ExpressionAttributeValues: this.attributeValues,
 		};
+		if (Object.keys(this.attributeValues).length > 0) {
+			json.ExpressionAttributeValues = this.attributeValues;
+		}
+
+		return json;
 	}
 }
 

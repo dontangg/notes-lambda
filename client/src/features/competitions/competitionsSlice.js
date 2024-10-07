@@ -24,11 +24,11 @@ export const fetchAllUsers = createAsyncThunk(
 	async (arg, { dispatch, getState }) => {
 		return appFetch('/users', null, dispatch, getState).then(response => response.json());
 	}, {
-	condition: (arg, { getState, extra }) => {
-		const competitionsState = getState().competitions;
-		return competitionsState.allUsersFetchStatus !== FetchStatus.pending;
-	}
-},
+		condition: (arg, { getState, extra }) => {
+			const competitionsState = getState().competitions;
+			return competitionsState.allUsersFetchStatus !== FetchStatus.pending;
+		}
+	},
 );
 
 export const fetchCompetitions = createAsyncThunk(
@@ -36,11 +36,11 @@ export const fetchCompetitions = createAsyncThunk(
 	async (arg, { dispatch, getState }) => {
 		return appFetch('/competitions', null, dispatch, getState).then(response => response.json());
 	}, {
-	condition: (arg, { getState, extra }) => {
-		const competitionsState = getState().competitions;
-		return competitionsState.competitionsFetchStatus !== FetchStatus.pending;
-	}
-},
+		condition: (arg, { getState, extra }) => {
+			const competitionsState = getState().competitions;
+			return competitionsState.competitionsFetchStatus !== FetchStatus.pending;
+		}
+	},
 );
 
 export const fetchCurrentCompetition = createAsyncThunk(
@@ -48,11 +48,11 @@ export const fetchCurrentCompetition = createAsyncThunk(
 	async (arg, { dispatch, getState }) => {
 		return appFetch('/competition/current', null, dispatch, getState).then(response => response.json());
 	}, {
-	condition: (arg, { getState, extra }) => {
-		const competitionsState = getState().competitions;
-		return competitionsState.curCompFetchStatus !== FetchStatus.pending;
-	}
-},
+		condition: (arg, { getState, extra }) => {
+			const competitionsState = getState().competitions;
+			return competitionsState.curCompFetchStatus !== FetchStatus.pending;
+		}
+	},
 );
 
 export const saveCompetition = createAsyncThunk(
@@ -61,11 +61,11 @@ export const saveCompetition = createAsyncThunk(
 		const body = JSON.stringify(arg);
 		return appFetch('/competition', { method: 'POST', body }, dispatch, getState).then(() => arg);
 	}, {
-	condition: (arg, { getState, extra }) => {
-		const competitionsState = getState().competitions;
-		return competitionsState.competitionSaveStatus !== FetchStatus.pending;
-	}
-},
+		condition: (arg, { getState, extra }) => {
+			const competitionsState = getState().competitions;
+			return competitionsState.competitionSaveStatus !== FetchStatus.pending;
+		}
+	},
 );
 
 export const deleteCompetition = createAsyncThunk(
@@ -74,11 +74,11 @@ export const deleteCompetition = createAsyncThunk(
 		const body = JSON.stringify(comp);
 		return appFetch('/competition', { method: 'DELETE', body }, dispatch, getState).then(() => comp);
 	}, {
-	condition: (arg, { getState, extra }) => {
-		const competitionsState = getState().competitions;
-		return competitionsState.competitionSaveStatus !== FetchStatus.pending;
-	}
-},
+		condition: (arg, { getState, extra }) => {
+			const competitionsState = getState().competitions;
+			return competitionsState.competitionSaveStatus !== FetchStatus.pending;
+		}
+	},
 );
 
 export const saveSong = createAsyncThunk(
@@ -87,11 +87,23 @@ export const saveSong = createAsyncThunk(
 		const body = JSON.stringify(comp);
 		return appFetch('/song', { method: 'POST', body }, dispatch, getState).then(response => response.json());
 	}, {
-	condition: (arg, { getState, extra }) => {
-		const competitionsState = getState().competitions;
-		return competitionsState.songSaveStatus !== FetchStatus.pending;
-	}
-},
+		condition: (arg, { getState, extra }) => {
+			const competitionsState = getState().competitions;
+			return competitionsState.songSaveStatus !== FetchStatus.pending;
+		}
+	},
+);
+
+export const deleteSong = createAsyncThunk(
+	'competitions/deleteSong',
+	async (songId, { dispatch, getState }) => {
+		return appFetch(`/song/${songId}`, { method: 'DELETE' }, dispatch, getState).then(() => songId);
+	}, {
+		condition: (arg, { getState, extra }) => {
+			const competitionsState = getState().competitions;
+			return competitionsState.songSaveStatus !== FetchStatus.pending;
+		}
+	},
 );
 
 
@@ -203,6 +215,19 @@ export const competitionsSlice = createSlice({
 			state.error = action.error.message;
 		});
 		builder.addCase(saveSong.pending, (state, action) => {
+			state.songSaveStatus = FetchStatus.pending;
+		});
+		// deleteSong
+		builder.addCase(deleteSong.fulfilled, (state, action) => {
+			state.error = '';
+			state.songSaveStatus = FetchStatus.success;
+			state.currentCompetition.songs = state.currentCompetition.songs.filter(s => s.id !== action.payload);
+		});
+		builder.addCase(deleteSong.rejected, (state, action) => {
+			state.songSaveStatus = FetchStatus.error;
+			state.error = action.error.message;
+		});
+		builder.addCase(deleteSong.pending, (state, action) => {
 			state.songSaveStatus = FetchStatus.pending;
 		});
 	},
