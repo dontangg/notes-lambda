@@ -6,7 +6,7 @@ ZIP_FILE=lambda.zip
 rm -f ${ZIP_FILE}
 cd lambda
 npm prune --production
-zip -r ../${ZIP_FILE} .
+zip -qr ../${ZIP_FILE} .
 cd ..
 
 # Update the lambda
