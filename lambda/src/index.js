@@ -21,6 +21,8 @@ router.delete('/competition', competitionController.delete);
 
 router.post('/song', songController.save);
 router.delete('/song/:id', songController.delete);
+router.post('/song_upload_url', songController.getUploadUrl);
+router.post('/trigger_transcoder', songController.triggerTranscoder);
 
 /* TEST - These are test endpoints to test how errors & timeouts happen */
 router.get('/testerror', (req) => {

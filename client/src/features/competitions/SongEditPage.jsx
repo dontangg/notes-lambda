@@ -1,17 +1,18 @@
 import { useEffect } from 'react';
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { unwrapResult } from "@reduxjs/toolkit";
 import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import { FetchStatus } from "../../app/appFetch";
 import Spinner from "../../common/Spinner";
-import { deleteSong, selectCompetitions, saveSong, selectAllUsers } from "./competitionsSlice";
+import { deleteSong, selectCompetitions, saveSong, selectAllUsers, uploadSong } from "./competitionsSlice";
 import { selectCurrentUser } from "../signIn/signInSlice";
 
 export default function SongEditPage() {
 	const { id: songId } = useParams();
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
+	const fileInputRef = useRef(null);
 	const competitionsState = useSelector(selectCompetitions);
 	const allUsers = useSelector(selectAllUsers);
 	const currentUser = useSelector(selectCurrentUser);
@@ -21,7 +22,9 @@ export default function SongEditPage() {
 	const [typedArtist, setTypedArtsit] = useState(song?.artist || '');
 	const [typedReason, setTypedReason] = useState(song?.reason || '');
 	const [selectedUserId, setSelectedUserId] = useState(song?.userId || '');
-	const [songFilename, setSongFilename] = useState('');
+	const [filename, setFilename] = useState(song?.filename || '');
+	const [extension, setExtension] = useState(song?.extension || '');
+	const [fileToUpload, setFileToUpload] = useState('');
 	const [formWasValidated, setFormWasValidated] = useState(false);
 	const [isConfirmingDelete, setIsConfirmingDelete] = useState(false);
 
@@ -30,6 +33,8 @@ export default function SongEditPage() {
 		setTypedArtsit(song?.artist || '');
 		setTypedReason(song?.reason || '');
 		setSelectedUserId(song?.userId || '');
+		setFilename(song?.filename || '');
+		setExtension(song?.extension || '');
 	}, [song]);
 
 	const onSaveClick = (e) => {
@@ -40,8 +45,11 @@ export default function SongEditPage() {
 			if (songId !== 'new') {
 				songToSave.id = songId;
 			}
-			if (songFilename) {
-				songToSave.filename = songFilename;
+			if (filename) {
+				songToSave.filename = filename;
+			}
+			if (extension) {
+				songToSave.extension = extension;
 			}
 			dispatch(saveSong(songToSave))
 				.then(unwrapResult)
@@ -62,6 +70,22 @@ export default function SongEditPage() {
 		} else {
 			setIsConfirmingDelete(true);
 		}
+	};
+
+	const onChangeFile = (e) => {
+		setFileToUpload(e.target.value);
+
+		const filename = Date.now().toString(36);
+		const extension = e.target.value.split('.').pop();
+		const file = e.target.files[0];
+		const type = file.type;
+
+		dispatch(uploadSong({ filename, extension, type, file }))
+			.then(unwrapResult)
+			.then(() => {
+				setFilename(filename);
+				setExtension(extension);
+			});
 	};
 
 	let usersForDropdown = [];
@@ -90,6 +114,8 @@ export default function SongEditPage() {
 			}
 		}
 	}
+
+	const isSaving = competitionsState.uploadSongStatus === FetchStatus.pending || competitionsState.songSaveStatus === FetchStatus.pending;
 
 	return (
 		<div>
@@ -129,19 +155,31 @@ export default function SongEditPage() {
 								</select>
 							</div>
 							<div className="mb-3">
-								<label htmlFor="uploadInput" className="form-label">Upload the file</label>
-								<input type="file" className="form-control" id="uploadInput" accept="audio/*" value={songFilename} onChange={e => setSongFilename(e.target.value)} />
+								<label htmlFor="uploadInput" className="form-label">
+									{filename ? (filename === song?.filename ? 'File uploaded' : 'New file uploaded') : 'Song file'}
+								</label>
+								{' '}
+								<button type="button" className="btn btn-outline-secondary" onClick={() => fileInputRef.current?.click?.()} disabled={isSaving}>
+									{filename ? 'Upload new file' : 'Upload'}
+								</button>
+								{competitionsState.uploadSongStatus === FetchStatus.pending ? (<>{' '}<Spinner /></>) : null}
+								<input type="file" ref={fileInputRef} className="form-control d-none" id="uploadInput" accept="audio/*" value={fileToUpload} onChange={onChangeFile} />
 							</div>
-							<button type="submit" className="btn btn-primary" onClick={onSaveClick} disabled={competitionsState.songSaveStatus === FetchStatus.pending}>
-								Save
-							</button>
-							{' '}
-							<NavLink className="btn btn-secondary" to="/song">Cancel</NavLink>
-							{' '}
-							<button type="button" className="btn btn-danger" onClick={onDeleteClick} disabled={competitionsState.songSaveStatus === FetchStatus.pending}>
-								{isConfirmingDelete ? 'Are you sure?' : 'Delete'}
-							</button>
-							{competitionsState.songSaveStatus === FetchStatus.pending ? (<>{' '}<Spinner /></>) : null}
+							<div className="mb-3 d-flex">
+								<div className="flex-grow-1">
+									<button type="submit" className="btn btn-primary" onClick={onSaveClick} disabled={isSaving}>
+										Save
+									</button>
+									{' '}
+									<NavLink className="btn btn-secondary" to="/song">Cancel</NavLink>
+									{competitionsState.songSaveStatus === FetchStatus.pending ? (<>{' '}<Spinner /></>) : null}
+								</div>
+								<div>
+									<button type="button" className="btn btn-danger" onClick={onDeleteClick} disabled={isSaving}>
+										{isConfirmingDelete ? 'Are you sure?' : 'Delete'}
+									</button>
+								</div>
+							</div>
 						</form>
 					) : (
 						<p className="opacity-75">Loading....</p>

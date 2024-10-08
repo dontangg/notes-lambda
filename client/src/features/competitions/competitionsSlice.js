@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import appFetch, { FetchStatus } from '../../app/appFetch';
+import { uploadFile } from '../../app/utilities';
 
 const initialState = {
 	allUsers: null,
@@ -8,6 +9,7 @@ const initialState = {
 	curCompFetchStatus: FetchStatus.idle,
 	competitionSaveStatus: FetchStatus.idle,
 	songSaveStatus: FetchStatus.idle,
+	uploadSongStatus: FetchStatus.idle,
 	competitions: null,
 	currentCompetition: null,
 	error: '',
@@ -105,6 +107,27 @@ export const deleteSong = createAsyncThunk(
 		}
 	},
 );
+
+export const uploadSong = createAsyncThunk(
+	'competitions/uploadSong',
+	async (arg, { dispatch, getState }) => {
+		const { filename, extension, type, file } = arg
+		const body = { filename, extension, type };
+		return appFetch('/song_upload_url', { method: 'POST', body: JSON.stringify(body) }, dispatch, getState)
+			.then(response => response.json())
+			.then(({ uploadUrl }) => uploadFile(file, uploadUrl))
+			.then(() => {
+				return appFetch('/trigger_transcoder', { method: 'POST', body: JSON.stringify(body) }, dispatch, getState)
+			})
+			.then(() => body);
+	}, {
+		condition: (arg, { getState, extra }) => {
+			const competitionsState = getState().competitions;
+			return competitionsState.uploadSongStatus !== FetchStatus.pending;
+		}
+	},
+);
+
 
 
 export const competitionsSlice = createSlice({
@@ -229,6 +252,18 @@ export const competitionsSlice = createSlice({
 		});
 		builder.addCase(deleteSong.pending, (state, action) => {
 			state.songSaveStatus = FetchStatus.pending;
+		});
+		// uploadSong
+		builder.addCase(uploadSong.fulfilled, (state, action) => {
+			state.error = '';
+			state.uploadSongStatus = FetchStatus.success;
+		});
+		builder.addCase(uploadSong.rejected, (state, action) => {
+			state.uploadSongStatus = FetchStatus.error;
+			state.error = action.error.message;
+		});
+		builder.addCase(uploadSong.pending, (state, action) => {
+			state.uploadSongStatus = FetchStatus.pending;
 		});
 	},
 	selectors: {
