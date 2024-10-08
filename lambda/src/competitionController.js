@@ -14,9 +14,18 @@ const competitionController = {
 
 		if (currentCompetition) {
 			if (currentCompetition.phase === 'submitting') {
-				// Filter out the songs not submitted by the user or the user's partner
+				// Filter out the songs or at least the userIds of songs not submitted by the user or the user's partner
 				if (currentCompetition.songs) {
-					currentCompetition.songs = currentCompetition.songs.filter(song => allowedUserIds.includes(song.userId));
+					if (req.user.admin) {
+						currentCompetition.songs.map(song => {
+							if (!allowedUserIds.includes(song.userId)) {
+								delete song.userId;
+							}
+							return song;
+						});
+					} else {
+						currentCompetition.songs = currentCompetition.songs.filter(song => allowedUserIds.includes(song.userId));
+					}
 				}
 			} else if (currentCompetition.phase === 'guessing') {
 				// Find the songs guessed correctly

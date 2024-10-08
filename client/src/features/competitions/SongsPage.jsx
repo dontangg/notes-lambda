@@ -1,29 +1,41 @@
-import React, { useEffect, useState, Fragment } from "react";
+import React, { Fragment } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { selectCompetitions } from "./competitionsSlice";
-import { useDocumentTitle } from "../../app/customHooks";
+import { selectAllUsers, selectCompetitions } from "./competitionsSlice";
 import { selectCurrentUser } from "../signIn/signInSlice";
-import AudioPlayer from '../../common/AudioPlayer';
 import { selectAudioPlayer, setIsPlaying, setCurrentSongFilename } from "../../common/audioPlayerSlice";
 import { convertMsToStr } from '../../app/utilities';
+import { useDocumentTitle } from "../../app/customHooks";
+import AudioPlayer from '../../common/AudioPlayer';
 
 export default function NewCompetitionPage() {
 	const dispatch = useDispatch();
-	useDocumentTitle('My Songs');
+	useDocumentTitle('Songs');
 	const competitionsState = useSelector(selectCompetitions);
 	const audioPlayerState = useSelector(selectAudioPlayer);
 	const currentUser = useSelector(selectCurrentUser);
+	const allUsers = useSelector(selectAllUsers);
 
 	const currentCompetition = competitionsState.currentCompetition;
 
-	// TODO: Allow admin to see all when they're all submitted
-	const allowedUserIds = [currentUser.id];
-	if (currentUser.partnerId) {
-		allowedUserIds.push(currentUser.partnerId);
+	let songs = null;
+	if (currentUser.admin && allUsers) {
+		const maxSongCount = allUsers.reduce((sum, user) => {
+			if (!user.isParticipating) return sum;
+			return sum + (user.partnerId ? 1 : 2);
+		}, 0);
+		if (currentCompetition?.songs?.length === maxSongCount) {
+			songs = currentCompetition?.songs;
+		}
 	}
+	if (!songs) {
+		const allowedUserIds = [currentUser.id];
+		if (currentUser.partnerId) {
+			allowedUserIds.push(currentUser.partnerId);
+		}
 
-	const songs = currentCompetition?.songs?.filter(s => allowedUserIds.includes(s.userId)) || [];
+		songs = currentCompetition?.songs?.filter(s => allowedUserIds.includes(s.userId)) || [];
+	}
 
 	const getUserName = (userId) => {
 		const user = competitionsState.allUsers?.find(u => u.id === userId);
@@ -42,7 +54,7 @@ export default function NewCompetitionPage() {
 
 	return (
 		<>
-			<h1 className="mb-4">My Songs</h1>
+			<h1 className="mb-4">Songs</h1>
 			{competitionsState.error && (<div className="alert alert-danger" role="alert">{competitionsState.error}</div>)}
 
 			<div className="row">
