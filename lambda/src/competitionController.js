@@ -19,6 +19,16 @@ const mapCompetition = (req, comp) => {
 		}
 		comp.songCounts = songCounts;
 
+		comp.attempts?.forEach(attempt => {
+			attempt.correctGuessedUserIds = [];
+			attempt.guesses?.forEach(guess => {
+				const isCorrect = comp.songs.some(song => song.filename === guess.songFilename && song.userId === guess.guessedUserId);
+				if (isCorrect) {
+					attempt.correctGuessedUserIds.push(guess.guessedUserId);
+				}
+			});
+		});
+
 		const hasForfeited = comp.forfeitedUserIds?.some(ffUserId => allowedUserIds.includes(ffUserId));
 
 		// If the user hasn't forfeited, filter out userIds in the songs that they haven't gotten right
@@ -42,16 +52,8 @@ const mapCompetition = (req, comp) => {
 			});
 		}
 
+		// Remove the array of the guesses inside attempts not made by the user or the user's partner
 		comp.attempts?.forEach(attempt => {
-			attempt.correctGuessedUserIds = [];
-			attempt.guesses?.forEach(guess => {
-				const isCorrect = comp.songs.some(song => song.filename === guess.songFilename && song.userId === guess.guessedUserId);
-				if (isCorrect) {
-					attempt.correctGuessedUserIds.push(guess.guessedUserId);
-				}
-			});
-
-			// Remove the array of the guesses inside attempts not made by the user or the user's partner
 			if (!allowedUserIds.includes(attempt.userId)) {
 				delete attempt.guesses;
 			}
