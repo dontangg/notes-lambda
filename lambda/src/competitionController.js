@@ -132,7 +132,7 @@ const competitionController = {
 			newAttempt.guesses.push(guessForSong);
 		}
 
-		await competitionDb.saveAttempt(currentCompetition.name, newAttempt);
+		await competitionDb.saveAttempt(currentCompetition, newAttempt);
 
 		if (!currentCompetition.attempts) {
 			currentCompetition.attempts = [];

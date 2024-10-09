@@ -70,9 +70,14 @@ const competitionDb = {
 		return db.removeDeepItem(tableName, { pk, sk: compName }, `songs.${songId}`);
 	},
 
-	saveAttempt: async (compName, attempt) => {
-		return db.appendToList(tableName, { pk, sk: compName }, 'attempts', attempt);
-	}
+	saveAttempt: async (competition, attempt) => {
+		if (competition.attempts) {
+			return db.appendToList(tableName, { pk, sk: competition.name }, 'attempts', attempt);
+		}
+
+		const compToSave = { attempts: [ attempt ] };
+		return db.saveItem(tableName, compToSave, { pk, sk: competition.name }, ['attempts']);
+	},
 };
 
 module.exports = competitionDb;
