@@ -45,6 +45,18 @@ export const fetchCompetitions = createAsyncThunk(
 	},
 );
 
+export const fetchCompetition = createAsyncThunk(
+	'competitions/fetchCompetition',
+	async (compName, { dispatch, getState }) => {
+		return appFetch('/competition?' + (new URLSearchParams({ name: compName })), null, dispatch, getState).then(response => response.json());
+	}, {
+		condition: (arg, { getState, extra }) => {
+			const competitionsState = getState().competitions;
+			return competitionsState.competitionsFetchStatus !== FetchStatus.pending;
+		}
+	},
+);
+
 export const fetchCurrentCompetition = createAsyncThunk(
 	'competitions/fetchCurrentCompetition',
 	async (arg, { dispatch, getState }) => {
@@ -128,7 +140,22 @@ export const uploadSong = createAsyncThunk(
 	},
 );
 
-
+const addCompetitionFetched = (state, comp) => {
+	if (!state.competitions) {
+		state.competitions = [];
+	}
+	let foundExistingComp = false;
+	state.competitions = state.competitions.map(existingComp => {
+		if (comp.name === existingComp.name) {
+			foundExistingComp = true;
+			return { ...existingComp, ...comp };
+		}
+		return existingComp;
+	});
+	if (!foundExistingComp) {
+		state.competitions.push(comp);
+	}
+};
 
 export const competitionsSlice = createSlice({
 	name: 'competitions',
@@ -139,7 +166,7 @@ export const competitionsSlice = createSlice({
 		// },
 	},
 	extraReducers: (builder) => {
-		// fetchCompetitions
+		// fetchAllUsers
 		builder.addCase(fetchAllUsers.fulfilled, (state, action) => {
 			state.error = '';
 			state.allUsersFetchStatus = FetchStatus.success;
@@ -156,7 +183,13 @@ export const competitionsSlice = createSlice({
 		builder.addCase(fetchCompetitions.fulfilled, (state, action) => {
 			state.error = '';
 			state.competitionsFetchStatus = FetchStatus.success;
-			state.competitions = action.payload;
+			state.competitions = action.payload.map(comp => {
+				const existingComp = state.competitions?.find(c => c.name === comp.name);
+				if (existingComp) {
+					return { ...existingComp, ...comp };
+				}
+				return comp;
+			});
 		});
 		builder.addCase(fetchCompetitions.rejected, (state, action) => {
 			state.competitionsFetchStatus = FetchStatus.error;
@@ -165,11 +198,26 @@ export const competitionsSlice = createSlice({
 		builder.addCase(fetchCompetitions.pending, (state, action) => {
 			state.competitionsFetchStatus = FetchStatus.pending;
 		});
+		// fetchCompetition
+		builder.addCase(fetchCompetition.fulfilled, (state, action) => {
+			state.error = '';
+			state.competitionsFetchStatus = FetchStatus.success;
+			const comp = action.payload;
+			addCompetitionFetched(state, comp);
+		});
+		builder.addCase(fetchCompetition.rejected, (state, action) => {
+			state.competitionsFetchStatus = FetchStatus.error;
+			state.error = action.error.message;
+		});
+		builder.addCase(fetchCompetition.pending, (state, action) => {
+			state.competitionsFetchStatus = FetchStatus.pending;
+		});
 		// fetchCurrentCompetition
 		builder.addCase(fetchCurrentCompetition.fulfilled, (state, action) => {
 			state.error = '';
 			state.curCompFetchStatus = FetchStatus.success;
 			state.currentCompetition = action.payload;
+			addCompetitionFetched(state, state.currentCompetition);
 		});
 		builder.addCase(fetchCurrentCompetition.rejected, (state, action) => {
 			state.curCompFetchStatus = FetchStatus.error;

@@ -16,6 +16,7 @@ router.post('/get_token', userController.getToken);
 
 router.get('/competitions', competitionController.list);
 router.get('/competition/current', competitionController.getCurrent);
+router.get('/competition', competitionController.get);
 router.post('/competition', competitionController.save);
 router.delete('/competition', competitionController.delete);
 

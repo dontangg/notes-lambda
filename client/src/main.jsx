@@ -9,6 +9,7 @@ import SignInPage from "./features/signIn/SignInPage";
 import AccountPage from "./features/account/AccountPage";
 import CompetitionsPage from "./features/competitions/CompetitionsPage";
 import NewCompetitionPage from "./features/competitions/NewCompetitionPage";
+import ScorecardPage from "./features/competitions/ScorecardPage";
 import SongsPage from "./features/competitions/SongsPage";
 import SongEditPage from "./features/competitions/SongEditPage";
 
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
 			{
 				path: "/competition/new",
 				element: <NewCompetitionPage />,
+			},
+			{
+				path: "/scorecard/:name",
+				element: <ScorecardPage />,
 			},
 			{
 				path: "/song",

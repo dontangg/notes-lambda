@@ -89,7 +89,7 @@ export default function AccountPage() {
 			return (<button type="button" className="btn invisible" aria-hidden>SpaceHolder</button>);
 		}
 
-		const scoreCardButton = (<button type="button" className="btn btn-secondary">Scorecard</button>);
+		const scoreCardButton = (<NavLink className="btn btn-secondary" to={'/scorecard/' + competition.name}>Scorecard</NavLink>);
 		if (userIsAdmin) {
 			return (<>
 				<button type="button" className="btn btn-secondary" onClick={onEditCompClick(competition)}>Edit</button>

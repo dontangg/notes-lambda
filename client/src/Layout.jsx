@@ -61,7 +61,7 @@ const Layout = () => {
 							)}
 							{currentCompetition && (
 								<li className="nav-item">
-									<a className="nav-link" href="#">Scorecard</a>
+									<NavLink className="nav-link" to="/scorecard/current">Scorecard</NavLink>
 								</li>
 							)}
 							{currentCompetition?.phase === CompetitionPhase.submitting && (

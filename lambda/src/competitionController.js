@@ -2,62 +2,75 @@
 
 const competitionDb = require('./db/competition');
 
-const competitionController = {
+const mapCompetition = (req, comp) => {
+	const allowedUserIds = [req.user.id];
+	if (req.user.partnerId) {
+		allowedUserIds.push(req.user.partnerId);
+	}
 
-	getCurrent: async (req) => {
-		const currentCompetition = await competitionDb.getCurrent();
+	if (comp) {
 
-		const allowedUserIds = [req.user.id];
-		if (req.user.partnerId) {
-			allowedUserIds.push(req.user.partnerId);
-		}
-
-		if (currentCompetition) {
-			if (currentCompetition.phase === 'submitting') {
-				// Filter out the songs or at least the userIds of songs not submitted by the user or the user's partner
-				if (currentCompetition.songs) {
-					if (req.user.admin) {
-						currentCompetition.songs.map(song => {
-							if (!allowedUserIds.includes(song.userId)) {
-								delete song.userId;
-							}
-							return song;
-						});
-					} else {
-						currentCompetition.songs = currentCompetition.songs.filter(song => allowedUserIds.includes(song.userId));
-					}
-				}
-			} else if (currentCompetition.phase === 'guessing') {
-				// Find the songs guessed correctly
-				const correctlyGuessedSongs = [];
-				const lastAttempt = currentCompetition.attempts?.[currentCompetition.attempts?.length - 1];
-				lastAttempt?.guesses?.forEach(guess => {
-					const isCorrect = currentCompetition.songs.some(song => song.filename === guess.songFilename && song.userId === guess.guessedUserId);
-					if (isCorrect) {
-						correctlyGuessedSongs.push(guess.songFilename);
-					}
-				});
-
-				const hasForfeited = currentCompetition?.forfeitedUserIds?.some(ffUserId => allowedUserIds.includes(ffUserId));
-				if (!hasForfeited) {
-					// Filter out the userIds of the songs not submitted by the user or the user's partner and not guessed correctly
-					currentCompetition.songs?.forEach(song => {
-						if (!allowedUserIds.includes(song.userId) && !correctlyGuessedSongs.includes(song.filename)) {
-							delete song.userId;
-						}
-					});
-				}
+		// Report how many songs each person has submitted
+		const songCounts = {};
+		if (comp.songs) {
+			for (const song of comp.songs) {
+				songCounts[song.userId] = (songCounts[song.userId] || 0) + 1;
 			}
+		}
+		comp.songCounts = songCounts;
 
-			// Remove the array of the guesses inside attempts not made by the user or the user's partner
-			currentCompetition.attempts?.forEach(attempt => {
-				if (!allowedUserIds.includes(attempt.userId)) {
-					delete attempt.guesses;
+		const hasForfeited = comp.forfeitedUserIds?.some(ffUserId => allowedUserIds.includes(ffUserId));
+
+		// If the user hasn't forfeited, filter out userIds in the songs that they haven't gotten right
+		if (!hasForfeited && comp.phase !== 'closed') {
+			// Find the songs guessed correctly
+			const correctlyGuessedSongs = [];
+			const teamAttempts = (comp.attempts || []).filter(att => allowedUserIds.includes(att.userId)).sort((a, b) => b.createdAt.localeCompare(a.createdAt)); // sort in reverse
+			const lastAttempt = teamAttempts?.[0];
+			lastAttempt?.guesses?.forEach(guess => {
+				const isCorrect = comp.songs.some(song => song.filename === guess.songFilename && song.userId === guess.guessedUserId);
+				if (isCorrect) {
+					correctlyGuessedSongs.push(guess.songFilename);
+				}
+			});
+
+			// Filter out the userIds of the songs not submitted by the user or the user's partner and not guessed correctly
+			comp.songs?.forEach(song => {
+				if (!allowedUserIds.includes(song.userId) && !correctlyGuessedSongs.includes(song.filename)) {
+					delete song.userId;
 				}
 			});
 		}
 
+		comp.attempts?.forEach(attempt => {
+			attempt.correctGuessedUserIds = [];
+			attempt.guesses?.forEach(guess => {
+				const isCorrect = comp.songs.some(song => song.filename === guess.songFilename && song.userId === guess.guessedUserId);
+				if (isCorrect) {
+					attempt.correctGuessedUserIds.push(guess.guessedUserId);
+				}
+			});
+
+			// Remove the array of the guesses inside attempts not made by the user or the user's partner
+			if (!allowedUserIds.includes(attempt.userId)) {
+				delete attempt.guesses;
+			}
+		});
+	}
+
+	return comp;
+};
+
+const competitionController = {
+
+	getCurrent: async (req) => {
+		const currentCompetition = mapCompetition(req, await competitionDb.getCurrent());
 		return { statusCode: 200, body: JSON.stringify(currentCompetition) };
+	},
+
+	get: async (req) => {
+		const comp = mapCompetition(req, await competitionDb.get(req.query['name']));
+		return { statusCode: 200, body: JSON.stringify(comp) };
 	},
 
 	list: async (req) => {
