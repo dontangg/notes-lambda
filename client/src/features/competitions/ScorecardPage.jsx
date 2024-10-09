@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
-import { fetchCompetition, fetchCurrentCompetition, selectCompetitions, selectAllUsers } from "./competitionsSlice";
+import { CompetitionPhase, fetchCompetition, fetchCurrentCompetition, selectCompetitions, selectAllUsers } from "./competitionsSlice";
 import { useDocumentTitle } from "../../app/customHooks";
 
 export default function ScorecardPage() {
@@ -24,7 +24,7 @@ export default function ScorecardPage() {
 		: competitionsState.competitions?.find(c => c.name === nameParam);
 	
 	const participatingUsers = allUsers?.filter(u => {
-		if (nameParam === 'current')
+		if (nameParam === 'current' || (competition && competition.phase !== CompetitionPhase.closed))
 			return u.isParticipating;
 		// If this isn't the current competition, use the list of submitted songs to know who participated
 		return competition?.songs?.some(song => song.userId === u.id);
