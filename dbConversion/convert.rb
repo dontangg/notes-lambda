@@ -31,7 +31,7 @@ TEXT
         <<TEXT.chomp
         {
             "createdAt": "#{attempt.created_at.as_json}",
-            "correctCount": "#{attempt.correct_count}",
+            "correctCount": #{attempt.correct_count},
             "userId": #{attempt.user_id},
             "guesses": [
 #{guesses}

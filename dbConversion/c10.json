@@ -105,7 +105,7 @@
 	"attempts": [
 		{
 			"createdAt": "2023-02-17T22:21:06.184-06:00",
-			"correctCount": "2",
+			"correctCount": 2,
 			"userId": 3,
 			"guesses": [
 				{
@@ -160,7 +160,7 @@
 		},
 		{
 			"createdAt": "2023-02-17T22:27:56.318-06:00",
-			"correctCount": "3",
+			"correctCount": 3,
 			"userId": 3,
 			"guesses": [
 				{
@@ -215,7 +215,7 @@
 		},
 		{
 			"createdAt": "2023-02-17T22:33:55.694-06:00",
-			"correctCount": "6",
+			"correctCount": 6,
 			"userId": 3,
 			"guesses": [
 				{
@@ -270,7 +270,7 @@
 		},
 		{
 			"createdAt": "2023-02-17T22:38:29.013-06:00",
-			"correctCount": "10",
+			"correctCount": 10,
 			"userId": 3,
 			"guesses": [
 				{
@@ -325,7 +325,7 @@
 		},
 		{
 			"createdAt": "2023-02-17T22:41:10.736-06:00",
-			"correctCount": "12",
+			"correctCount": 12,
 			"userId": 3,
 			"guesses": [
 				{
@@ -380,7 +380,7 @@
 		},
 		{
 			"createdAt": "2023-02-18T10:21:08.811-06:00",
-			"correctCount": "3",
+			"correctCount": 3,
 			"userId": 5,
 			"guesses": [
 				{
@@ -435,7 +435,7 @@
 		},
 		{
 			"createdAt": "2023-02-18T13:38:05.810-06:00",
-			"correctCount": "7",
+			"correctCount": 7,
 			"userId": 5,
 			"guesses": [
 				{
@@ -490,7 +490,7 @@
 		},
 		{
 			"createdAt": "2023-02-18T13:53:17.291-06:00",
-			"correctCount": "8",
+			"correctCount": 8,
 			"userId": 5,
 			"guesses": [
 				{
@@ -545,7 +545,7 @@
 		},
 		{
 			"createdAt": "2023-02-18T13:57:30.689-06:00",
-			"correctCount": "12",
+			"correctCount": 12,
 			"userId": 5,
 			"guesses": [
 				{
@@ -600,7 +600,7 @@
 		},
 		{
 			"createdAt": "2023-02-18T14:21:02.985-06:00",
-			"correctCount": "3",
+			"correctCount": 3,
 			"userId": 4,
 			"guesses": [
 				{
@@ -655,7 +655,7 @@
 		},
 		{
 			"createdAt": "2023-02-18T14:27:55.698-06:00",
-			"correctCount": "4",
+			"correctCount": 4,
 			"userId": 4,
 			"guesses": [
 				{
@@ -710,7 +710,7 @@
 		},
 		{
 			"createdAt": "2023-02-18T14:31:42.395-06:00",
-			"correctCount": "6",
+			"correctCount": 6,
 			"userId": 4,
 			"guesses": [
 				{
@@ -765,7 +765,7 @@
 		},
 		{
 			"createdAt": "2023-02-18T14:34:26.058-06:00",
-			"correctCount": "9",
+			"correctCount": 9,
 			"userId": 4,
 			"guesses": [
 				{
@@ -820,7 +820,7 @@
 		},
 		{
 			"createdAt": "2023-02-18T14:35:59.250-06:00",
-			"correctCount": "12",
+			"correctCount": 12,
 			"userId": 4,
 			"guesses": [
 				{
@@ -875,7 +875,7 @@
 		},
 		{
 			"createdAt": "2023-02-20T00:03:02.588-06:00",
-			"correctCount": "1",
+			"correctCount": 1,
 			"userId": 6,
 			"guesses": [
 				{
@@ -930,7 +930,7 @@
 		},
 		{
 			"createdAt": "2023-02-20T00:19:00.419-06:00",
-			"correctCount": "1",
+			"correctCount": 1,
 			"userId": 6,
 			"guesses": [
 				{
@@ -985,7 +985,7 @@
 		},
 		{
 			"createdAt": "2023-02-20T00:37:01.715-06:00",
-			"correctCount": "2",
+			"correctCount": 2,
 			"userId": 6,
 			"guesses": [
 				{
@@ -1040,7 +1040,7 @@
 		},
 		{
 			"createdAt": "2023-02-20T00:49:54.204-06:00",
-			"correctCount": "6",
+			"correctCount": 6,
 			"userId": 6,
 			"guesses": [
 				{
@@ -1095,7 +1095,7 @@
 		},
 		{
 			"createdAt": "2023-02-20T01:08:15.700-06:00",
-			"correctCount": "7",
+			"correctCount": 7,
 			"userId": 6,
 			"guesses": [
 				{
@@ -1150,7 +1150,7 @@
 		},
 		{
 			"createdAt": "2023-02-20T01:13:17.341-06:00",
-			"correctCount": "10",
+			"correctCount": 10,
 			"userId": 6,
 			"guesses": [
 				{
@@ -1205,7 +1205,7 @@
 		},
 		{
 			"createdAt": "2023-02-20T01:13:40.759-06:00",
-			"correctCount": "12",
+			"correctCount": 12,
 			"userId": 6,
 			"guesses": [
 				{
@@ -1260,7 +1260,7 @@
 		},
 		{
 			"createdAt": "2023-02-22T19:03:32.515-06:00",
-			"correctCount": "0",
+			"correctCount": 0,
 			"userId": 10,
 			"guesses": [
 				{
@@ -1315,7 +1315,7 @@
 		},
 		{
 			"createdAt": "2023-02-22T19:10:24.060-06:00",
-			"correctCount": "1",
+			"correctCount": 1,
 			"userId": 10,
 			"guesses": [
 				{
@@ -1370,7 +1370,7 @@
 		},
 		{
 			"createdAt": "2023-02-22T19:20:55.386-06:00",
-			"correctCount": "3",
+			"correctCount": 3,
 			"userId": 10,
 			"guesses": [
 				{
@@ -1425,7 +1425,7 @@
 		},
 		{
 			"createdAt": "2023-02-22T19:28:17.249-06:00",
-			"correctCount": "10",
+			"correctCount": 10,
 			"userId": 10,
 			"guesses": [
 				{
@@ -1480,7 +1480,7 @@
 		},
 		{
 			"createdAt": "2023-02-22T19:30:41.801-06:00",
-			"correctCount": "12",
+			"correctCount": 12,
 			"userId": 10,
 			"guesses": [
 				{
@@ -1535,7 +1535,7 @@
 		},
 		{
 			"createdAt": "2023-02-24T11:48:50.638-06:00",
-			"correctCount": "2",
+			"correctCount": 2,
 			"userId": 1,
 			"guesses": [
 				{
@@ -1590,7 +1590,7 @@
 		},
 		{
 			"createdAt": "2023-02-25T19:52:49.777-06:00",
-			"correctCount": "3",
+			"correctCount": 3,
 			"userId": 1,
 			"guesses": [
 				{
@@ -1645,7 +1645,7 @@
 		},
 		{
 			"createdAt": "2023-03-05T21:43:15.822-06:00",
-			"correctCount": "2",
+			"correctCount": 2,
 			"userId": 7,
 			"guesses": [
 				{
@@ -1700,7 +1700,7 @@
 		},
 		{
 			"createdAt": "2023-03-05T21:48:02.816-06:00",
-			"correctCount": "6",
+			"correctCount": 6,
 			"userId": 7,
 			"guesses": [
 				{
@@ -1755,7 +1755,7 @@
 		},
 		{
 			"createdAt": "2023-03-05T21:54:50.245-06:00",
-			"correctCount": "6",
+			"correctCount": 6,
 			"userId": 7,
 			"guesses": [
 				{
@@ -1810,7 +1810,7 @@
 		},
 		{
 			"createdAt": "2023-03-05T21:58:33.155-06:00",
-			"correctCount": "8",
+			"correctCount": 8,
 			"userId": 7,
 			"guesses": [
 				{
@@ -1865,7 +1865,7 @@
 		},
 		{
 			"createdAt": "2023-03-05T22:00:33.973-06:00",
-			"correctCount": "12",
+			"correctCount": 12,
 			"userId": 7,
 			"guesses": [
 				{
@@ -1920,7 +1920,7 @@
 		},
 		{
 			"createdAt": "2023-03-24T13:48:00.769-05:00",
-			"correctCount": "5",
+			"correctCount": 5,
 			"userId": 1,
 			"guesses": [
 				{
@@ -1975,7 +1975,7 @@
 		},
 		{
 			"createdAt": "2023-03-24T14:07:48.188-05:00",
-			"correctCount": "5",
+			"correctCount": 5,
 			"userId": 1,
 			"guesses": [
 				{
@@ -2030,7 +2030,7 @@
 		},
 		{
 			"createdAt": "2023-03-24T14:16:09.256-05:00",
-			"correctCount": "9",
+			"correctCount": 9,
 			"userId": 1,
 			"guesses": [
 				{
@@ -2085,7 +2085,7 @@
 		},
 		{
 			"createdAt": "2023-03-24T14:18:12.230-05:00",
-			"correctCount": "12",
+			"correctCount": 12,
 			"userId": 1,
 			"guesses": [
 				{

@@ -105,7 +105,7 @@
 	"attempts": [
 		{
 			"createdAt": "2022-02-19T01:07:18.505-06:00",
-			"correctCount": "5",
+			"correctCount": 5,
 			"userId": 5,
 			"guesses": [
 				{
@@ -160,7 +160,7 @@
 		},
 		{
 			"createdAt": "2022-02-19T01:17:55.119-06:00",
-			"correctCount": "8",
+			"correctCount": 8,
 			"userId": 5,
 			"guesses": [
 				{
@@ -215,7 +215,7 @@
 		},
 		{
 			"createdAt": "2022-02-19T01:21:26.411-06:00",
-			"correctCount": "10",
+			"correctCount": 10,
 			"userId": 5,
 			"guesses": [
 				{
@@ -270,7 +270,7 @@
 		},
 		{
 			"createdAt": "2022-02-19T01:22:35.424-06:00",
-			"correctCount": "12",
+			"correctCount": 12,
 			"userId": 5,
 			"guesses": [
 				{
@@ -325,7 +325,7 @@
 		},
 		{
 			"createdAt": "2022-02-19T11:01:09.820-06:00",
-			"correctCount": "6",
+			"correctCount": 6,
 			"userId": 6,
 			"guesses": [
 				{
@@ -380,7 +380,7 @@
 		},
 		{
 			"createdAt": "2022-02-19T11:15:44.015-06:00",
-			"correctCount": "7",
+			"correctCount": 7,
 			"userId": 6,
 			"guesses": [
 				{
@@ -435,7 +435,7 @@
 		},
 		{
 			"createdAt": "2022-02-19T11:26:05.970-06:00",
-			"correctCount": "12",
+			"correctCount": 12,
 			"userId": 6,
 			"guesses": [
 				{
@@ -490,7 +490,7 @@
 		},
 		{
 			"createdAt": "2022-02-19T17:17:09.509-06:00",
-			"correctCount": "1",
+			"correctCount": 1,
 			"userId": 1,
 			"guesses": [
 				{
@@ -545,7 +545,7 @@
 		},
 		{
 			"createdAt": "2022-02-19T17:25:39.744-06:00",
-			"correctCount": "5",
+			"correctCount": 5,
 			"userId": 1,
 			"guesses": [
 				{
@@ -600,7 +600,7 @@
 		},
 		{
 			"createdAt": "2022-02-19T17:31:41.420-06:00",
-			"correctCount": "8",
+			"correctCount": 8,
 			"userId": 1,
 			"guesses": [
 				{
@@ -655,7 +655,7 @@
 		},
 		{
 			"createdAt": "2022-02-19T17:35:52.098-06:00",
-			"correctCount": "12",
+			"correctCount": 12,
 			"userId": 1,
 			"guesses": [
 				{
@@ -710,7 +710,7 @@
 		},
 		{
 			"createdAt": "2022-02-19T18:43:58.129-06:00",
-			"correctCount": "3",
+			"correctCount": 3,
 			"userId": 3,
 			"guesses": [
 				{
@@ -765,7 +765,7 @@
 		},
 		{
 			"createdAt": "2022-02-19T18:52:38.486-06:00",
-			"correctCount": "4",
+			"correctCount": 4,
 			"userId": 3,
 			"guesses": [
 				{
@@ -820,7 +820,7 @@
 		},
 		{
 			"createdAt": "2022-02-19T18:58:05.729-06:00",
-			"correctCount": "6",
+			"correctCount": 6,
 			"userId": 3,
 			"guesses": [
 				{
@@ -875,7 +875,7 @@
 		},
 		{
 			"createdAt": "2022-02-19T19:07:54.399-06:00",
-			"correctCount": "10",
+			"correctCount": 10,
 			"userId": 3,
 			"guesses": [
 				{
@@ -930,7 +930,7 @@
 		},
 		{
 			"createdAt": "2022-02-19T19:08:59.612-06:00",
-			"correctCount": "12",
+			"correctCount": 12,
 			"userId": 3,
 			"guesses": [
 				{
@@ -985,7 +985,7 @@
 		},
 		{
 			"createdAt": "2022-02-19T23:04:05.972-06:00",
-			"correctCount": "2",
+			"correctCount": 2,
 			"userId": 4,
 			"guesses": [
 				{
@@ -1040,7 +1040,7 @@
 		},
 		{
 			"createdAt": "2022-02-19T23:06:37.086-06:00",
-			"correctCount": "4",
+			"correctCount": 4,
 			"userId": 4,
 			"guesses": [
 				{
@@ -1095,7 +1095,7 @@
 		},
 		{
 			"createdAt": "2022-02-19T23:10:29.983-06:00",
-			"correctCount": "6",
+			"correctCount": 6,
 			"userId": 4,
 			"guesses": [
 				{
@@ -1150,7 +1150,7 @@
 		},
 		{
 			"createdAt": "2022-02-19T23:17:56.825-06:00",
-			"correctCount": "9",
+			"correctCount": 9,
 			"userId": 4,
 			"guesses": [
 				{
@@ -1205,7 +1205,7 @@
 		},
 		{
 			"createdAt": "2022-02-19T23:18:54.271-06:00",
-			"correctCount": "12",
+			"correctCount": 12,
 			"userId": 4,
 			"guesses": [
 				{
@@ -1260,7 +1260,7 @@
 		},
 		{
 			"createdAt": "2022-02-20T15:21:31.848-06:00",
-			"correctCount": "1",
+			"correctCount": 1,
 			"userId": 10,
 			"guesses": [
 				{
@@ -1315,7 +1315,7 @@
 		},
 		{
 			"createdAt": "2022-02-20T15:25:15.080-06:00",
-			"correctCount": "6",
+			"correctCount": 6,
 			"userId": 10,
 			"guesses": [
 				{
@@ -1370,7 +1370,7 @@
 		},
 		{
 			"createdAt": "2022-02-20T15:27:54.715-06:00",
-			"correctCount": "7",
+			"correctCount": 7,
 			"userId": 10,
 			"guesses": [
 				{
@@ -1425,7 +1425,7 @@
 		},
 		{
 			"createdAt": "2022-02-20T15:30:09.085-06:00",
-			"correctCount": "12",
+			"correctCount": 12,
 			"userId": 10,
 			"guesses": [
 				{
@@ -1480,7 +1480,7 @@
 		},
 		{
 			"createdAt": "2022-03-01T21:04:43.553-06:00",
-			"correctCount": "2",
+			"correctCount": 2,
 			"userId": 8,
 			"guesses": [
 				{
@@ -1535,7 +1535,7 @@
 		},
 		{
 			"createdAt": "2022-03-01T21:08:42.360-06:00",
-			"correctCount": "6",
+			"correctCount": 6,
 			"userId": 8,
 			"guesses": [
 				{
@@ -1590,7 +1590,7 @@
 		},
 		{
 			"createdAt": "2022-03-01T21:26:13.703-06:00",
-			"correctCount": "9",
+			"correctCount": 9,
 			"userId": 8,
 			"guesses": [
 				{
@@ -1645,7 +1645,7 @@
 		},
 		{
 			"createdAt": "2022-03-01T21:28:44.854-06:00",
-			"correctCount": "12",
+			"correctCount": 12,
 			"userId": 8,
 			"guesses": [
 				{

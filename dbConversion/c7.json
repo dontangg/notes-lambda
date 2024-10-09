@@ -105,7 +105,7 @@
 	"attempts": [
 		{
 			"createdAt": "2020-02-08T10:13:35.525-06:00",
-			"correctCount": "2",
+			"correctCount": 2,
 			"userId": 5,
 			"guesses": [
 				{
@@ -160,7 +160,7 @@
 		},
 		{
 			"createdAt": "2020-02-08T10:26:45.033-06:00",
-			"correctCount": "3",
+			"correctCount": 3,
 			"userId": 5,
 			"guesses": [
 				{
@@ -215,7 +215,7 @@
 		},
 		{
 			"createdAt": "2020-02-08T10:39:11.990-06:00",
-			"correctCount": "8",
+			"correctCount": 8,
 			"userId": 5,
 			"guesses": [
 				{
@@ -270,7 +270,7 @@
 		},
 		{
 			"createdAt": "2020-02-08T10:46:18.911-06:00",
-			"correctCount": "12",
+			"correctCount": 12,
 			"userId": 5,
 			"guesses": [
 				{
@@ -325,7 +325,7 @@
 		},
 		{
 			"createdAt": "2020-02-08T13:34:11.762-06:00",
-			"correctCount": "3",
+			"correctCount": 3,
 			"userId": 4,
 			"guesses": [
 				{
@@ -380,7 +380,7 @@
 		},
 		{
 			"createdAt": "2020-02-08T13:40:18.019-06:00",
-			"correctCount": "7",
+			"correctCount": 7,
 			"userId": 4,
 			"guesses": [
 				{
@@ -435,7 +435,7 @@
 		},
 		{
 			"createdAt": "2020-02-08T13:46:00.505-06:00",
-			"correctCount": "8",
+			"correctCount": 8,
 			"userId": 4,
 			"guesses": [
 				{
@@ -490,7 +490,7 @@
 		},
 		{
 			"createdAt": "2020-02-08T13:50:13.630-06:00",
-			"correctCount": "12",
+			"correctCount": 12,
 			"userId": 4,
 			"guesses": [
 				{
@@ -545,7 +545,7 @@
 		},
 		{
 			"createdAt": "2020-02-08T13:56:17.984-06:00",
-			"correctCount": "1",
+			"correctCount": 1,
 			"userId": 2,
 			"guesses": [
 				{
@@ -600,7 +600,7 @@
 		},
 		{
 			"createdAt": "2020-02-08T14:08:34.299-06:00",
-			"correctCount": "5",
+			"correctCount": 5,
 			"userId": 2,
 			"guesses": [
 				{
@@ -655,7 +655,7 @@
 		},
 		{
 			"createdAt": "2020-02-08T14:18:47.875-06:00",
-			"correctCount": "7",
+			"correctCount": 7,
 			"userId": 2,
 			"guesses": [
 				{
@@ -710,7 +710,7 @@
 		},
 		{
 			"createdAt": "2020-02-08T14:25:06.484-06:00",
-			"correctCount": "12",
+			"correctCount": 12,
 			"userId": 2,
 			"guesses": [
 				{
@@ -765,7 +765,7 @@
 		},
 		{
 			"createdAt": "2020-02-08T19:27:04.439-06:00",
-			"correctCount": "3",
+			"correctCount": 3,
 			"userId": 6,
 			"guesses": [
 				{
@@ -820,7 +820,7 @@
 		},
 		{
 			"createdAt": "2020-02-08T20:13:30.505-06:00",
-			"correctCount": "6",
+			"correctCount": 6,
 			"userId": 6,
 			"guesses": [
 				{
@@ -875,7 +875,7 @@
 		},
 		{
 			"createdAt": "2020-02-08T20:30:59.331-06:00",
-			"correctCount": "6",
+			"correctCount": 6,
 			"userId": 6,
 			"guesses": [
 				{
@@ -930,7 +930,7 @@
 		},
 		{
 			"createdAt": "2020-02-08T20:40:38.918-06:00",
-			"correctCount": "9",
+			"correctCount": 9,
 			"userId": 6,
 			"guesses": [
 				{
@@ -985,7 +985,7 @@
 		},
 		{
 			"createdAt": "2020-02-08T20:44:33.525-06:00",
-			"correctCount": "12",
+			"correctCount": 12,
 			"userId": 6,
 			"guesses": [
 				{
@@ -1040,7 +1040,7 @@
 		},
 		{
 			"createdAt": "2020-02-09T09:56:25.361-06:00",
-			"correctCount": "2",
+			"correctCount": 2,
 			"userId": 1,
 			"guesses": [
 				{
@@ -1095,7 +1095,7 @@
 		},
 		{
 			"createdAt": "2020-02-09T10:00:57.441-06:00",
-			"correctCount": "5",
+			"correctCount": 5,
 			"userId": 1,
 			"guesses": [
 				{
@@ -1150,7 +1150,7 @@
 		},
 		{
 			"createdAt": "2020-02-09T10:07:37.424-06:00",
-			"correctCount": "8",
+			"correctCount": 8,
 			"userId": 1,
 			"guesses": [
 				{
@@ -1205,7 +1205,7 @@
 		},
 		{
 			"createdAt": "2020-02-09T10:12:47.823-06:00",
-			"correctCount": "10",
+			"correctCount": 10,
 			"userId": 1,
 			"guesses": [
 				{
@@ -1260,7 +1260,7 @@
 		},
 		{
 			"createdAt": "2020-02-09T10:13:22.538-06:00",
-			"correctCount": "12",
+			"correctCount": 12,
 			"userId": 1,
 			"guesses": [
 				{
@@ -1315,7 +1315,7 @@
 		},
 		{
 			"createdAt": "2020-02-09T14:03:29.002-06:00",
-			"correctCount": "3",
+			"correctCount": 3,
 			"userId": 10,
 			"guesses": [
 				{
@@ -1370,7 +1370,7 @@
 		},
 		{
 			"createdAt": "2020-02-09T14:08:26.053-06:00",
-			"correctCount": "3",
+			"correctCount": 3,
 			"userId": 10,
 			"guesses": [
 				{
@@ -1425,7 +1425,7 @@
 		},
 		{
 			"createdAt": "2020-02-09T14:13:45.537-06:00",
-			"correctCount": "5",
+			"correctCount": 5,
 			"userId": 10,
 			"guesses": [
 				{
@@ -1480,7 +1480,7 @@
 		},
 		{
 			"createdAt": "2020-02-09T14:16:40.515-06:00",
-			"correctCount": "9",
+			"correctCount": 9,
 			"userId": 10,
 			"guesses": [
 				{
@@ -1535,7 +1535,7 @@
 		},
 		{
 			"createdAt": "2020-02-09T14:18:00.801-06:00",
-			"correctCount": "12",
+			"correctCount": 12,
 			"userId": 10,
 			"guesses": [
 				{
@@ -1590,7 +1590,7 @@
 		},
 		{
 			"createdAt": "2020-02-23T21:31:05.094-06:00",
-			"correctCount": "5",
+			"correctCount": 5,
 			"userId": 8,
 			"guesses": [
 				{
@@ -1645,7 +1645,7 @@
 		},
 		{
 			"createdAt": "2020-02-23T21:49:57.610-06:00",
-			"correctCount": "10",
+			"correctCount": 10,
 			"userId": 8,
 			"guesses": [
 				{
@@ -1700,7 +1700,7 @@
 		},
 		{
 			"createdAt": "2020-02-23T21:53:06.561-06:00",
-			"correctCount": "12",
+			"correctCount": 12,
 			"userId": 8,
 			"guesses": [
 				{

@@ -105,7 +105,7 @@
 	"attempts": [
 		{
 			"createdAt": "2018-02-17T08:01:09.407-06:00",
-			"correctCount": "2",
+			"correctCount": 2,
 			"userId": 8,
 			"guesses": [
 				{
@@ -160,7 +160,7 @@
 		},
 		{
 			"createdAt": "2018-02-17T10:16:00.710-06:00",
-			"correctCount": "3",
+			"correctCount": 3,
 			"userId": 1,
 			"guesses": [
 				{
@@ -215,7 +215,7 @@
 		},
 		{
 			"createdAt": "2018-02-17T17:23:34.278-06:00",
-			"correctCount": "4",
+			"correctCount": 4,
 			"userId": 3,
 			"guesses": [
 				{
@@ -270,7 +270,7 @@
 		},
 		{
 			"createdAt": "2018-02-17T18:57:18.460-06:00",
-			"correctCount": "4",
+			"correctCount": 4,
 			"userId": 4,
 			"guesses": [
 				{
@@ -325,7 +325,7 @@
 		},
 		{
 			"createdAt": "2018-02-17T19:19:32.573-06:00",
-			"correctCount": "1",
+			"correctCount": 1,
 			"userId": 5,
 			"guesses": [
 				{
@@ -380,7 +380,7 @@
 		},
 		{
 			"createdAt": "2018-02-17T20:42:52.922-06:00",
-			"correctCount": "2",
+			"correctCount": 2,
 			"userId": 9,
 			"guesses": [
 				{
@@ -435,7 +435,7 @@
 		},
 		{
 			"createdAt": "2018-02-17T23:13:44.828-06:00",
-			"correctCount": "1",
+			"correctCount": 1,
 			"userId": 10,
 			"guesses": [
 				{
@@ -490,7 +490,7 @@
 		},
 		{
 			"createdAt": "2018-02-18T01:22:37.917-06:00",
-			"correctCount": "4",
+			"correctCount": 4,
 			"userId": 5,
 			"guesses": [
 				{
@@ -545,7 +545,7 @@
 		},
 		{
 			"createdAt": "2018-02-18T10:09:00.740-06:00",
-			"correctCount": "5",
+			"correctCount": 5,
 			"userId": 1,
 			"guesses": [
 				{
@@ -600,7 +600,7 @@
 		},
 		{
 			"createdAt": "2018-02-18T14:43:22.352-06:00",
-			"correctCount": "5",
+			"correctCount": 5,
 			"userId": 9,
 			"guesses": [
 				{
@@ -655,7 +655,7 @@
 		},
 		{
 			"createdAt": "2018-02-18T22:49:14.805-06:00",
-			"correctCount": "6",
+			"correctCount": 6,
 			"userId": 8,
 			"guesses": [
 				{
@@ -710,7 +710,7 @@
 		},
 		{
 			"createdAt": "2018-02-18T23:38:55.797-06:00",
-			"correctCount": "10",
+			"correctCount": 10,
 			"userId": 3,
 			"guesses": [
 				{
@@ -765,7 +765,7 @@
 		},
 		{
 			"createdAt": "2018-02-18T23:50:55.745-06:00",
-			"correctCount": "5",
+			"correctCount": 5,
 			"userId": 4,
 			"guesses": [
 				{
@@ -820,7 +820,7 @@
 		},
 		{
 			"createdAt": "2018-02-19T00:00:53.932-06:00",
-			"correctCount": "12",
+			"correctCount": 12,
 			"userId": 3,
 			"guesses": [
 				{
@@ -875,7 +875,7 @@
 		},
 		{
 			"createdAt": "2018-02-19T00:59:13.403-06:00",
-			"correctCount": "7",
+			"correctCount": 7,
 			"userId": 5,
 			"guesses": [
 				{
@@ -930,7 +930,7 @@
 		},
 		{
 			"createdAt": "2018-02-19T01:18:38.558-06:00",
-			"correctCount": "7",
+			"correctCount": 7,
 			"userId": 1,
 			"guesses": [
 				{
@@ -985,7 +985,7 @@
 		},
 		{
 			"createdAt": "2018-02-19T04:17:54.059-06:00",
-			"correctCount": "6",
+			"correctCount": 6,
 			"userId": 8,
 			"guesses": [
 				{
@@ -1040,7 +1040,7 @@
 		},
 		{
 			"createdAt": "2018-02-19T15:26:46.330-06:00",
-			"correctCount": "10",
+			"correctCount": 10,
 			"userId": 4,
 			"guesses": [
 				{
@@ -1095,7 +1095,7 @@
 		},
 		{
 			"createdAt": "2018-02-19T17:28:00.888-06:00",
-			"correctCount": "8",
+			"correctCount": 8,
 			"userId": 6,
 			"guesses": [
 				{
@@ -1150,7 +1150,7 @@
 		},
 		{
 			"createdAt": "2018-02-20T07:43:52.365-06:00",
-			"correctCount": "12",
+			"correctCount": 12,
 			"userId": 9,
 			"guesses": [
 				{
@@ -1205,7 +1205,7 @@
 		},
 		{
 			"createdAt": "2018-02-20T12:19:40.684-06:00",
-			"correctCount": "9",
+			"correctCount": 9,
 			"userId": 5,
 			"guesses": [
 				{
@@ -1260,7 +1260,7 @@
 		},
 		{
 			"createdAt": "2018-02-20T22:17:41.507-06:00",
-			"correctCount": "12",
+			"correctCount": 12,
 			"userId": 1,
 			"guesses": [
 				{
@@ -1315,7 +1315,7 @@
 		},
 		{
 			"createdAt": "2018-02-21T10:21:24.550-06:00",
-			"correctCount": "12",
+			"correctCount": 12,
 			"userId": 5,
 			"guesses": [
 				{
@@ -1370,7 +1370,7 @@
 		},
 		{
 			"createdAt": "2018-02-22T20:34:42.041-06:00",
-			"correctCount": "10",
+			"correctCount": 10,
 			"userId": 8,
 			"guesses": [
 				{
@@ -1425,7 +1425,7 @@
 		},
 		{
 			"createdAt": "2018-02-22T23:09:41.478-06:00",
-			"correctCount": "12",
+			"correctCount": 12,
 			"userId": 4,
 			"guesses": [
 				{
