@@ -8,7 +8,7 @@ import Spinner from "../../common/Spinner";
 import { unwrapResult } from "@reduxjs/toolkit";
 import { useDocumentTitle } from "../../app/customHooks";
 
-export default function AccountPage() {
+export default function CompetitionsPage() {
 	const dispatch = useDispatch();
 	const competitionsState = useSelector(selectCompetitions);
 	const userIsAdmin = useSelector(selectCurrentUser).admin;
@@ -106,44 +106,46 @@ export default function AccountPage() {
 			<h1>Competitions</h1>
 			{competitionsState.error && (<div className="alert alert-danger" role="alert">{competitionsState.error}</div>)}
 			
-			<div className="row">
-				<div className="col-lg-6">
-					<table className="table table-striped align-middle">
-						<thead>
-							<tr>
-								<th scope="col" className="col-2">Name</th>
-								<th scope="col" className="col-4">Phase</th>
-								<th scope="col" className="text-end">
-									<button type="button" className="btn invisible" aria-hidden>SpaceHolder</button>
-									{userIsAdmin && !competitionInEdit && (<NavLink className="btn btn-primary" to="new">New</NavLink>)}
-								</th>
-							</tr>
-						</thead>
-						<tbody>
-							{competitionsState.competitions?.map(competition => (
-								<tr key={competition.name}>
-									<th scope="row">{competition.name}</th>
-									<td>
-										{competitionInEdit === competition.name
-											? (
-												<select className="form-select" value={competitionPhaseInEdit} onChange={e => setCompetitionPhaseInEdit(e.target.value)}>
-													<option value="submitting">Submitting</option>
-													<option value="guessing">Guessing</option>
-													<option value="closed">Closed</option>
-												</select>
-											)
-											: competition.phase
-										}
-									</td>
-									<td className="text-end">
-										{getButtons(competition)}
-									</td>
+			{competitionsState.competitions && (
+				<div className="row">
+					<div className="col-lg-6">
+						<table className="table table-striped align-middle">
+							<thead>
+								<tr>
+									<th scope="col" className="col-2">Name</th>
+									<th scope="col" className="col-4">Phase</th>
+									<th scope="col" className="text-end">
+										<button type="button" className="btn invisible" aria-hidden>SpaceHolder</button>
+										{userIsAdmin && !competitionInEdit && (<NavLink className="btn btn-primary" to="new">New</NavLink>)}
+									</th>
 								</tr>
-							))}
-						</tbody>
-					</table>
+							</thead>
+							<tbody>
+								{competitionsState.competitions?.map(competition => (
+									<tr key={competition.name}>
+										<th scope="row">{competition.name}</th>
+										<td>
+											{competitionInEdit === competition.name
+												? (
+													<select className="form-select" value={competitionPhaseInEdit} onChange={e => setCompetitionPhaseInEdit(e.target.value)}>
+														<option value="submitting">Submitting</option>
+														<option value="guessing">Guessing</option>
+														<option value="closed">Closed</option>
+													</select>
+												)
+												: competition.phase
+											}
+										</td>
+										<td className="text-end">
+											{getButtons(competition)}
+										</td>
+									</tr>
+								))}
+							</tbody>
+						</table>
+					</div>
 				</div>
-			</div>
+			)}
 		</>
 	);
 };

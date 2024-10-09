@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
 import { fetchCompetition, fetchCurrentCompetition, selectCompetitions, selectAllUsers } from "./competitionsSlice";
 
-export default function SongcardPage() {
+export default function ScorecardPage() {
 	const { name: nameParam } = useParams();
 	const dispatch = useDispatch();
 	const competitionsState = useSelector(selectCompetitions);

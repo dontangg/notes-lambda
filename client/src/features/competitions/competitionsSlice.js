@@ -182,6 +182,8 @@ export const saveForfeit = createAsyncThunk(
 
 
 const addCompetitionFetched = (state, comp) => {
+	if (!comp) return;
+	
 	if (!state.competitions) {
 		state.competitions = [];
 	}
