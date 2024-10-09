@@ -6,13 +6,15 @@ for (let i = 1; i < 11; i++) {
 	const comp = require(`./c${i}.json`);
 
 	Object.keys(comp.songs).forEach(id => {
-		songs.push({
-			compName: comp.sk,
-			artist: comp.songs[id].artist,
-			title: comp.songs[id].title,
-			filename: comp.songs[id].filename,
-			userId: comp.songs[id].userId,
-		});
+		if (comp.songs[id].filename) {
+			songs.push({
+				compName: comp.sk,
+				artist: comp.songs[id].artist,
+				title: comp.songs[id].title,
+				filename: comp.songs[id].filename,
+				userId: comp.songs[id].userId,
+			});
+		}
 	});
 }
 
