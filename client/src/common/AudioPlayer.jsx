@@ -16,7 +16,7 @@ export default function AudioPlayer({ songs }) {
 
 	useEffect(() => {
 		for (const filename in audioRefs.current) {
-			audioRefs.current[filename].pause();
+			audioRefs.current[filename]?.pause();
 		}
 
 		if (audioRefs.current && audioRefs.current?.[currentSongFilename]) {
@@ -90,7 +90,7 @@ export default function AudioPlayer({ songs }) {
 	const isPlaying = audioRefs.current[currentSongFilename]?.paused === false;
 
 	return (
-		<div className={'fixed-bottom player ' + (currentSongFilename ? 'd-flex' : 'd-none')}>
+		<div className={'fixed-bottom player ' + (currentSong ? 'd-flex' : 'd-none')}>
 			{songs.map(song => song.filename && (
 				<audio key={song.filename} ref={el => { audioRefs.current[song.filename] = el; }} crossOrigin="anonymous" onLoadedMetadata={onLoadedMetadata(song.filename)} onTimeUpdate={onTimeUpdate(song.filename)} onCanPlay={onCanPlay(song.filename)} onEnded={onEnded(song.filename)}>
 					<source src={`https://wilson-notes.s3.amazonaws.com/t/${song.filename}/playlist.m3u8`} type="audio/mpeg" />
