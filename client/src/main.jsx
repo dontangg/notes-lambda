@@ -1,7 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { Provider } from "react-redux";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Provider, useSelector } from "react-redux";
+import { createBrowserRouter, RouterProvider, useNavigate } from "react-router-dom";
 import { store } from "./app/store";
 import Layout from "./Layout";
 import ErrorPage from "./ErrorPage";
@@ -12,6 +12,25 @@ import NewCompetitionPage from "./features/competitions/NewCompetitionPage";
 import ScorecardPage from "./features/competitions/ScorecardPage";
 import SongsPage from "./features/competitions/SongsPage";
 import SongEditPage from "./features/competitions/SongEditPage";
+import { selectCompetitions } from "./features/competitions/competitionsSlice";
+import { FetchStatus } from "./app/appFetch";
+
+const HomePage = () => {
+	const navigate = useNavigate();
+	const competitionsState = useSelector(selectCompetitions);
+
+	if (competitionsState.currentCompetition) {
+		navigate('/scorecard/current');
+		return null;
+	}
+
+	if (competitionsState.curCompFetchStatus !== FetchStatus.pending) {
+		navigate('/competition');
+		return null;
+	}
+
+	return null;
+};
 
 const router = createBrowserRouter([
 	{
@@ -20,7 +39,7 @@ const router = createBrowserRouter([
 		children: [
 			{
 				path: "/",
-				element: <div>Home</div>,
+				element: <HomePage />,
 			},
 			{
 				path: "/account",
