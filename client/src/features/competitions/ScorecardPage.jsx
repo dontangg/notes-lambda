@@ -40,10 +40,10 @@ export default function SongcardPage() {
 
 		const teamIds = [user.id];
 		const partner = participatingUsers.find(u => u.id === user.partnerId);
-		group.users.push({ ...user, songCount: competition?.songCounts?.[String(user.id)] });
+		group.users.push({ ...user, songCount: competition?.songCounts?.[String(user.id)] || 0 });
 		if (partner) {
 			teamIds.push(partner.id);
-			group.users.push({ ...partner, songCount: competition?.songCounts?.[String(partner.id)] });
+			group.users.push({ ...partner, songCount: competition?.songCounts?.[String(partner.id)] || 0 });
 		}
 
 		group.attempts = competition?.attempts?.filter(att => teamIds.includes(att.userId));

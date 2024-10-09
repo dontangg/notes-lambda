@@ -52,13 +52,6 @@ export default function NewGuessPage() {
 		};
 	};
 
-	const onChangeGuess = (songFilename, guessedUserId) => {
-		setGuesses({
-			...guesses,
-			[songFilename]: Number(guessedUserId),
-		});
-	};
-
 	const getUserCell = (song) => {
 		if (song.userId) {
 			return getUserName(song.userId);
@@ -87,18 +80,16 @@ export default function NewGuessPage() {
 		);
 	};
 
-	const onSubmitAttempt = (e) => {
-		e.preventDefault();
-
+	const doValidGuessesCheck = (guesses) => {
 		// Check that someone is picked for each song
 		for (let i = 0; i < songs.length; i++) {
 			const song = songs[i];
 			if (!song.userId && !guesses[song.filename]) {
 				setInvalidGuessMessage('Please select a person for each song.');
-				return;
+				return false;
 			}
 		}
-
+		
 		// Check that each person is picked the right number of times
 		for (let i = 0; i < participatingUsers?.length; i++) {
 			const user = participatingUsers[i];
@@ -110,11 +101,30 @@ export default function NewGuessPage() {
 			const countGuessedForUser = Object.values(guesses).filter(guessedUserId => guessedUserId === user.id).length;
 			if (countGuessedForUser > countLeftForUser) {
 				setInvalidGuessMessage(`You have selected ${getUserName(user.id)} for too many songs.`);
-				return;
+				return false;
 			}
 		}
 
 		setInvalidGuessMessage('');
+		return true;
+	};
+
+	const onChangeGuess = (songFilename, guessedUserId) => {
+		const newGuesses = {
+			...guesses,
+			[songFilename]: Number(guessedUserId),
+		};
+		setGuesses(newGuesses);
+		if (invalidGuessMessage) {
+			doValidGuessesCheck(newGuesses);
+		}
+	};
+
+	const onSubmitAttempt = (e) => {
+		e.preventDefault();
+
+		if (!doValidGuessesCheck(guesses)) return;
+		
 		dispatch(saveAttempt(guesses))
 			.then(unwrapResult)
 			.then(() => {
