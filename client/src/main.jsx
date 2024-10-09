@@ -12,6 +12,7 @@ import NewCompetitionPage from "./features/competitions/NewCompetitionPage";
 import ScorecardPage from "./features/competitions/ScorecardPage";
 import SongsPage from "./features/competitions/SongsPage";
 import SongEditPage from "./features/competitions/SongEditPage";
+import NewGuessPage from "./features/competitions/NewGuessPage";
 import { selectCompetitions } from "./features/competitions/competitionsSlice";
 import { FetchStatus } from "./app/appFetch";
 
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
 			{
 				path: "/account",
 				element: <AccountPage />,
+			},
+			{
+				path: "/guess",
+				element: <NewGuessPage />,
 			},
 			{
 				path: "/competition",

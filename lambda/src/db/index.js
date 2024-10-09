@@ -179,6 +179,17 @@ const db = {
 
 		return dynamodb.update(params.toJson()).promise();
 	},
+
+	appendToList: async function(tableName, key, listName, newListItem) {
+		const params = new UpdateParams(tableName, key);
+
+		params.appendToList(listName, newListItem);
+
+		if (params.isEmpty())
+			return;
+
+		return dynamodb.update(params.toJson()).promise();
+	},
 };
 
 module.exports = db;

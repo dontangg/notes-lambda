@@ -88,6 +88,60 @@ const competitionController = {
 		return { statusCode: 200, body: JSON.stringify({ message: 'success' }) };
 	},
 
+	saveAttempt: async (req) => {
+		const guesses = JSON.parse(req.body);
+
+		const currentCompetition = await competitionDb.getCurrent();
+
+		const teamUserIds = [req.user.id];
+		if (req.user.partnerId) {
+			teamUserIds.push(req.user.partnerId);
+		}
+
+		const newAttempt = {
+			userId: req.user.id,
+			guesses: [],
+			correctCount: 0,
+			createdAt: new Date().toISOString(),
+		};
+
+		
+		const teamAttempts = (currentCompetition.attempts || []).filter(att => teamUserIds.includes(att.userId)).sort((a, b) => b.createdAt.localeCompare(a.createdAt)); // sort in reverse
+		const lastAttempt = teamAttempts?.[0];
+
+		for (let song of currentCompetition.songs) {
+			if (teamUserIds.includes(song.userId)) continue;
+			
+			let guessForSong;
+			if (guesses[song.filename]) {
+				guessForSong = {
+					songFilename: song.filename,
+					guessedUserId: guesses[song.filename],
+				};
+			} else {
+				const lastAttemptGuess = lastAttempt.guesses.find(guess => guess.songFilename === song.filename);
+				if (!lastAttemptGuess) {
+					return { statusCode: 400, body: JSON.stringify({ message: `Invalid guess. Missing guess for song titled, "${song.title}" (${song.filename})` }) };
+				}
+				guessForSong = lastAttemptGuess;
+			}
+
+			if (song.userId === guessForSong.guessedUserId) {
+				newAttempt.correctCount++;
+			}
+			newAttempt.guesses.push(guessForSong);
+		}
+
+		await competitionDb.saveAttempt(currentCompetition.name, newAttempt);
+
+		if (!currentCompetition.attempts) {
+			currentCompetition.attempts = [];
+		}
+		currentCompetition.attempts.push(newAttempt);
+
+		return { statusCode: 200, body: JSON.stringify(mapCompetition(req, currentCompetition)) };
+	},
+
 	delete: async (req) => {
 		const comp = JSON.parse(req.body);
 		await competitionDb.delete(comp);

@@ -8,7 +8,7 @@ import { convertMsToStr } from '../../app/utilities';
 import { useDocumentTitle } from "../../app/customHooks";
 import AudioPlayer from '../../common/AudioPlayer';
 
-export default function NewCompetitionPage() {
+export default function SongsPage() {
 	const dispatch = useDispatch();
 	useDocumentTitle('Songs');
 	const competitionsState = useSelector(selectCompetitions);
@@ -25,7 +25,7 @@ export default function NewCompetitionPage() {
 			return sum + (user.partnerId ? 1 : 2);
 		}, 0);
 		if (currentCompetition?.songs?.length === maxSongCount) {
-			songs = currentCompetition?.songs;
+			songs = [...currentCompetition?.songs];
 		}
 	}
 	if (!songs) {
@@ -36,6 +36,7 @@ export default function NewCompetitionPage() {
 
 		songs = currentCompetition?.songs?.filter(s => allowedUserIds.includes(s.userId)) || [];
 	}
+	songs.sort((a, b) => a.title.localeCompare(b.title));
 
 	const getUserName = (userId) => {
 		const user = competitionsState.allUsers?.find(u => u.id === userId);
@@ -57,7 +58,7 @@ export default function NewCompetitionPage() {
 			<h1 className="mb-4">Songs</h1>
 			{competitionsState.error && (<div className="alert alert-danger" role="alert">{competitionsState.error}</div>)}
 
-			<div className="row">
+			<div className="row audio-player-margin">
 				<div className="col-lg-6">
 					<table className="table table-hover align-middle playlist">
 						<tbody>

@@ -5,6 +5,7 @@ import { uploadFile } from '../../app/utilities';
 const initialState = {
 	allUsers: null,
 	allUsersFetchStatus: FetchStatus.idle,
+	attemptSaveStatus: FetchStatus.idle,
 	competitionsFetchStatus: FetchStatus.idle,
 	curCompFetchStatus: FetchStatus.idle,
 	competitionSaveStatus: FetchStatus.idle,
@@ -139,6 +140,20 @@ export const uploadSong = createAsyncThunk(
 		}
 	},
 );
+
+export const saveAttempt = createAsyncThunk(
+	'competitions/saveAttempt',
+	async (guesses, { dispatch, getState }) => {
+		const body = JSON.stringify(guesses);
+		return appFetch('/attempt', { method: 'POST', body }, dispatch, getState).then(response => response.json());
+	}, {
+		condition: (arg, { getState, extra }) => {
+			const competitionsState = getState().competitions;
+			return competitionsState.attemptSaveStatus !== FetchStatus.pending;
+		}
+	},
+);
+
 
 const addCompetitionFetched = (state, comp) => {
 	if (!state.competitions) {
@@ -312,6 +327,20 @@ export const competitionsSlice = createSlice({
 		});
 		builder.addCase(uploadSong.pending, (state, action) => {
 			state.uploadSongStatus = FetchStatus.pending;
+		});
+		// saveAttempt
+		builder.addCase(saveAttempt.fulfilled, (state, action) => {
+			state.error = '';
+			state.attemptSaveStatus = FetchStatus.success;
+			state.currentCompetition = action.payload;
+			addCompetitionFetched(state, state.currentCompetition);
+		});
+		builder.addCase(saveAttempt.rejected, (state, action) => {
+			state.attemptSaveStatus = FetchStatus.error;
+			state.error = action.error.message;
+		});
+		builder.addCase(saveAttempt.pending, (state, action) => {
+			state.attemptSaveStatus = FetchStatus.pending;
 		});
 	},
 	selectors: {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
-import { fetchCompetition, selectCompetitions, selectAllUsers } from "./competitionsSlice";
+import { fetchCompetition, fetchCurrentCompetition, selectCompetitions, selectAllUsers } from "./competitionsSlice";
 
 export default function SongcardPage() {
 	const { name: nameParam } = useParams();
@@ -10,7 +10,9 @@ export default function SongcardPage() {
 	const allUsers = useSelector(selectAllUsers);
 
 	useEffect(() => {
-		if (nameParam !== 'current' && !competitionsState.competitions?.find(c => c.name === nameParam)?.songCounts) {
+		if (nameParam === 'current') {
+			dispatch(fetchCurrentCompetition());
+		} else if (!competitionsState.competitions?.find(c => c.name === nameParam)?.songCounts) {
 			dispatch(fetchCompetition(nameParam));
 		}
 	}, [nameParam]);
@@ -105,7 +107,7 @@ export default function SongcardPage() {
 													<tr key={att.createdAt}>
 														<td>{att.correctCount} of {totalSongCount} correct</td>
 														<td>{timeAgoInWords(att.createdAt)}</td>
-														<td>{att.correctGuessedUserIds?.map(guessedUserId => participatingUsers.find(u => u.id === guessedUserId).name).join(', ')}</td>
+														<td>{att.correctGuessedUserIds?.map(guessedUserId => participatingUsers.find(u => u.id === guessedUserId).name).sort().join(', ')}</td>
 													</tr>
 												))}
 											</tbody>

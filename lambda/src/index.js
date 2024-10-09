@@ -19,6 +19,7 @@ router.get('/competition/current', competitionController.getCurrent);
 router.get('/competition', competitionController.get);
 router.post('/competition', competitionController.save);
 router.delete('/competition', competitionController.delete);
+router.post('/attempt', competitionController.saveAttempt);
 
 router.post('/song', songController.save);
 router.delete('/song/:id', songController.delete);

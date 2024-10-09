@@ -69,6 +69,10 @@ const competitionDb = {
 	deleteSong: async (compName, songId) => {
 		return db.removeDeepItem(tableName, { pk, sk: compName }, `songs.${songId}`);
 	},
+
+	saveAttempt: async (compName, attempt) => {
+		return db.appendToList(tableName, { pk, sk: compName }, 'attempts', attempt);
+	}
 };
 
 module.exports = competitionDb;

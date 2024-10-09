@@ -22,13 +22,13 @@ class UpdateParams {
 		if (obj[objPropName] === undefined)
 			return;
 
-		let exprPropName = '#' + objPropName;
+		const exprPropName = '#' + objPropName;
 
 		this.attributeNames[exprPropName] = objPropName;
 
 		// If it exists, but it is null or empty string, remove it; otherwise update it
 		if (obj[objPropName]) {
-			let exprValueName = ':new_' + objPropName;
+			const exprValueName = ':new_' + objPropName;
 			this.propertiesToSet.push(exprPropName + ' = ' + exprValueName);
 			this.attributeValues[exprValueName] = obj[objPropName];
 		} else {
@@ -62,6 +62,16 @@ class UpdateParams {
 		};
 
 		this.propertiesToRemove.push(exprPropName);
+	}
+
+	appendToList(listName, newListItem) {
+		const exprPropName = '#' + listName;
+		const exprValueName = ':new_' + listName + '_list';
+
+		this.attributeNames[exprPropName] = listName;
+
+		this.propertiesToSet.push(`${exprPropName} = list_append(${exprPropName}, ${exprValueName})`);
+		this.attributeValues[exprValueName] = [newListItem];
 	}
 
 	isEmpty() {

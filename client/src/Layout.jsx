@@ -56,7 +56,7 @@ const Layout = () => {
 						<ul className="navbar-nav me-auto mb-2 mb-lg-0">
 							{currentCompetition?.phase === CompetitionPhase.guessing && (
 								<li className="nav-item">
-									<a className="nav-link" aria-current="page" href="#">New Guess</a>
+									<NavLink className="nav-link" aria-current="page" to="/guess">New Guess</NavLink>
 								</li>
 							)}
 							{currentCompetition && (
