@@ -4,7 +4,9 @@ import { uploadFile } from '../../app/utilities';
 
 const initialState = {
 	allUsers: null,
+	allSongs: null,
 	allUsersFetchStatus: FetchStatus.idle,
+	allSongsFetchStatus: FetchStatus.idle,
 	attemptSaveStatus: FetchStatus.idle,
 	competitionsFetchStatus: FetchStatus.idle,
 	curCompFetchStatus: FetchStatus.idle,
@@ -30,6 +32,18 @@ export const fetchAllUsers = createAsyncThunk(
 		condition: (arg, { getState, extra }) => {
 			const competitionsState = getState().competitions;
 			return competitionsState.allUsersFetchStatus !== FetchStatus.pending;
+		}
+	},
+);
+
+export const fetchAllSongs = createAsyncThunk(
+	'competitions/fetchAllSongs',
+	async (arg, { dispatch, getState }) => {
+		return appFetch('/songs', null, dispatch, getState).then(response => response.json());
+	}, {
+		condition: (arg, { getState, extra }) => {
+			const competitionsState = getState().competitions;
+			return competitionsState.allSongsFetchStatus !== FetchStatus.pending;
 		}
 	},
 );
@@ -194,6 +208,19 @@ export const competitionsSlice = createSlice({
 		builder.addCase(fetchAllUsers.pending, (state, action) => {
 			state.allUsersFetchStatus = FetchStatus.pending;
 		});
+		// fetchAllSongs
+		builder.addCase(fetchAllSongs.fulfilled, (state, action) => {
+			state.error = '';
+			state.allSongsFetchStatus = FetchStatus.success;
+			state.allSongs = action.payload;
+		});
+		builder.addCase(fetchAllSongs.rejected, (state, action) => {
+			state.allSongsFetchStatus = FetchStatus.error;
+			state.error = action.error.message;
+		});
+		builder.addCase(fetchAllSongs.pending, (state, action) => {
+			state.allSongsFetchStatus = FetchStatus.pending;
+		});
 		// fetchCompetitions
 		builder.addCase(fetchCompetitions.fulfilled, (state, action) => {
 			state.error = '';
@@ -347,9 +374,10 @@ export const competitionsSlice = createSlice({
 		selectCompetitions: state => state,
 		selectCurrentCompetition: state => state.currentCompetition,
 		selectAllUsers: state => state.allUsers,
+		selectAllSongs: state => state.allSongs,
 	},
 });
 
-export const { selectAllUsers, selectCompetitions, selectCurrentCompetition } = competitionsSlice.selectors;
+export const { selectAllSongs, selectAllUsers, selectCompetitions, selectCurrentCompetition } = competitionsSlice.selectors;
 
 // export const { changeSignInField } = competitionsSlice.actions;

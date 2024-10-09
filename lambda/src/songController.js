@@ -2,6 +2,7 @@
 
 const AWS = require('aws-sdk');
 const competitionDb = require('./db/competition');
+const allSongsDb = require('./db/allSongs');
 
 const songController = {
 
@@ -110,7 +111,13 @@ const songController = {
 		await competitionDb.deleteSong(curComp.name, songId);
 
 		return { statusCode: 200, body: JSON.stringify({ message: 'success' }) };
-	}
+	},
+
+	all: async (req) => {
+		const allSongs = await allSongsDb.get();
+
+		return { statusCode: 200, body: JSON.stringify(allSongs.songs) };
+	},
 }
 
 module.exports = songController;

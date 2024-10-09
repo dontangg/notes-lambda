@@ -64,11 +64,9 @@ const Layout = () => {
 									<NavLink className="nav-link" to="/scorecard/current">Scorecard</NavLink>
 								</li>
 							)}
-							{currentCompetition?.phase === CompetitionPhase.submitting && (
-								<li className="nav-item">
-									<NavLink className="nav-link" to="/song">Songs</NavLink>
-								</li>
-							)}
+							<li className="nav-item">
+								<NavLink className="nav-link" to="/song">Songs</NavLink>
+							</li>
 							<li className="nav-item">
 								<NavLink className="nav-link" to="/competition">Competitions</NavLink>
 							</li>
