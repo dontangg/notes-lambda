@@ -1,0 +1,43 @@
+{
+    "users": [
+        {
+            "id": 0,
+            "name": "",
+            "email": "",
+            "passwordHash": "",
+            "partnerId": 0,
+            "isAdmin": false,
+			"isParticipating": true // With this there is a way of knowing when everyone has submitted a song in the current competition
+        }
+    ],
+    "competitions": [
+        {
+            "phase": "", // submitting, guessing, closed
+            "name": "",
+            "songs": {
+                "m1xuukvg": {
+                    "artist": "",
+                    "title": "",
+                    "userId": 0,
+                    "filename": "",
+                    "extension": "",
+                    "reason": ""
+                }
+			},
+            "attempts": [
+                {
+					"createdAt": "2014-11-20T07:15:11-0500",
+                    "correctCount": 0,
+                    "userId": 0, // The user who submitted the attempt
+                    "guesses": [
+                        {
+                            "songFilename": 0,
+							"guessedUserId": 0 // The guessed user id of the person who submitted the song
+                        }
+                    ]
+                }
+            ],
+            "forfeitedUserIds": []
+        }
+    ]
+}
