@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { unwrapResult } from "@reduxjs/toolkit";
-import { saveAttempt, selectAllUsers, selectCompetitions } from "./competitionsSlice";
+import { saveAttempt, saveForfeit, selectAllUsers, selectCompetitions } from "./competitionsSlice";
 import { selectCurrentUser } from "../signIn/signInSlice";
 import { selectAudioPlayer, setIsPlaying, setCurrentSongFilename } from "../../common/audioPlayerSlice";
 import { convertMsToStr } from '../../app/utilities';
@@ -15,6 +15,7 @@ export default function NewGuessPage() {
 	useDocumentTitle('Guess');
 	const [invalidGuessMessage, setInvalidGuessMessage] = useState('');
 	const [guesses, setGuesses] = useState({});
+	const [isConfirmingForfeit, setIsConfirmingForfeit] = useState(false);
 	const competitionsState = useSelector(selectCompetitions);
 	const audioPlayerState = useSelector(selectAudioPlayer);
 	const currentUser = useSelector(selectCurrentUser);
@@ -27,12 +28,14 @@ export default function NewGuessPage() {
 	if (currentUser.partnerId) {
 		teamUserIds.push(currentUser.partnerId);
 	}
+
 	const songs = currentCompetition?.songs?.filter(s => !teamUserIds.includes(s.userId)) || [];
 	songs.sort((s1, s2) => s1.title.localeCompare(s2.title));
 
 	const teamAttempts = (currentCompetition?.attempts || []).filter(att => teamUserIds.includes(att.userId)).sort((a, b) => b.createdAt.localeCompare(a.createdAt)); // sort in reverse
 	const lastAttempt = teamAttempts?.[0];
-	console.log(lastAttempt);
+
+	const hasSongsLeftToGuess = songs.some(s => !s.userId);
 
 	const getUserName = (userId) => {
 		const user = allUsers?.find(u => u.id === userId);
@@ -119,6 +122,16 @@ export default function NewGuessPage() {
 			});
 	};
 
+	const onForfeitClick = (e) => {
+		e.preventDefault();
+		if (isConfirmingForfeit) {
+			setIsConfirmingForfeit(false);
+			dispatch(saveForfeit());
+		} else {
+			setIsConfirmingForfeit(true);
+		}
+	};
+
 	return (
 		<>
 			<h1 className="mb-4">Guess</h1>
@@ -157,7 +170,7 @@ export default function NewGuessPage() {
 													<td className="small text-end">{song.filename && convertMsToStr(audioPlayerState.audioInfo[song.filename]?.duration)}</td>
 													<td>{getUserCell(song)}</td>
 												</tr>
-												{song.reason
+												{song.reason && song.userId
 													? (
 														<tr className={'song-reason' + (isThisSongPlaying ? ' table-active' : '')}>
 															<td></td>
@@ -172,10 +185,24 @@ export default function NewGuessPage() {
 								</tbody>
 							</table>
 							
-							{invalidGuessMessage && (<div className="alert alert-danger" role="alert">{invalidGuessMessage}</div>)}
-							<button className="btn btn-primary" onClick={onSubmitAttempt} disabled={competitionsState.attemptSaveStatus === FetchStatus.pending}>
-								Submit guess {competitionsState.attemptSaveStatus === FetchStatus.pending && (<Spinner />)}
-							</button>
+							{hasSongsLeftToGuess && (
+								<>
+									{invalidGuessMessage && (<div className="alert alert-danger" role="alert">{invalidGuessMessage}</div>)}
+									<div className="mb-3 d-flex">
+										<div className="flex-grow-1">
+											<button className="btn btn-primary" onClick={onSubmitAttempt} disabled={competitionsState.attemptSaveStatus === FetchStatus.pending}>
+												Submit guess {competitionsState.attemptSaveStatus === FetchStatus.pending && (<Spinner />)}
+											</button>
+										</div>
+										<div>
+											<button type="button" className="btn btn-outline-danger" onClick={onForfeitClick} disabled={competitionsState.attemptSaveStatus === FetchStatus.pending}>
+												{isConfirmingForfeit ? 'Are you sure?' : 'Forfeit'}
+											</button>
+										</div>
+									</div>
+								</>
+							)}
+							
 						</>
 					)}
 				</div>

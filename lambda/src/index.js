@@ -19,6 +19,7 @@ router.get('/competition/current', competitionController.getCurrent);
 router.get('/competition', competitionController.get);
 router.post('/competition', competitionController.save);
 router.delete('/competition', competitionController.delete);
+router.post('/forfeit', competitionController.forfeit);
 router.post('/attempt', competitionController.saveAttempt);
 
 router.get('/songs', songController.all);

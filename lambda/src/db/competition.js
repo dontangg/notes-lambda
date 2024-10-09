@@ -1,7 +1,7 @@
 const db = require('./index');
 
 const tableName = 'Notes';
-const attributes = [ 'attempts', 'isActive', 'phase', 'songs' ];
+const attributes = [ 'attempts', 'forfeitedUserIds', 'isActive', 'phase', 'songs' ];
 const pk = 'Competition';
 
 const mapFromDb = (comp) => {
@@ -77,6 +77,15 @@ const competitionDb = {
 
 		const compToSave = { attempts: [ attempt ] };
 		return db.saveItem(tableName, compToSave, { pk, sk: competition.name }, ['attempts']);
+	},
+
+	forfeit: async (competition, userId) => {
+		if (competition.forfeitedUserIds) {
+			return db.appendToList(tableName, { pk, sk: competition.name }, 'forfeitedUserIds', userId);
+		}
+
+		const compToSave = { forfeitedUserIds: [ userId ] };
+		return db.saveItem(tableName, compToSave, { pk, sk: competition.name }, ['forfeitedUserIds']);
 	},
 };
 

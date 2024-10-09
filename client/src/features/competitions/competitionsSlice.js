@@ -168,6 +168,18 @@ export const saveAttempt = createAsyncThunk(
 	},
 );
 
+export const saveForfeit = createAsyncThunk(
+	'competitions/saveForfeit',
+	async (guesses, { dispatch, getState }) => {
+		return appFetch('/forfeit', { method: 'POST' }, dispatch, getState).then(response => response.json());
+	}, {
+		condition: (arg, { getState, extra }) => {
+			const competitionsState = getState().competitions;
+			return competitionsState.attemptSaveStatus !== FetchStatus.pending;
+		}
+	},
+);
+
 
 const addCompetitionFetched = (state, comp) => {
 	if (!state.competitions) {
@@ -367,6 +379,20 @@ export const competitionsSlice = createSlice({
 			state.error = action.error.message;
 		});
 		builder.addCase(saveAttempt.pending, (state, action) => {
+			state.attemptSaveStatus = FetchStatus.pending;
+		});
+		// saveForfeit
+		builder.addCase(saveForfeit.fulfilled, (state, action) => {
+			state.error = '';
+			state.attemptSaveStatus = FetchStatus.success;
+			state.currentCompetition = action.payload;
+			addCompetitionFetched(state, state.currentCompetition);
+		});
+		builder.addCase(saveForfeit.rejected, (state, action) => {
+			state.attemptSaveStatus = FetchStatus.error;
+			state.error = action.error.message;
+		});
+		builder.addCase(saveForfeit.pending, (state, action) => {
 			state.attemptSaveStatus = FetchStatus.pending;
 		});
 	},

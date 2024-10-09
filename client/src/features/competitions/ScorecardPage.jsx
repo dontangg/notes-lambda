@@ -47,6 +47,8 @@ export default function SongcardPage() {
 		}
 
 		group.attempts = competition?.attempts?.filter(att => teamIds.includes(att.userId));
+
+		group.forfeited = competition?.forfeitedUserIds?.some(id => teamIds.includes(id));
 	}
 
 	const totalSongCount = competition?.songs?.length - 2;
@@ -114,6 +116,7 @@ export default function SongcardPage() {
 										</table>
 									</>
 								)}
+								{group.forfeited && (<p>Forfeited</p>)}
 							</li>
 						))}
 					</ul>

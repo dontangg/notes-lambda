@@ -142,6 +142,19 @@ const competitionController = {
 		return { statusCode: 200, body: JSON.stringify(mapCompetition(req, currentCompetition)) };
 	},
 
+	forfeit: async (req) => {
+		const currentCompetition = await competitionDb.getCurrent();
+
+		await competitionDb.forfeit(currentCompetition, req.user.id);
+
+		if (!currentCompetition.forfeitedUserIds) {
+			currentCompetition.forfeitedUserIds = [];
+		}
+		currentCompetition.forfeitedUserIds.push(req.user.id);
+
+		return { statusCode: 200, body: JSON.stringify(mapCompetition(req, currentCompetition)) };
+	},
+
 	delete: async (req) => {
 		const comp = JSON.parse(req.body);
 		await competitionDb.delete(comp);
