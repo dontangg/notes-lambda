@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
 import { fetchCompetition, fetchCurrentCompetition, selectCompetitions, selectAllUsers } from "./competitionsSlice";
+import { useDocumentTitle } from "../../app/customHooks";
 
 export default function ScorecardPage() {
 	const { name: nameParam } = useParams();
 	const dispatch = useDispatch();
 	const competitionsState = useSelector(selectCompetitions);
 	const allUsers = useSelector(selectAllUsers);
+	useDocumentTitle('Scorecard');
 
 	useEffect(() => {
 		if (nameParam === 'current') {

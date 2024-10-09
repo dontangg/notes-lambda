@@ -6,9 +6,11 @@ import { FetchStatus } from "../../app/appFetch";
 import Spinner from "../../common/Spinner";
 import { deleteSong, selectCompetitions, saveSong, selectAllUsers, uploadSong } from "./competitionsSlice";
 import { selectCurrentUser } from "../signIn/signInSlice";
+import { useDocumentTitle } from "../../app/customHooks";
 
 export default function SongEditPage() {
 	const { id: songId } = useParams();
+	useDocumentTitle('Edit Song');
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 	const fileInputRef = useRef(null);
@@ -173,11 +175,13 @@ export default function SongEditPage() {
 									<NavLink className="btn btn-secondary" to="/song">Cancel</NavLink>
 									{competitionsState.songSaveStatus === FetchStatus.pending ? (<>{' '}<Spinner /></>) : null}
 								</div>
-								<div>
-									<button type="button" className="btn btn-danger" onClick={onDeleteClick} disabled={isSaving}>
-										{isConfirmingDelete ? 'Are you sure?' : 'Delete'}
-									</button>
-								</div>
+								{songId !== 'new' && (
+									<div>
+										<button type="button" className="btn btn-danger" onClick={onDeleteClick} disabled={isSaving}>
+											{isConfirmingDelete ? 'Are you sure?' : 'Delete'}
+										</button>
+									</div>
+								)}
 							</div>
 						</form>
 					) : (
