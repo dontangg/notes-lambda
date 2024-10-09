@@ -13,7 +13,7 @@ import ScorecardPage from "./features/competitions/ScorecardPage";
 import SongsPage from "./features/competitions/SongsPage";
 import SongEditPage from "./features/competitions/SongEditPage";
 import NewGuessPage from "./features/competitions/NewGuessPage";
-import { selectCompetitions } from "./features/competitions/competitionsSlice";
+import { CompetitionPhase, selectCompetitions } from "./features/competitions/competitionsSlice";
 import { FetchStatus } from "./app/appFetch";
 
 const HomePage = () => {
@@ -21,8 +21,13 @@ const HomePage = () => {
 	const competitionsState = useSelector(selectCompetitions);
 
 	if (competitionsState.currentCompetition) {
-		navigate('/scorecard/current');
-		return null;
+		if (competitionsState.currentCompetition.phase === CompetitionPhase.submitting) {
+			navigate('/song');
+			return null;
+		} else {
+			navigate('/scorecard/current');
+			return null;
+		}
 	}
 
 	if (competitionsState.curCompFetchStatus !== FetchStatus.pending) {
