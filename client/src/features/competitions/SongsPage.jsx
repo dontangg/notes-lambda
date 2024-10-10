@@ -103,10 +103,10 @@ export default function SongsPage() {
 			<h1 className="mb-4">Songs</h1>
 			{competitionsState.error && (<div className="alert alert-danger" role="alert">{competitionsState.error}</div>)}
 
-			<ul className="nav nav-pills mb-3">
+			<ul className="nav nav-tabs mb-3">
 				<li className="nav-item dropdown">
 					<button className={'nav-link dropdown-toggle' + (!selectedSongList || selectedSongList.compName ? ' active' : '')} ref={competitionDropdownRef} onClick={onOpenCompetitionDropdown}>
-						{selectedSongList?.compName ? selectedSongList.compName : 'Competition'}
+						{selectedSongList?.compName ? selectedSongList.compName : 'Current'} Competition
 					</button>
 					<ul className={'dropdown-menu' + (dropdownMenuOpen === 'competition' ? ' d-block' : '')}>
 						{compNames?.length

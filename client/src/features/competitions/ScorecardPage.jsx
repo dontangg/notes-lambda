@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
 import { CompetitionPhase, fetchCompetition, fetchCurrentCompetition, selectCompetitions, selectAllUsers } from "./competitionsSlice";
 import { useDocumentTitle } from "../../app/customHooks";
+import { timeAgoInWords } from '../../app/utilities';
 
 export default function ScorecardPage() {
 	const { name: nameParam } = useParams();
@@ -54,40 +55,6 @@ export default function ScorecardPage() {
 	}
 
 	const totalSongCount = competition?.songs?.length - 2;
-
-	const timeAgoInWords = (timeStr) => {
-		const seconds = Math.floor((new Date() - new Date(timeStr)) / 1000);
-		let num = 0;
-		let unit = '';
-		let modifier = '';
-		if (seconds < 60) {
-			num = seconds;
-			unit = 'second';
-			modifier = 'about';
-		} else if (seconds < 3600) {
-			num = Math.floor(seconds / 60);
-			unit = 'minute';
-			modifier = 'about';
-		} else if (seconds < 86400) {
-			num = Math.floor(seconds / 3600);
-			unit = 'hour'
-			modifier = 'over';
-		} else if (seconds < 604800) {
-			num = Math.floor(seconds / 86400);
-			unit = 'day';
-			modifier = 'over';
-		} else if (seconds < 31536000) {
-			num = Math.floor(seconds / 604800);
-			unit = 'week'
-			modifier = 'over';
-		} else {
-			num = Math.floor(seconds / 31536000);
-			unit = 'year';
-			modifier = 'over';
-		}
-
-		return `${modifier} ${num} ${unit}${num === 1 ? '' : 's'} ago`;
-	};
 
 	return (
 		<div className="scorecard">
