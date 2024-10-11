@@ -85,7 +85,7 @@ const Layout = () => {
 									aria-expanded={userMenuIsOpen ? 'true' : 'false'}
 									onClick={() => setUserMenuIsOpen(!userMenuIsOpen)}
 									ref={accountDropdownRef}>
-									Don
+									<i className="fa-regular fa-user"></i>
 								</button>
 								<ul className={'dropdown-menu dropdown-menu-end' + (userMenuIsOpen ? ' show' : '')} style={{ right: 0 }}>
 									<li><NavLink className="dropdown-item" to="/account">Account</NavLink></li>
