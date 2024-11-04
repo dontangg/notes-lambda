@@ -66,13 +66,15 @@ const songController = {
 
 		const curComp = await competitionDb.getCurrent();
 
-		// Check to make sure that the userId is not allowed to change unless you're changing it to/from you/partner or you're an admin
-		if (!req.user.admin && updatedSong.userId !== req.user.userId && updatedSong.userId !== req.user.partnerId) {
-			return { statusCode: 403, body: JSON.stringify({ message: 'You are not allowed to change the userId of the song to this userId' }) };
-		}
-
 		if (updatedSong.id) {
 			const existingSong = curComp.songs.find(s => s.id === updatedSong.id);
+
+			// Check to make sure that the userId is not allowed to change unless you're changing it to/from you/partner or you're an admin
+			if (!req.user.admin && existingSong.userId !== req.user.userId && existingSong.userId !== req.user.partnerId) {
+				return { statusCode: 403, body: JSON.stringify({ message: 'You are not allowed to change the userId of the song to this userId' }) };
+			}
+			// Make sure the userId doesn't change
+			updatedSong.userId = existingSong.userId;
 
 			if (!existingSong) {
 				return { statusCode: 404, body: JSON.stringify({ message: 'Song not found' }) };
