@@ -91,16 +91,22 @@ export default function SongEditPage() {
 
 	let usersForDropdown = [];
 	if (competitionsState.currentCompetition) {
-		const mySong = competitionsState.currentCompetition.songs?.find(s => s.userId === currentUser.id);
+		const mySongs = competitionsState.currentCompetition.songs?.filter(s => s.userId === currentUser.id) || [];
 		const partnerSong = competitionsState.currentCompetition.songs?.find(s => s.userId === currentUser.partnerId);
+
+		const allowedSongCount = currentUser.partnerId ? 1 : 2;
 
 		usersForDropdown = allUsers?.filter(u => {
 			if (!competitionsState.currentCompetition) return false;
 
-			if (u.id === currentUser.id && (!mySong || mySong.id === song?.id)) {
-				return true;
-			}
-			if (u.id === currentUser.partnerId && (!partnerSong || partnerSong.id === song?.id)) {
+			if (u.id === currentUser.id) {
+				if (mySongs.length < allowedSongCount) { // If I haven't submitted my limit
+					return true;
+				}
+				if (mySongs.some(s => s.id === song?.id)) { // If this song is one I already submitted
+					return true;
+				}
+			} else if (u.id === currentUser.partnerId && (!partnerSong || partnerSong.id === song?.id)) {
 				return true;
 			}
 			return false;
@@ -142,7 +148,7 @@ export default function SongEditPage() {
 							</div>
 							<div className="mb-3">
 								<label htmlFor="reasonInput" className="form-label">Reason</label>
-								<textarea className="form-control" id="reasonInput" value={typedReason} onChange={e => setTypedReason(e.target.value)} required />
+								<textarea className="form-control" rows="4" id="reasonInput" value={typedReason} onChange={e => setTypedReason(e.target.value)} required />
 								<div className="invalid-feedback">
 									Please enter the reason you are selecting this song.
 								</div>
