@@ -48,6 +48,7 @@ const mapCompetition = (req, comp) => {
 			comp.songs?.forEach(song => {
 				if (!allowedUserIds.includes(song.userId) && !correctlyGuessedSongs.includes(song.filename)) {
 					delete song.userId;
+					delete song.reason;
 				}
 			});
 		}
