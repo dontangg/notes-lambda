@@ -128,14 +128,14 @@ export default function SongEditPage() {
 						<form className={formWasValidated ? 'was-validated' : ''} noValidate>
 							<div className="mb-3">
 								<label htmlFor="titleInput" className="form-label">Title</label>
-								<input type="text" className="form-control" id="titleInput" value={typedTitle} onChange={e => setTypedTitle(e.target.value)} required />
+								<input type="text" className="form-control" id="titleInput" autoCapitalize="words" value={typedTitle} onChange={e => setTypedTitle(e.target.value)} required />
 								<div className="invalid-feedback">
 									Please enter the song title.
 								</div>
 							</div>
 							<div className="mb-3">
 								<label htmlFor="artistInput" className="form-label">Artist</label>
-								<input type="text" className="form-control" id="artistInput" value={typedArtist} onChange={e => setTypedArtsit(e.target.value)} required />
+								<input type="text" className="form-control" id="artistInput" autoCapitalize="words" value={typedArtist} onChange={e => setTypedArtsit(e.target.value)} required />
 								<div className="invalid-feedback">
 									Please enter the song artist.
 								</div>
