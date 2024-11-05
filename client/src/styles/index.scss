@@ -36,6 +36,10 @@
 	tr:has(+ .song-reason) td {
 		border: 0;
 	}
+
+	tr.song-reason {
+		white-space-collapse: preserve;
+	}
 }
 
 .audio-player-margin {
