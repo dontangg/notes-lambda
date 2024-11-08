@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import { Provider, useSelector } from "react-redux";
 import { createBrowserRouter, RouterProvider, useNavigate } from "react-router-dom";
@@ -20,20 +20,22 @@ const HomePage = () => {
 	const navigate = useNavigate();
 	const competitionsState = useSelector(selectCompetitions);
 
-	if (competitionsState.currentCompetition) {
-		if (competitionsState.currentCompetition.phase === CompetitionPhase.submitting) {
-			navigate('/song');
-			return null;
-		} else {
-			navigate('/scorecard/current');
-			return null;
-		}
-	}
+	useEffect(() => {
+		if (competitionsState.curCompFetchStatus !== FetchStatus.success) return;
 
-	if (competitionsState.curCompFetchStatus !== FetchStatus.pending) {
+		if (competitionsState.currentCompetition) {
+			if (competitionsState.currentCompetition.phase === CompetitionPhase.submitting) {
+				navigate('/song');
+				return;
+			} else {
+				navigate('/scorecard/current');
+				return;
+			}
+		}
+	
 		navigate('/competition');
-		return null;
-	}
+
+	}, [competitionsState.curCompFetchStatus]);
 
 	return null;
 };
