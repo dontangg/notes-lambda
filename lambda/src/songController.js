@@ -69,12 +69,11 @@ const songController = {
 		if (updatedSong.id) {
 			const existingSong = curComp.songs.find(s => s.id === updatedSong.id);
 
-			// Check to make sure that the userId is not allowed to change unless you're changing it to/from you/partner or you're an admin
-			if (!req.user.admin && existingSong.userId !== req.user.userId && existingSong.userId !== req.user.partnerId) {
-				return { statusCode: 403, body: JSON.stringify({ message: 'You are not allowed to change the userId of the song to this userId' }) };
+			// Check to make sure that the userId/reason is not allowed to change unless you're changing it to/from you/partner
+			if (existingSong.userId !== req.user.userId && existingSong.userId !== req.user.partnerId) {
+				updatedSong.reason = existingSong.reason;
+				updatedSong.userId = existingSong.userId;
 			}
-			// Make sure the userId doesn't change
-			updatedSong.userId = existingSong.userId;
 
 			if (!existingSong) {
 				return { statusCode: 404, body: JSON.stringify({ message: 'Song not found' }) };

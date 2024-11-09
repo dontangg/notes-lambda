@@ -38,10 +38,17 @@ export default function SongEditPage() {
 		setExtension(song?.extension || '');
 	}, [song]);
 
+	let showReasonAndUser = true;
+	if (currentUser.admin && song) {
+		if (song.userId !== currentUser.id && (!currentUser.partnerId || song.userId !== currentUser.partnerId)) {
+			showReasonAndUser = false;
+		}
+	}
+
 	const onSaveClick = (e) => {
 		e.preventDefault();
 		setFormWasValidated(true);
-		if (typedTitle && typedArtist && typedReason) {
+		if (typedTitle && typedArtist && (!showReasonAndUser || typedReason)) {
 			const songToSave = { title: typedTitle, artist: typedArtist, reason: typedReason, userId: Number(selectedUserId) };
 			if (songId !== 'new') {
 				songToSave.id = songId;
@@ -146,21 +153,25 @@ export default function SongEditPage() {
 									Please enter the song artist.
 								</div>
 							</div>
-							<div className="mb-3">
-								<label htmlFor="reasonInput" className="form-label">Reason</label>
-								<textarea className="form-control" rows="4" id="reasonInput" value={typedReason} onChange={e => setTypedReason(e.target.value)} required />
-								<div className="invalid-feedback">
-									Please enter the reason you are selecting this song.
-								</div>
-							</div>
-							<div className="mb-3">
-								<label htmlFor="userSelect" className="form-label">For whom</label>
-								<select className="form-select" id="userSelect" value={selectedUserId} onChange={e => setSelectedUserId(e.target.value)} disabled={usersForDropdown?.length === 1}>
-									{usersForDropdown?.map(user => (
-										<option key={user.id} value={user.id}>{user.name}</option>
-									))}
-								</select>
-							</div>
+							{showReasonAndUser && (
+								<>
+									<div className="mb-3">
+										<label htmlFor="reasonInput" className="form-label">Reason</label>
+										<textarea className="form-control" rows="4" id="reasonInput" value={typedReason} onChange={e => setTypedReason(e.target.value)} required />
+										<div className="invalid-feedback">
+											Please enter the reason you are selecting this song.
+										</div>
+									</div>
+									<div className="mb-3">
+										<label htmlFor="userSelect" className="form-label">For whom</label>
+										<select className="form-select" id="userSelect" value={selectedUserId} onChange={e => setSelectedUserId(e.target.value)} disabled={usersForDropdown?.length === 1}>
+											{usersForDropdown?.map(user => (
+												<option key={user.id} value={user.id}>{user.name}</option>
+											))}
+										</select>
+									</div>
+								</>
+							)}
 							<div className="mb-3">
 								<label htmlFor="uploadInput" className="form-label">
 									{filename ? (filename === song?.filename ? 'File uploaded' : 'New file uploaded') : 'Song file'}
