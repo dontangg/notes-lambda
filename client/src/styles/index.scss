@@ -2,6 +2,10 @@
 @import "bootstrap/scss/bootstrap";
 @import "./player.scss";
 
+html, body {
+	overflow-x: hidden;
+}
+
 .sign-in-page form {
 	max-width: 400px;
 }

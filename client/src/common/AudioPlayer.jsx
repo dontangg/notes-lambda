@@ -72,6 +72,18 @@ export default function AudioPlayer({ songs }) {
 		audioRefs.current[currentSongFilename].currentTime = scrubTime;
 	};
 
+	const onTouchEnd = (e) => {
+		dispatch(setIsPlaying(true));
+	};
+	const onTouchMove = (e) => {
+		e.preventDefault();
+		dispatch(setIsPlaying(false));
+		const rect = e.target.getBoundingClientRect();
+		const offsetX = e.targetTouches[0].pageX - rect.left;
+		const scrubTime = (offsetX / scrubberRef.current.offsetWidth) * audioRefs.current[currentSongFilename].duration;
+		audioRefs.current[currentSongFilename].currentTime = scrubTime;
+	};
+
 	const onChangeVolume = (e) => {
 		const newVolume = e.target.value;
 		setVolume(newVolume);
@@ -111,12 +123,12 @@ export default function AudioPlayer({ songs }) {
 
 							<div className="d-flex align-items-center justify-content-between flex-grow-1">
 								<span className="font-monospace px-2">{audioCurrentTimeStr}</span>
-								<div className="player-progress" onClick={onScrub} ref={scrubberRef}>
+								<div className="player-progress" onTouchEnd={onTouchEnd} onTouchMove={onTouchMove} onClick={onScrub} ref={scrubberRef}>
 									<div className="player-progress-filled" style={{ flexBasis: percentComplete + '%' }}></div>
 								</div>
 								<span className="font-monospace px-2">{audioDurationStr}</span>
 							</div>
-							<div className="player-volume-container">
+							<div className="player-volume-container d-none d-md-block">
 								<input type="range" min="0" max="1" value={volume} step="0.01" className="player-volume" onChange={onChangeVolume} />
 							</div>
 						</div>
