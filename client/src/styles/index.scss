@@ -12,13 +12,14 @@
 }
 
 .playlist {
-	td:nth-child(1) {
+	td:first-child {
 		position: relative;
 		width: 50px;
 
 		button {
 			display: inline-block;
 			background: none;
+			color: #000;
 			border: 0;
 			position: absolute;
 			bottom: 0;
@@ -31,6 +32,10 @@
 				color: #fff;
 			}
 		}
+	}
+
+	td:last-child select {
+		min-width: 105px;
 	}
 
 	tr:has(+ .song-reason) td {

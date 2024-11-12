@@ -40,7 +40,7 @@ router.get('/timeout', async function timeoutHandler(req) {
 });
 /* END TEST */
 
-const validOrigins = ['http://localhost:1234', 'https://notes.thewilsonpad.com'];
+const validOrigins = ['http://localhost:1234', 'http://192.168.1.242:1234', 'https://notes.thewilsonpad.com'];
 
 const addCorsHeaders = (req, res) => {
 	if (req?.headers) {

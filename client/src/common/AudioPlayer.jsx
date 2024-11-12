@@ -87,7 +87,7 @@ export default function AudioPlayer({ songs }) {
 	const audioDurationStr = convertMsToStr(currentAudioInfo.duration);
 	const percentComplete = (audioCurrentTime / currentAudioInfo.duration) * 100;
 
-	const isPlaying = audioRefs.current[currentSongFilename]?.paused === false;
+	// const isPlaying = audioRefs.current[currentSongFilename]?.paused === false;
 
 	return (
 		<div className={'fixed-bottom player ' + (currentSong ? 'd-flex' : 'd-none')}>
@@ -106,7 +106,7 @@ export default function AudioPlayer({ songs }) {
 						</div>
 						<div className="d-flex align-items-center justify-content-between">
 							<button className={'bg-transparent border-0 text-white' + (currentAudioInfo.canPlay ? '' : ' opacity-25')} title="Play song" onClick={onPlayClick} disabled={!currentAudioInfo.canPlay}>
-								{isPlaying ? (<i className="fa-solid fa-pause"></i>) : (<i className="fa-solid fa-play"></i>)}
+								{audioPlayerState.isPlaying ? (<i className="fa-solid fa-pause"></i>) : (<i className="fa-solid fa-play"></i>)}
 							</button>
 
 							<div className="d-flex align-items-center justify-content-between flex-grow-1">
