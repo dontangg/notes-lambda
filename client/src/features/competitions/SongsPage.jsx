@@ -141,7 +141,7 @@ export default function SongsPage() {
 							{songs.map((song, idx) => {
 								const isThisSongPlaying = (audioPlayerState.currentSongFilename === song.filename && audioPlayerState.isPlaying);
 								return (
-									<Fragment key={song.title}>
+									<Fragment key={song.id}>
 										<tr className={isThisSongPlaying ? 'table-active' : null}>
 											<td className="text-center">
 												{song.filename ? (

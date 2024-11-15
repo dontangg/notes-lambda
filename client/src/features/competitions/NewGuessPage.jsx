@@ -16,6 +16,7 @@ export default function NewGuessPage() {
 	const [invalidGuessMessage, setInvalidGuessMessage] = useState('');
 	const [guesses, setGuesses] = useState({});
 	const [isConfirmingForfeit, setIsConfirmingForfeit] = useState(false);
+	const [showReasons, setShowReasons] = useState(true);
 	const competitionsState = useSelector(selectCompetitions);
 	const audioPlayerState = useSelector(selectAudioPlayer);
 	const currentUser = useSelector(selectCurrentUser);
@@ -152,15 +153,16 @@ export default function NewGuessPage() {
 					{!currentCompetition ? (<span className="opacity-25">Loading...</span>) : (
 						<>
 							{lastAttempt && (
-								<div className="alert alert-info" role="alert">You got {lastAttempt.correctCount} right with {teamAttempts.length} guess{teamAttempts.length === 1 ? '' : 'es'}!</div>
+								<div className="alert alert-info" role="alert">You got {lastAttempt.correctCount} right with {teamAttempts.length} guess{teamAttempts.length === 1 ? '' : 'es'}! You have {songs.length - lastAttempt.correctCount} left to guess.</div>
 							)}
+							<button className="btn btn-outline-secondary mb-2" onClick={e => setShowReasons(!showReasons)}>{showReasons ? 'Hide' : 'Show'} reasons</button>
 
 							<table className="table table-hover align-middle playlist">
 								<tbody>
 									{songs.map((song, idx) => {
 										const isThisSongPlaying = (audioPlayerState.currentSongFilename === song.filename && audioPlayerState.isPlaying);
 										return (
-											<Fragment key={song.title}>
+											<Fragment key={song.id}>
 												<tr className={isThisSongPlaying ? 'table-active' : null}>
 													<td className="text-center">
 														{song.filename ? (
@@ -180,7 +182,7 @@ export default function NewGuessPage() {
 													<td className="small text-end">{song.filename && convertMsToStr(audioPlayerState.audioInfo[song.filename]?.duration)}</td>
 													<td>{getUserCell(song)}</td>
 												</tr>
-												{song.reason && song.userId
+												{song.reason && song.userId && showReasons
 													? (
 														<tr className={'song-reason' + (isThisSongPlaying ? ' table-active' : '')}>
 															<td></td>
