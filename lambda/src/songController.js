@@ -24,41 +24,106 @@ const songController = {
 	triggerTranscoder: async (req) => {
 		const fileInfo = JSON.parse(req.body);
 
-		const transcoder = new AWS.ElasticTranscoder({ region: 'us-west-2' });
-		await transcoder.createJob({
-			PipelineId: '1390029519400-paneaz',
-			Input: {
-				Key: `uploads/${fileInfo.filename}.${fileInfo.extension}`,
-				Container: 'auto', // auto-detect the existing file's container (eg. mp3, ogg, etc)
-			},
-			OutputKeyPrefix: `t/${fileInfo.filename}/`, // each output key will have this prefix
-			Outputs: [
-				{
-					Key: 'segment.ts',
-					PresetId: '1351620000001-200050',
-					SegmentDuration: '30' // Create 30 second segments
-				},
-				{
-					Key: "song.mp3",
-					PresetId: "1351620000001-300040" // MP3 - 128k
-				},
-			],
-			Playlists: [
-				{
-					Name: 'playlist', // the extension m3u8 is automatically added for us
-					Format: 'HLSv3',
-					OutputKeys: [
-						'segment.ts', // create a playlist for the segment.ts output
-					],
-				},
-			],
-		}, (err) => {
-			if (err) {
-				console.error(err);
-			}
-		}).promise();
+		// Create MediaConvert client with the discovered endpoint
+		const mediaConvert = new AWS.MediaConvert({
+			region: 'us-west-2',
+			endpoint: 'https://mlboolfjb.mediaconvert.us-west-2.amazonaws.com',
+		});
 
-		return { statusCode: 200, body: JSON.stringify({ message: 'success' }) };
+		// Define the job parameters
+		const params = {
+			Role: 'arn:aws:iam::177961644364:role/MediaConvertRole',
+			Settings: {
+				Inputs: [
+					{
+						FileInput: `s3://wilson-notes/uploads/${fileInfo.filename}.${fileInfo.extension}`,
+						AudioSelectors: {
+							'Audio Selector 1': {
+								DefaultSelection: 'DEFAULT'
+							}
+						}
+					}
+				],
+				OutputGroups: [
+					{
+						// HLS Output Group
+						Name: 'HLS',
+						OutputGroupSettings: {
+							Type: 'HLS_GROUP_SETTINGS',
+							HlsGroupSettings: {
+								SegmentLength: 30,
+								MinSegmentLength: 0,
+								Destination: `s3://wilson-notes/t/${fileInfo.filename}/playlist`,
+								DirectoryStructure: 'SINGLE_DIRECTORY',
+								SegmentControl: "SEGMENTED_FILES"
+							}
+						},
+						Outputs: [
+							{
+								ContainerSettings: {
+									Container: 'M3U8',
+									M3u8Settings: {}
+								},
+								AudioDescriptions: [
+									{
+										CodecSettings: {
+											Codec: 'AAC',
+											AacSettings: {
+												Bitrate: 96000,
+												CodingMode: "CODING_MODE_2_0",
+												SampleRate: 48000
+											}
+										},
+										AudioSourceName: "Audio Selector 1"
+									}
+								],
+								NameModifier: ".ts"
+							}
+						]
+					},
+					{
+						// MP3 Output Group
+						Name: 'MP3',
+						OutputGroupSettings: {
+							Type: 'FILE_GROUP_SETTINGS',
+							FileGroupSettings: {
+								Destination: `s3://wilson-notes/t/${fileInfo.filename}/song` // .mp3 extension is added automatically
+							}
+						},
+						Outputs: [
+							{
+								ContainerSettings: {
+									Container: 'RAW'
+								},
+								AudioDescriptions: [
+									{
+										CodecSettings: {
+											Codec: 'MP3',
+											Mp3Settings: {
+												Bitrate: 192000,
+												Channels: 2,
+												RateControlMode: 'CBR',
+												SampleRate: 48000
+											}
+										}
+									}
+								]
+							}
+						]
+					}
+				],
+				FollowSource: 1
+			},
+		};
+
+		try {
+			const result = await mediaConvert.createJob(params).promise();
+			console.log(`Job created: ${result.Job.Id}`);
+			return { statusCode: 200, body: JSON.stringify({ message: 'success' }) };
+		} catch (err) {
+			console.error('Error creating MediaConvert job:', err);
+			return { statusCode: 500, body: JSON.stringify({ message: 'Failed to create transcoding job' }) };
+		}
 	},
 
 	save: async (req) => {
