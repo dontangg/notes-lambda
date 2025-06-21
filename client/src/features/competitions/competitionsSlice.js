@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import appFetch, { FetchStatus } from '../../app/appFetch';
 import { uploadFile } from '../../app/utilities';
+import { signOut } from '../signIn/signInSlice';
 
 const initialState = {
 	allUsers: null,
@@ -27,8 +28,22 @@ export const CompetitionPhase = {
 export const fetchAllUsers = createAsyncThunk(
 	'competitions/fetchAllUsers',
 	async (arg, { dispatch, getState }) => {
-		return appFetch('/users', null, dispatch, getState).then(response => response.json());
-	}, {
+        const response = await appFetch('/users', null, dispatch, getState);
+        const users = await response.json();
+        
+        // Check that the current user info stored in local storage is correct.
+        const localStorageUser = window.localStorage.getItem('user');
+        if (localStorageUser) {
+            const parsedUser = JSON.parse(localStorageUser);
+            const currentUser = users.find(u => u.id === parsedUser.id && (u.partnerId === parsedUser.partnerId || (!u.partnerId && !parsedUser.partnerId)));
+            if (!currentUser) {
+                // Sign out the current user.
+                dispatch(signOut());
+            }
+        }
+        
+        return users;
+    }, {
 		condition: (arg, { getState, extra }) => {
 			const competitionsState = getState().competitions;
 			return competitionsState.allUsersFetchStatus !== FetchStatus.pending;
