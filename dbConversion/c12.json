@@ -1,0 +1,1092 @@
+{
+	"pk": "Competition",
+	"sk": "2025",
+	"attempts": [
+		{
+			"correctCount": 3,
+			"createdAt": "2025-06-20T23:50:16.719Z",
+			"guesses": [
+				{
+					"guessedUserId": 16,
+					"songFilename": "mc5f584q"
+				},
+				{
+					"guessedUserId": 3,
+					"songFilename": "mc5fvep9"
+				},
+				{
+					"guessedUserId": 14,
+					"songFilename": "mbx1wqdd"
+				},
+				{
+					"guessedUserId": 6,
+					"songFilename": "mbx2s1w6"
+				},
+				{
+					"guessedUserId": 4,
+					"songFilename": "mc5fqv6m"
+				},
+				{
+					"guessedUserId": 10,
+					"songFilename": "mbzhzvd6"
+				},
+				{
+					"guessedUserId": 15,
+					"songFilename": "mbzi1vrx"
+				},
+				{
+					"guessedUserId": 9,
+					"songFilename": "mc5fmpc9"
+				},
+				{
+					"guessedUserId": 1,
+					"songFilename": "mc5euccl"
+				},
+				{
+					"guessedUserId": 5,
+					"songFilename": "mc3nzggs"
+				}
+			],
+			"userId": 7
+		},
+		{
+			"correctCount": 3,
+			"createdAt": "2025-06-20T23:56:17.396Z",
+			"guesses": [
+				{
+					"guessedUserId": 14,
+					"songFilename": "mc5f584q"
+				},
+				{
+					"guessedUserId": 5,
+					"songFilename": "mc5fvep9"
+				},
+				{
+					"guessedUserId": 4,
+					"songFilename": "mc5fqv6m"
+				},
+				{
+					"guessedUserId": 8,
+					"songFilename": "mbzhzvd6"
+				},
+				{
+					"guessedUserId": 16,
+					"songFilename": "mbzi1vrx"
+				},
+				{
+					"guessedUserId": 6,
+					"songFilename": "mc5fmpc9"
+				},
+				{
+					"guessedUserId": 1,
+					"songFilename": "mc5euccl"
+				},
+				{
+					"guessedUserId": 9,
+					"songFilename": "mc3nzggs"
+				},
+				{
+					"guessedUserId": 3,
+					"songFilename": "mc5ffzxg"
+				},
+				{
+					"guessedUserId": 7,
+					"songFilename": "mc5fcgs7"
+				}
+			],
+			"userId": 10
+		},
+		{
+			"correctCount": 3,
+			"createdAt": "2025-06-20T23:57:38.313Z",
+			"guesses": [
+				{
+					"guessedUserId": 3,
+					"songFilename": "mc5f584q"
+				},
+				{
+					"guessedUserId": 14,
+					"songFilename": "mc5fvep9"
+				},
+				{
+					"guessedUserId": 15,
+					"songFilename": "mbx1wqdd"
+				},
+				{
+					"guessedUserId": 10,
+					"songFilename": "mbx2s1w6"
+				},
+				{
+					"guessedUserId": 4,
+					"songFilename": "mc5fqv6m"
+				},
+				{
+					"guessedUserId": 1,
+					"songFilename": "mbzhzvd6"
+				},
+				{
+					"guessedUserId": 6,
+					"songFilename": "mbzi1vrx"
+				},
+				{
+					"guessedUserId": 9,
+					"songFilename": "mc5fmpc9"
+				},
+				{
+					"guessedUserId": 16,
+					"songFilename": "mc5euccl"
+				},
+				{
+					"guessedUserId": 5,
+					"songFilename": "mc3nzggs"
+				}
+			],
+			"userId": 7
+		},
+		{
+			"correctCount": 5,
+			"createdAt": "2025-06-20T23:58:47.660Z",
+			"guesses": [
+				{
+					"guessedUserId": 14,
+					"songFilename": "mc5f584q"
+				},
+				{
+					"guessedUserId": 16,
+					"songFilename": "mc5fvep9"
+				},
+				{
+					"guessedUserId": 4,
+					"songFilename": "mc5fqv6m"
+				},
+				{
+					"guessedUserId": 5,
+					"songFilename": "mbzhzvd6"
+				},
+				{
+					"guessedUserId": 8,
+					"songFilename": "mbzi1vrx"
+				},
+				{
+					"guessedUserId": 9,
+					"songFilename": "mc5fmpc9"
+				},
+				{
+					"guessedUserId": 3,
+					"songFilename": "mc5euccl"
+				},
+				{
+					"guessedUserId": 6,
+					"songFilename": "mc3nzggs"
+				},
+				{
+					"guessedUserId": 1,
+					"songFilename": "mc5ffzxg"
+				},
+				{
+					"guessedUserId": 7,
+					"songFilename": "mc5fcgs7"
+				}
+			],
+			"userId": 10
+		},
+		{
+			"correctCount": 5,
+			"createdAt": "2025-06-21T00:00:15.027Z",
+			"guesses": [
+				{
+					"guessedUserId": 14,
+					"songFilename": "mc5f584q"
+				},
+				{
+					"guessedUserId": 8,
+					"songFilename": "mc5fvep9"
+				},
+				{
+					"guessedUserId": 4,
+					"songFilename": "mc5fqv6m"
+				},
+				{
+					"guessedUserId": 6,
+					"songFilename": "mbzhzvd6"
+				},
+				{
+					"guessedUserId": 5,
+					"songFilename": "mbzi1vrx"
+				},
+				{
+					"guessedUserId": 9,
+					"songFilename": "mc5fmpc9"
+				},
+				{
+					"guessedUserId": 3,
+					"songFilename": "mc5euccl"
+				},
+				{
+					"guessedUserId": 1,
+					"songFilename": "mc3nzggs"
+				},
+				{
+					"guessedUserId": 16,
+					"songFilename": "mc5ffzxg"
+				},
+				{
+					"guessedUserId": 7,
+					"songFilename": "mc5fcgs7"
+				}
+			],
+			"userId": 10
+		},
+		{
+			"correctCount": 10,
+			"createdAt": "2025-06-21T00:01:11.276Z",
+			"guesses": [
+				{
+					"guessedUserId": 14,
+					"songFilename": "mc5f584q"
+				},
+				{
+					"guessedUserId": 6,
+					"songFilename": "mc5fvep9"
+				},
+				{
+					"guessedUserId": 4,
+					"songFilename": "mc5fqv6m"
+				},
+				{
+					"guessedUserId": 16,
+					"songFilename": "mbzhzvd6"
+				},
+				{
+					"guessedUserId": 1,
+					"songFilename": "mbzi1vrx"
+				},
+				{
+					"guessedUserId": 9,
+					"songFilename": "mc5fmpc9"
+				},
+				{
+					"guessedUserId": 3,
+					"songFilename": "mc5euccl"
+				},
+				{
+					"guessedUserId": 5,
+					"songFilename": "mc3nzggs"
+				},
+				{
+					"guessedUserId": 8,
+					"songFilename": "mc5ffzxg"
+				},
+				{
+					"guessedUserId": 7,
+					"songFilename": "mc5fcgs7"
+				}
+			],
+			"userId": 10
+		},
+		{
+			"correctCount": 5,
+			"createdAt": "2025-06-21T00:02:45.219Z",
+			"guesses": [
+				{
+					"guessedUserId": 1,
+					"songFilename": "mc5f584q"
+				},
+				{
+					"guessedUserId": 6,
+					"songFilename": "mc5fvep9"
+				},
+				{
+					"guessedUserId": 16,
+					"songFilename": "mbx1wqdd"
+				},
+				{
+					"guessedUserId": 14,
+					"songFilename": "mbx2s1w6"
+				},
+				{
+					"guessedUserId": 4,
+					"songFilename": "mc5fqv6m"
+				},
+				{
+					"guessedUserId": 15,
+					"songFilename": "mbzhzvd6"
+				},
+				{
+					"guessedUserId": 10,
+					"songFilename": "mbzi1vrx"
+				},
+				{
+					"guessedUserId": 9,
+					"songFilename": "mc5fmpc9"
+				},
+				{
+					"guessedUserId": 3,
+					"songFilename": "mc5euccl"
+				},
+				{
+					"guessedUserId": 5,
+					"songFilename": "mc3nzggs"
+				}
+			],
+			"userId": 7
+		},
+		{
+			"correctCount": 7,
+			"createdAt": "2025-06-21T00:04:30.344Z",
+			"guesses": [
+				{
+					"guessedUserId": 15,
+					"songFilename": "mc5f584q"
+				},
+				{
+					"guessedUserId": 6,
+					"songFilename": "mc5fvep9"
+				},
+				{
+					"guessedUserId": 10,
+					"songFilename": "mbx1wqdd"
+				},
+				{
+					"guessedUserId": 1,
+					"songFilename": "mbx2s1w6"
+				},
+				{
+					"guessedUserId": 4,
+					"songFilename": "mc5fqv6m"
+				},
+				{
+					"guessedUserId": 16,
+					"songFilename": "mbzhzvd6"
+				},
+				{
+					"guessedUserId": 14,
+					"songFilename": "mbzi1vrx"
+				},
+				{
+					"guessedUserId": 9,
+					"songFilename": "mc5fmpc9"
+				},
+				{
+					"guessedUserId": 3,
+					"songFilename": "mc5euccl"
+				},
+				{
+					"guessedUserId": 5,
+					"songFilename": "mc3nzggs"
+				}
+			],
+			"userId": 7
+		},
+		{
+			"correctCount": 10,
+			"createdAt": "2025-06-21T00:05:14.972Z",
+			"guesses": [
+				{
+					"guessedUserId": 14,
+					"songFilename": "mc5f584q"
+				},
+				{
+					"guessedUserId": 6,
+					"songFilename": "mc5fvep9"
+				},
+				{
+					"guessedUserId": 10,
+					"songFilename": "mbx1wqdd"
+				},
+				{
+					"guessedUserId": 15,
+					"songFilename": "mbx2s1w6"
+				},
+				{
+					"guessedUserId": 4,
+					"songFilename": "mc5fqv6m"
+				},
+				{
+					"guessedUserId": 16,
+					"songFilename": "mbzhzvd6"
+				},
+				{
+					"guessedUserId": 1,
+					"songFilename": "mbzi1vrx"
+				},
+				{
+					"guessedUserId": 9,
+					"songFilename": "mc5fmpc9"
+				},
+				{
+					"guessedUserId": 3,
+					"songFilename": "mc5euccl"
+				},
+				{
+					"guessedUserId": 5,
+					"songFilename": "mc3nzggs"
+				}
+			],
+			"userId": 7
+		},
+		{
+			"correctCount": 4,
+			"createdAt": "2025-06-21T00:10:01.490Z",
+			"guesses": [
+				{
+					"guessedUserId": 14,
+					"songFilename": "mc5f584q"
+				},
+				{
+					"guessedUserId": 1,
+					"songFilename": "mc5fvep9"
+				},
+				{
+					"guessedUserId": 10,
+					"songFilename": "mbx1wqdd"
+				},
+				{
+					"guessedUserId": 9,
+					"songFilename": "mbx2s1w6"
+				},
+				{
+					"guessedUserId": 8,
+					"songFilename": "mbzhzvd6"
+				},
+				{
+					"guessedUserId": 6,
+					"songFilename": "mbzi1vrx"
+				},
+				{
+					"guessedUserId": 15,
+					"songFilename": "mc5fmpc9"
+				},
+				{
+					"guessedUserId": 5,
+					"songFilename": "mc3nzggs"
+				},
+				{
+					"guessedUserId": 16,
+					"songFilename": "mc5ffzxg"
+				},
+				{
+					"guessedUserId": 7,
+					"songFilename": "mc5fcgs7"
+				}
+			],
+			"userId": 4
+		},
+		{
+			"correctCount": 5,
+			"createdAt": "2025-06-21T00:24:27.249Z",
+			"guesses": [
+				{
+					"guessedUserId": 14,
+					"songFilename": "mc5f584q"
+				},
+				{
+					"guessedUserId": 16,
+					"songFilename": "mc5fvep9"
+				},
+				{
+					"guessedUserId": 10,
+					"songFilename": "mbx1wqdd"
+				},
+				{
+					"guessedUserId": 6,
+					"songFilename": "mbx2s1w6"
+				},
+				{
+					"guessedUserId": 15,
+					"songFilename": "mbzhzvd6"
+				},
+				{
+					"guessedUserId": 8,
+					"songFilename": "mbzi1vrx"
+				},
+				{
+					"guessedUserId": 9,
+					"songFilename": "mc5fmpc9"
+				},
+				{
+					"guessedUserId": 5,
+					"songFilename": "mc3nzggs"
+				},
+				{
+					"guessedUserId": 1,
+					"songFilename": "mc5ffzxg"
+				},
+				{
+					"guessedUserId": 7,
+					"songFilename": "mc5fcgs7"
+				}
+			],
+			"userId": 4
+		},
+		{
+			"correctCount": 7,
+			"createdAt": "2025-06-21T00:27:32.571Z",
+			"guesses": [
+				{
+					"guessedUserId": 14,
+					"songFilename": "mc5f584q"
+				},
+				{
+					"guessedUserId": 15,
+					"songFilename": "mc5fvep9"
+				},
+				{
+					"guessedUserId": 10,
+					"songFilename": "mbx1wqdd"
+				},
+				{
+					"guessedUserId": 8,
+					"songFilename": "mbx2s1w6"
+				},
+				{
+					"guessedUserId": 16,
+					"songFilename": "mbzhzvd6"
+				},
+				{
+					"guessedUserId": 1,
+					"songFilename": "mbzi1vrx"
+				},
+				{
+					"guessedUserId": 9,
+					"songFilename": "mc5fmpc9"
+				},
+				{
+					"guessedUserId": 5,
+					"songFilename": "mc3nzggs"
+				},
+				{
+					"guessedUserId": 6,
+					"songFilename": "mc5ffzxg"
+				},
+				{
+					"guessedUserId": 7,
+					"songFilename": "mc5fcgs7"
+				}
+			],
+			"userId": 4
+		},
+		{
+			"correctCount": 10,
+			"createdAt": "2025-06-21T00:29:03.849Z",
+			"guesses": [
+				{
+					"guessedUserId": 14,
+					"songFilename": "mc5f584q"
+				},
+				{
+					"guessedUserId": 6,
+					"songFilename": "mc5fvep9"
+				},
+				{
+					"guessedUserId": 10,
+					"songFilename": "mbx1wqdd"
+				},
+				{
+					"guessedUserId": 15,
+					"songFilename": "mbx2s1w6"
+				},
+				{
+					"guessedUserId": 16,
+					"songFilename": "mbzhzvd6"
+				},
+				{
+					"guessedUserId": 1,
+					"songFilename": "mbzi1vrx"
+				},
+				{
+					"guessedUserId": 9,
+					"songFilename": "mc5fmpc9"
+				},
+				{
+					"guessedUserId": 5,
+					"songFilename": "mc3nzggs"
+				},
+				{
+					"guessedUserId": 8,
+					"songFilename": "mc5ffzxg"
+				},
+				{
+					"guessedUserId": 7,
+					"songFilename": "mc5fcgs7"
+				}
+			],
+			"userId": 4
+		},
+		{
+			"correctCount": 4,
+			"createdAt": "2025-06-21T04:58:35.941Z",
+			"guesses": [
+				{
+					"guessedUserId": 14,
+					"songFilename": "mc5f584q"
+				},
+				{
+					"guessedUserId": 5,
+					"songFilename": "mc5fvep9"
+				},
+				{
+					"guessedUserId": 3,
+					"songFilename": "mbx1wqdd"
+				},
+				{
+					"guessedUserId": 6,
+					"songFilename": "mbx2s1w6"
+				},
+				{
+					"guessedUserId": 4,
+					"songFilename": "mc5fqv6m"
+				},
+				{
+					"guessedUserId": 15,
+					"songFilename": "mc5fmpc9"
+				},
+				{
+					"guessedUserId": 9,
+					"songFilename": "mc5euccl"
+				},
+				{
+					"guessedUserId": 10,
+					"songFilename": "mc3nzggs"
+				},
+				{
+					"guessedUserId": 8,
+					"songFilename": "mc5ffzxg"
+				},
+				{
+					"guessedUserId": 7,
+					"songFilename": "mc5fcgs7"
+				}
+			],
+			"userId": 1
+		},
+		{
+			"correctCount": 10,
+			"createdAt": "2025-06-21T05:10:55.636Z",
+			"guesses": [
+				{
+					"guessedUserId": 14,
+					"songFilename": "mc5f584q"
+				},
+				{
+					"guessedUserId": 6,
+					"songFilename": "mc5fvep9"
+				},
+				{
+					"guessedUserId": 10,
+					"songFilename": "mbx1wqdd"
+				},
+				{
+					"guessedUserId": 15,
+					"songFilename": "mbx2s1w6"
+				},
+				{
+					"guessedUserId": 4,
+					"songFilename": "mc5fqv6m"
+				},
+				{
+					"guessedUserId": 9,
+					"songFilename": "mc5fmpc9"
+				},
+				{
+					"guessedUserId": 3,
+					"songFilename": "mc5euccl"
+				},
+				{
+					"guessedUserId": 5,
+					"songFilename": "mc3nzggs"
+				},
+				{
+					"guessedUserId": 8,
+					"songFilename": "mc5ffzxg"
+				},
+				{
+					"guessedUserId": 7,
+					"songFilename": "mc5fcgs7"
+				}
+			],
+			"userId": 1
+		},
+		{
+			"correctCount": 4,
+			"createdAt": "2025-06-21T21:11:11.610Z",
+			"guesses": [
+				{
+					"guessedUserId": 1,
+					"songFilename": "mc5fvep9"
+				},
+				{
+					"guessedUserId": 10,
+					"songFilename": "mbx1wqdd"
+				},
+				{
+					"guessedUserId": 3,
+					"songFilename": "mbx2s1w6"
+				},
+				{
+					"guessedUserId": 15,
+					"songFilename": "mc5fqv6m"
+				},
+				{
+					"guessedUserId": 6,
+					"songFilename": "mbzhzvd6"
+				},
+				{
+					"guessedUserId": 16,
+					"songFilename": "mbzi1vrx"
+				},
+				{
+					"guessedUserId": 9,
+					"songFilename": "mc5fmpc9"
+				},
+				{
+					"guessedUserId": 4,
+					"songFilename": "mc5euccl"
+				},
+				{
+					"guessedUserId": 8,
+					"songFilename": "mc5ffzxg"
+				},
+				{
+					"guessedUserId": 7,
+					"songFilename": "mc5fcgs7"
+				}
+			],
+			"userId": 5
+		},
+		{
+			"correctCount": 6,
+			"createdAt": "2025-06-21T21:18:55.736Z",
+			"guesses": [
+				{
+					"guessedUserId": 6,
+					"songFilename": "mc5fvep9"
+				},
+				{
+					"guessedUserId": 10,
+					"songFilename": "mbx1wqdd"
+				},
+				{
+					"guessedUserId": 4,
+					"songFilename": "mbx2s1w6"
+				},
+				{
+					"guessedUserId": 16,
+					"songFilename": "mc5fqv6m"
+				},
+				{
+					"guessedUserId": 1,
+					"songFilename": "mbzhzvd6"
+				},
+				{
+					"guessedUserId": 15,
+					"songFilename": "mbzi1vrx"
+				},
+				{
+					"guessedUserId": 9,
+					"songFilename": "mc5fmpc9"
+				},
+				{
+					"guessedUserId": 3,
+					"songFilename": "mc5euccl"
+				},
+				{
+					"guessedUserId": 8,
+					"songFilename": "mc5ffzxg"
+				},
+				{
+					"guessedUserId": 7,
+					"songFilename": "mc5fcgs7"
+				}
+			],
+			"userId": 5
+		},
+		{
+			"correctCount": 10,
+			"createdAt": "2025-06-21T21:22:44.227Z",
+			"guesses": [
+				{
+					"guessedUserId": 6,
+					"songFilename": "mc5fvep9"
+				},
+				{
+					"guessedUserId": 10,
+					"songFilename": "mbx1wqdd"
+				},
+				{
+					"guessedUserId": 15,
+					"songFilename": "mbx2s1w6"
+				},
+				{
+					"guessedUserId": 4,
+					"songFilename": "mc5fqv6m"
+				},
+				{
+					"guessedUserId": 16,
+					"songFilename": "mbzhzvd6"
+				},
+				{
+					"guessedUserId": 1,
+					"songFilename": "mbzi1vrx"
+				},
+				{
+					"guessedUserId": 9,
+					"songFilename": "mc5fmpc9"
+				},
+				{
+					"guessedUserId": 3,
+					"songFilename": "mc5euccl"
+				},
+				{
+					"guessedUserId": 8,
+					"songFilename": "mc5ffzxg"
+				},
+				{
+					"guessedUserId": 7,
+					"songFilename": "mc5fcgs7"
+				}
+			],
+			"userId": 5
+		},
+		{
+			"correctCount": 6,
+			"createdAt": "2025-06-23T00:02:46.576Z",
+			"guesses": [
+				{
+					"guessedUserId": 14,
+					"songFilename": "mc5f584q"
+				},
+				{
+					"guessedUserId": 10,
+					"songFilename": "mbx1wqdd"
+				},
+				{
+					"guessedUserId": 15,
+					"songFilename": "mbx2s1w6"
+				},
+				{
+					"guessedUserId": 4,
+					"songFilename": "mc5fqv6m"
+				},
+				{
+					"guessedUserId": 8,
+					"songFilename": "mbzhzvd6"
+				},
+				{
+					"guessedUserId": 5,
+					"songFilename": "mbzi1vrx"
+				},
+				{
+					"guessedUserId": 3,
+					"songFilename": "mc5euccl"
+				},
+				{
+					"guessedUserId": 16,
+					"songFilename": "mc3nzggs"
+				},
+				{
+					"guessedUserId": 1,
+					"songFilename": "mc5ffzxg"
+				},
+				{
+					"guessedUserId": 7,
+					"songFilename": "mc5fcgs7"
+				}
+			],
+			"userId": 9
+		},
+		{
+			"correctCount": 7,
+			"createdAt": "2025-06-23T00:10:13.787Z",
+			"guesses": [
+				{
+					"guessedUserId": 14,
+					"songFilename": "mc5f584q"
+				},
+				{
+					"guessedUserId": 10,
+					"songFilename": "mbx1wqdd"
+				},
+				{
+					"guessedUserId": 15,
+					"songFilename": "mbx2s1w6"
+				},
+				{
+					"guessedUserId": 4,
+					"songFilename": "mc5fqv6m"
+				},
+				{
+					"guessedUserId": 1,
+					"songFilename": "mbzhzvd6"
+				},
+				{
+					"guessedUserId": 8,
+					"songFilename": "mbzi1vrx"
+				},
+				{
+					"guessedUserId": 3,
+					"songFilename": "mc5euccl"
+				},
+				{
+					"guessedUserId": 5,
+					"songFilename": "mc3nzggs"
+				},
+				{
+					"guessedUserId": 16,
+					"songFilename": "mc5ffzxg"
+				},
+				{
+					"guessedUserId": 7,
+					"songFilename": "mc5fcgs7"
+				}
+			],
+			"userId": 9
+		},
+		{
+			"correctCount": 10,
+			"createdAt": "2025-06-23T00:10:47.120Z",
+			"guesses": [
+				{
+					"guessedUserId": 14,
+					"songFilename": "mc5f584q"
+				},
+				{
+					"guessedUserId": 10,
+					"songFilename": "mbx1wqdd"
+				},
+				{
+					"guessedUserId": 15,
+					"songFilename": "mbx2s1w6"
+				},
+				{
+					"guessedUserId": 4,
+					"songFilename": "mc5fqv6m"
+				},
+				{
+					"guessedUserId": 16,
+					"songFilename": "mbzhzvd6"
+				},
+				{
+					"guessedUserId": 1,
+					"songFilename": "mbzi1vrx"
+				},
+				{
+					"guessedUserId": 3,
+					"songFilename": "mc5euccl"
+				},
+				{
+					"guessedUserId": 5,
+					"songFilename": "mc3nzggs"
+				},
+				{
+					"guessedUserId": 8,
+					"songFilename": "mc5ffzxg"
+				},
+				{
+					"guessedUserId": 7,
+					"songFilename": "mc5fcgs7"
+				}
+			],
+			"userId": 9
+		}
+	],
+	"phase": "closed",
+	"songs": {
+		"mbv1065a": {
+			"artist": "Taylor Swift",
+			"extension": "mp3",
+			"filename": "mc5f584q",
+			"reason": "For a little context, this song is about Jake Gyllenhaal. It's the epitome of Taylor Swift. She's hurt, she's vulnerable, she's not holding anything back. She shares it all and it's relatable somehow, even if you haven't had much experience with a breakup like this. She doesn't seem like some elevated superstar. When it comes to relationships, she's on your level and she experiences the same emotions and heartbreak that we've all felt before. It's an entire story in one song. You feel passion, sadness, anger, and longing all throughout the song.",
+			"title": "All Too Well (10 Minute Version) (Taylor's Version) (From The Vault)",
+			"userId": 14
+		},
+		"mbv7aepq": {
+			"artist": "Sam Ryder",
+			"extension": "mp3",
+			"filename": "mc5fvep9",
+			"reason": "I absolutely love these lines from the chorus:\n\nSo, we will see you here\nSame time, same place, next year\nAnd you may win this battle, but you'll never win the war\nBetter to have fought and lost than never fought at all\n\nI'm getting emotional just thinking about them. \n\nThis song is all about someone experiencing defeat. But, he isn't wallowing—he'll be back again, and he's never giving up. He's not leaving the game just because he had a setback. This is a feeling I really relate to and which I find very motivating. To me, there isn't a person who is my adversary, but just life itself. Life has a way of beating me up! But, I'm not giving up, so, expect to see me at the same time, same place, next year!\n\nThis song was played in a Ted Lasso episode, which is a show I also really love. That show along with this song are a great pairing.",
+			"title": "Fought & Lost",
+			"userId": 6
+		},
+		"mbx2j1gu": {
+			"artist": "Steven Wilson",
+			"extension": "mp3",
+			"filename": "mbx1wqdd",
+			"reason": "This is another example of an artist that I quickly fell in love with. I've known I was going to share this artist for a long time, but hadn't settled on a song until now. I love almost his entire discography, and I think he's a musical genius. Each album of his is very different musically but he does them so well taking inspiration from progressive rock, jazz, pop, and electronic music to name a few so it's impossible to pick something that's representative of his music.\n\nI chose this song because it's from my favorite album of his and it's one of my favorite songs of his. The song is about an old man who is soon to die of old age. He keeps being visited by a raven and he things that it's is dead sister's spirit who died when they were both children. He remembered that she often sang to him to calm him down, so he was waiting and hoping for the raven to sing before he passed to comfort him. It's a simple story, yet so powerful and it often brings me to tears.",
+			"title": "The Raven That Refused to Sing",
+			"userId": 10
+		},
+		"mbx3aa0m": {
+			"artist": "Novo Amor",
+			"extension": "mp3",
+			"filename": "mbx2s1w6",
+			"reason": "I always imagined this as an old man singing to those who have walked through life with him. He talks of the pain that they have all gone through, because more often than not its the pain that leaves an imprint on our lives. He talks of the pain and not merely supporting those he has walked with but of essentially inhabiting their skin and truly feeling every bit of their truth. He talks of how this has been hard, and how it has changed him, but that he would do this always. I feel that this is the most selfless and true expression of love. To say that I will go into any fight with you and face the monsters always, no matter the consequences. Also its a very pretty song and I like folk songs like this.",
+			"title": "Carry You",
+			"userId": 15
+		},
+		"mbxuj4ia": {
+			"artist": "dodie",
+			"extension": "mp3",
+			"filename": "mc5fqv6m",
+			"reason": "This year has been indescribably difficult for me. I feel a lot of pain, anger, grief, and more. I have a lot to unpack, process, and deal with. We all do. I love the message of this song. The message of being deeply seen by someone, to be given the space to hurt and to have someone sit in that pain with you, it's beautiful and sacred. \n\"A promise of hope is enough to feel free.\"\nI'm not there yet. I'm not ready yet. I'm not free yet. But I'm working on it and I'm grateful to have people who will sit with my as I do.",
+			"title": "Ready Now",
+			"userId": 4
+		},
+		"mbzi06tb": {
+			"artist": "Luke Combs",
+			"extension": "m4a",
+			"filename": "mbzhzvd6",
+			"reason": "I identify with some parts of the song. I've liked this song for many years. I also really like the voice of the singer even though I'm not into country music much.",
+			"title": "Beautiful Crazy",
+			"userId": 16
+		},
+		"mbzigtee": {
+			"artist": "David Kushner",
+			"extension": "m4a",
+			"filename": "mbzi1vrx",
+			"reason": "I had heard this song before, but recently, Luke told me to play it because he liked it too. I really like the emotion behind the way he sings. I do feel like life is often the way the chorus describes and there are aspects of many things that we love and aspects of the same thing that we might hate. I think, at times, we can relate with the desire to do something that we know isn't good for us, but for some reason we keep doing it. Sometimes, we want the safety of hiding parts of ourselves in the darkness, but at the same time we crave the daylight.",
+			"title": "Daylight",
+			"userId": 1
+		},
+		"mbzrg2fq": {
+			"artist": "Frou Frou",
+			"extension": "mp3",
+			"filename": "mc5fmpc9",
+			"reason": "I had this CD in high school and would listen to it a lot and really loved the style and emotions that I felt while listening to her. It hold's a lot of nostalgia for me. I remember listening to it in the winter one time with snow falling and it really added to the experience, so now I will sometimes turn the album on loudly in the winter when there is a good snowfall! ",
+			"title": "Let Go",
+			"userId": 9
+		},
+		"mc0q266k": {
+			"artist": "Cody Francis",
+			"extension": "mp3",
+			"filename": "mc5euccl",
+			"reason": "Some songs have come to me at just the right moment and have had a deep impact on my life. This is one of those songs. Micaela serendipitously discovered it on February 12 of this year. She immediately sent it to me and it has been on repeat ever since. Although the lyrics aren't perfectly suited to my situation, the message of reassurance and support from a loved one has been a balm to my soul. You all have been a great strength and comfort to me and I will be eternally grateful! \"We're Gonna Be Okay!\"",
+			"title": "We're Gonna Be Okay",
+			"userId": 3
+		},
+		"mc3okoww": {
+			"artist": "M83",
+			"extension": "mp3",
+			"filename": "mc3nzggs",
+			"reason": "I've been listening to more music this year and so it was harder than usual for me to narrow to one song. \nA few months ago, a friend shared a different song by M83, asking if I'd heard it, and I said I had but that this was my favorite song of theirs. He didn't like it, but it got me back listening to it. I'm not sure I can really explain why but I just love this song. It feels like it transports me somewhere. I think there is some nostalgia I feel as well because it sounds a bit like a modern take on a retro video game soundtrack.\n\nIf you hate this song too and want to know what it could have possibly beat out, a couple other songs I was considering were:\nPole Vaulter by Kris Allen - Love the acapella start and then switch to acoustic guitar.\nMalibu by Mumford and Sons - Banjo is finally back! I also irrationally love the muted bass drum keeping beat.\n",
+			"title": "Lune de fiel",
+			"userId": 5
+		},
+		"mc4xf4q5": {
+			"artist": "Fleetwood Mac",
+			"extension": "mp3",
+			"filename": "mc5ffzxg",
+			"reason": "I’ve always loved this song, and it reminds me of my parents. My parents played a lot of Fleetwood Mac when I was younger, so it brings back memories of my childhood. I also remember hearing this song covered a lot when we went to Nashville a few years ago, so it brings back fond memories of that trip.",
+			"title": "Dreams ",
+			"userId": 8
+		},
+		"mc5atwki": {
+			"artist": "Evan Bartels",
+			"extension": "mp3",
+			"filename": "mc5fcgs7",
+			"reason": "I love poetry songs. Imperfect singing, but this song reminds me of Cassidy for some reason. It’s a song I could see her loving. I also know a bunch of old guys who relate in my mind to the character in the song. I want to be loyal to those old guys.",
+			"title": "Death Of A Good Man",
+			"userId": 7
+		}
+	}
+}

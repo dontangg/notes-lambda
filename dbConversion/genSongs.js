@@ -2,7 +2,7 @@ const fs = require('fs');
 
 const songs = [];
 
-for (let i = 1; i < 11; i++) {
+for (let i = 1; i < 13; i++) {
 	const comp = require(`./c${i}.json`);
 
 	Object.keys(comp.songs).forEach(id => {
