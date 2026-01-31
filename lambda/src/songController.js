@@ -135,7 +135,7 @@ const songController = {
 			const existingSong = curComp.songs.find(s => s.id === updatedSong.id);
 
 			// Check to make sure that the userId/reason is not allowed to change unless you're changing it to/from you/partner
-			if (existingSong.userId !== req.user.userId && existingSong.userId !== req.user.partnerId) {
+			if (existingSong.userId !== req.user.id && existingSong.userId !== req.user.partnerId) {
 				updatedSong.reason = existingSong.reason;
 				updatedSong.userId = existingSong.userId;
 			}
